@@ -46,7 +46,7 @@ export function Games() {
       id: '5',
       title: 'Acan\'s Call',
       description: 'Plongez dans une aventure mystique en réalité virtuelle',
-      image: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=600',
+      image: 'https://drive.google.com/file/d/1anGGvVZpoU_vZIYpSEeM-XHZP0T9_bpn/view?usp=sharing',
       platform: 'CVR Autonome'
     },
     {
@@ -113,7 +113,7 @@ export function Games() {
       platform: 'CVR Autonome'
     },
     {
-      id: '15',
+      id: '16',
       title: 'VR Shooter Guns',
       description: 'Action FPS intense avec arsenal d\'armes varié',
       image: 'https://images.unsplash.com/photo-1709952565060-bd033682b54a?w=600',
