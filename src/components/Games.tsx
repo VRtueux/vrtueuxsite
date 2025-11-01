@@ -44,7 +44,7 @@ export function Games() {
     },
     {
       id: '5',
-      title: 'Acan\'s Call',
+      title: 'Acan\'s iuyiuyiu',
       description: 'Plongez dans une aventure mystique en réalité virtuelle',
       image: 'https://ibb.co/xSNqpQz2',
       platform: 'tapis omnidirectionnel'
