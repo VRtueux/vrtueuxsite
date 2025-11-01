@@ -8,7 +8,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
   // GitHub Pages sous /<user>/<repo>/ => base = '/vrtueuxsite/'
-  base: '/vrtueuxsite/',
+  base: '/',
   plugins: [react()],
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
