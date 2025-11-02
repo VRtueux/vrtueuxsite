@@ -26,29 +26,34 @@ export function Games() {
       title: 'Sairento VR',
       description: 'Devenez un Ninja en réalité virtuelle !\n Affrontez vos ennemis à travers 5 cartes et 5 classes différentes.',
       image: 'https://i.ibb.co/bjxPGjnr/sairentovr-header-700x400.jpg',
-      platform: 'tapis Omnidirectionnel'
+      platform: 'Tapis Omnidirectionnel'
     },
-        {
+    {
       id: '3',
       title: 'Acan\'s Call',
       description: 'Explore le Manoir hanté !\n Utilise ta torche pour éclairer ton chemin et choisis l’un des 3 parcours possibles.',
       image: 'https://i.ibb.co/zhzVywPm/Acan-s-Call.jpg',
-      platform: 'tapis Omnidirectionnel'
+      platform: 'Tapis Omnidirectionnel'
     },
-{
+    {
   id: '4',
   title: 'Beat Saber',
-  description: 'Plonge dans le rythme et tranche les cubes ! Teste tes réflexes, bat ton score et deviens le maître du sabre lumineux !'
-   <span class="text-cyan-400">Le meilleur score du mois remporte un cadeau !</span>,
+  description: 'Plonge dans le rythme et tranche les cubes ! Teste tes réflexes, bat ton score et deviens le maître du sabre lumineux !\n Le meilleur score du mois remporte un cadeau !',
   image: 'https://i.ibb.co/YBQ6hPpB/Beat-Saber.jpg',
   platform: 'CVR Autonome'
-},
-
+    },
     {
-      id: '',
+  id: '5',
+  title: 'Roblox VR',
+  description: 'Plonge dans l’univers infini de Roblox !\n Crée, explore et joue à des milliers de mondes imaginaires.',
+  image: 'https://i.ibb.co/tM7SYrb9/Roblox.jpg',
+  platform: 'CVR Autonome'
+  },
+    {
+      id: '6',
       title: 'Assetto Corsa Competizione',
-      description: 'Le simulateur de course ultime en VR',
-      image: 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=600',
+      description: 'Choisis ton circuit et ta voiture !\n Conduis, dépasse et teste tes réflexes dans des courses immersives.',
+      image: 'https://i.ibb.co/spDYkmGG/t-l-chargement.jpg',
       platform: 'SimRacing VR'
     },
       
