@@ -113,7 +113,7 @@ export function Games() {
       platform: 'CVR Autonome'
     },
     {
-      id: '16',
+      id: '15',
       title: 'VR Shooter Guns',
       description: 'Action FPS intense avec arsenal d\'armes varié',
       image: 'https://images.unsplash.com/photo-1709952565060-bd033682b54a?w=600',
