@@ -46,7 +46,7 @@ export function Games() {
       id: '5',
       title: 'Acan\'s Call',
       description: 'Plongez dans une aventure mystique en réalité virtuelle',
-      image: 'https://i.ibb.co/zhzVywPm/Acan-s-Call.jpg'
+      image: 'https://i.ibb.co/zhzVywPm/Acan-s-Call.jpg',
       platform: 'CVR Autonome'
     },
     {
