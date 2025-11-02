@@ -35,14 +35,14 @@ export function Games() {
       image: 'https://i.ibb.co/zhzVywPm/Acan-s-Call.jpg',
       platform: 'tapis Omnidirectionnel'
     },
-    {
-      id: '4',
-      title: 'Beat Saber',
-      description: 'Plonge dans le rythme et tranche les cubes !\n Teste tes réflexes, bat ton score et deviens le maître du sabre lumineux !\n 
-      <span className="text-cyan-400"> Le meilleur score du mois remporte un cadeau !'</span>,
-      image: 'https://i.ibb.co/YBQ6hPpB/Beat-Saber.jpg',
-      platform: 'CVR Autonome'
-    },
+{
+  id: '4',
+  title: 'Beat Saber',
+  description: 'Plonge dans le rythme et tranche les cubes ! Teste tes réflexes, bat ton score et deviens le maître du sabre lumineux ! <span class="text-cyan-400">Le meilleur score du mois remporte un cadeau !</span>',
+  image: 'https://i.ibb.co/YBQ6hPpB/Beat-Saber.jpg',
+  platform: 'CVR Autonome'
+},
+
     {
       id: '',
       title: 'Assetto Corsa Competizione',
