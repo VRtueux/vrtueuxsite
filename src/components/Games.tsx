@@ -36,14 +36,15 @@ export function Games() {
       platform: 'tapis Omnidirectionnel'
     },
     {
-      id: '2',
+      id: '4',
       title: 'Beat Saber',
-      description: 'Découpez des cubes au rythme de la musique',
-      image: 'https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?w=600',
+      description: 'Plonge dans le rythme et tranche les cubes !\n Teste tes réflexes, bat ton score et deviens le maître du sabre lumineux !\n 
+      <span className="text-cyan-400"> Le meilleur score du mois remporte un cadeau !'</span>,
+      image: 'https://i.ibb.co/YBQ6hPpB/Beat-Saber.jpg',
       platform: 'CVR Autonome'
     },
     {
-      id: '3',
+      id: '',
       title: 'Assetto Corsa Competizione',
       description: 'Le simulateur de course ultime en VR',
       image: 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=600',
