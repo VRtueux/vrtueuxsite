@@ -52,7 +52,7 @@ export function Games() {
     {
  id: '6',
       title: 'AFFECTED : The Manor',
-      description: 'Explore le Manoir hanté !\n Utilise ta torche pour éclairer ton chemin et choisis l’un des 3 parcours possibles.',
+      description: 'Explore le Manoir hanté !\n Utilise ta torche pour éclairer ton chemin et choisis l\’un des 3 parcours possibles.',
       image: 'https://i.ibb.co/fdJ3mW18/Affected-The-manor.jpg',
       platform: 'Tapis Omnidirectionnel'
     },
