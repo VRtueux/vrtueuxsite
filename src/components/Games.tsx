@@ -38,7 +38,8 @@ export function Games() {
 {
   id: '4',
   title: 'Beat Saber',
-  description: 'Plonge dans le rythme et tranche les cubes ! Teste tes réflexes, bat ton score et deviens le maître du sabre lumineux !' <span class="text-cyan-400">'Le meilleur score du mois remporte un cadeau !'</span>,
+  description: 'Plonge dans le rythme et tranche les cubes ! Teste tes réflexes, bat ton score et deviens le maître du sabre lumineux !'
+   <span class="text-cyan-400">Le meilleur score du mois remporte un cadeau !</span>,
   image: 'https://i.ibb.co/YBQ6hPpB/Beat-Saber.jpg',
   platform: 'CVR Autonome'
 },
