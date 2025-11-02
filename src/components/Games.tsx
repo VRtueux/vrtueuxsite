@@ -23,6 +23,20 @@ export function Games() {
     },
     {
       id: '2',
+      title: 'Sairento VR',
+      description: 'Devenez un Ninja en réalité virtuelle !\n Affrontez vos ennemis à travers 5 cartes et 5 classes différentes.',
+      image: 'https://i.ibb.co/bjxPGjnr/sairentovr-header-700x400.jpg',
+      platform: 'tapis Omnidirectionnel'
+    },
+        {
+      id: '3',
+      title: 'Acan\'s Call',
+      description: 'Explore le Manoir hanté !\n Utilise ta torche pour éclairer ton chemin et choisis l’un des 3 parcours possibles.',
+      image: 'https://i.ibb.co/zhzVywPm/Acan-s-Call.jpg',
+      platform: 'tapis Omnidirectionnel'
+    },
+    {
+      id: '2',
       title: 'Beat Saber',
       description: 'Découpez des cubes au rythme de la musique',
       image: 'https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?w=600',
@@ -35,97 +49,7 @@ export function Games() {
       image: 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=600',
       platform: 'SimRacing VR'
     },
-    {
-      id: '4',
-      title: 'The Walking Dead: Saints & Sinners',
-      description: 'Survivez dans l\'apocalypse zombie en VR',
-      image: 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=600',
-      platform: 'CVR Autonome'
-    },
-    {
-      id: '5',
-      title: 'Acan\'s Call',
-      description: 'Explore le Manoir hanté ! Utilise ta torche pour éclairer ton chemin et choisis l’un des 3 parcours possibles.',
-      image: 'https://i.ibb.co/zhzVywPm/Acan-s-Call.jpg',
-      platform: 'CVR Autonome'
-    },
-    {
-      id: '6',
-      title: 'AFFECTED : The Manor',
-      description: 'Osez entrer dans ce manoir hanté terrifiant',
-      image: 'https://images.unsplash.com/photo-1577388219814-9b75a45cea09?w=600',
-      platform: 'CVR Autonome'
-    },
-    {
-      id: '7',
-      title: 'Dreadhalls',
-      description: 'Explorez des donjons horrifiques en VR',
-      image: 'https://images.unsplash.com/photo-1577388219814-9b75a45cea09?w=600',
-      platform: 'Tapis Omnidirectionnel'
-    },
-    {
-      id: '8',
-      title: 'VRZ : Torment',
-      description: 'Survivez dans un monde post-apocalyptique infesté de zombies',
-      image: 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=600',
-      platform: 'Tapis Omnidirectionnel'
-    },
-    {
-      id: '9',
-      title: 'Intense Warfare',
-      description: 'Combat tactique multijoueur en réalité virtuelle',
-      image: 'https://images.unsplash.com/photo-1613477757272-96c69d8a64de?w=600',
-      platform: 'CVR Autonome'
-    },
-    {
-      id: '10',
-      title: 'ProtonWar',
-      description: 'Action spatiale futuriste avec batailles intergalactiques',
-      image: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=600',
-      platform: 'CVR Autonome'
-    },
-    {
-      id: '11',
-      title: 'SAGA',
-      description: 'Épopée fantastique en réalité virtuelle immersive',
-      image: 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600',
-      platform: 'Tapis Omnidirectionnel'
-    },
-    {
-      id: '12',
-      title: 'Sairento VR',
-      description: 'Incarnez un ninja cyber-samouraï dans des combats acrobatiques',
-      image: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=600',
-      platform: 'CVR Autonome'
-    },
-    {
-      id: '13',
-      title: 'Virtual Army : Revolution',
-      description: 'Combat militaire tactique en équipe',
-      image: 'https://images.unsplash.com/photo-1613477757272-96c69d8a64de?w=600',
-      platform: 'Tapis Omnidirectionnel'
-    },
-    {
-      id: '14',
-      title: 'Sairento VR',
-      description: 'Devenez un Ninja en réalité virtuelle !\n Affrontez vos ennemis à travers 5 cartes et 5 classes différentes.',
-      image: 'https://i.ibb.co/bjxPGjnr/sairentovr-header-700x400.jpg',
-      platform: 'tapis Omnidirectionnel'
-    },
-    {
-      id: '15',
-      title: 'Virtual Army : Revolution',
-      description: 'Prépare-toi à plonger dans une bataille à 360° plus vraie que nature !\n Inspiré des plus grands jeux de tir, ce jeu t’embarque dans un univers ultra-immersif où chaque mouvement compte et où stratégie et réflexes feront la différence.',
-      image: 'https://i.ibb.co/dwhM60Rg/Virtual-Army-Revolution.jpg',
-      platform: 'Tapis Omnidirectionnel'
-    },
-    {
-      id: '16gi',
-      title: 'VR Shooter Guns',
-      description: 'Action FPS intense avec arsenal d\'armes varié',
-      image: 'https://images.unsplash.com/photo-1709952565060-bd033682b54a?w=600',
-      platform: 'CVR Autonome'
-    }
+      
   ];
 
   const platformColors = {
