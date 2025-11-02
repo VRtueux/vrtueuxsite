@@ -22,25 +22,25 @@ export function Games() {
       platform: 'Tapis Omnidirectionnel'
     },
     {
-      id: '2',
-      title: 'Sairento VR',
-      description: 'Devenez un Ninja en réalité virtuelle !\n Affrontez vos ennemis à travers 5 cartes et 5 classes différentes.',
-      image: 'https://i.ibb.co/bjxPGjnr/sairentovr-header-700x400.jpg',
-      platform: 'Tapis Omnidirectionnel'
-    },
-    {
-      id: '3',
-      title: 'Acan\'s Call',
-      description: 'Explore le Manoir hanté !\n Utilise ta torche pour éclairer ton chemin et choisis l’un des 3 parcours possibles.',
-      image: 'https://i.ibb.co/zhzVywPm/Acan-s-Call.jpg',
-      platform: 'Tapis Omnidirectionnel'
-    },
-    {
-  id: '4',
+       id: '2',
   title: 'Beat Saber',
   description: 'Plonge dans le rythme et tranche les cubes ! Teste tes réflexes, bat ton score et deviens le maître du sabre lumineux !\n Le meilleur score du mois remporte un cadeau !',
   image: 'https://i.ibb.co/YBQ6hPpB/Beat-Saber.jpg',
   platform: 'CVR Autonome'
+    },
+    {
+         id: '3',
+      title: 'Assetto Corsa Competizione',
+      description: 'Choisis ton circuit et ta voiture !\n Conduis, dépasse et teste tes réflexes dans des courses immersives.',
+      image: 'https://i.ibb.co/spDYkmGG/t-l-chargement.jpg',
+      platform: 'SimRacing VR'
+    },
+    {
+ id: '4',
+      title: 'Sairento VR',
+      description: 'Devenez un Ninja en réalité virtuelle !\n Affrontez vos ennemis à travers 5 cartes et 5 classes différentes.',
+      image: 'https://i.ibb.co/bjxPGjnr/sairentovr-header-700x400.jpg',
+      platform: 'Tapis Omnidirectionnel'
     },
     {
   id: '5',
@@ -50,11 +50,11 @@ export function Games() {
   platform: 'CVR Autonome'
   },
     {
-      id: '6',
-      title: 'Assetto Corsa Competizione',
-      description: 'Choisis ton circuit et ta voiture !\n Conduis, dépasse et teste tes réflexes dans des courses immersives.',
-      image: 'https://i.ibb.co/spDYkmGG/t-l-chargement.jpg',
-      platform: 'SimRacing VR'
+ id: '6',
+      title: 'AFFECTED : The Manor',
+      description: 'Explore le Manoir hanté !\n Utilise ta torche pour éclairer ton chemin et choisis l’un des 3 parcours possibles.',
+      image: 'https://i.ibb.co/fdJ3mW18/Affected-The-manor.jpg',
+      platform: 'Tapis Omnidirectionnel'
     },
       
   ];
