@@ -16,9 +16,9 @@ export function Games() {
   const games: Game[] = [
     {
       id: '1',
-      title: 'Half-Life: Alyx',
-      description: 'Explorez City 17 dans cette aventure VR époustouflante',
-      image: 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600',
+      title: 'Virtual Army : Revolution',
+      description: 'Prépare-toi à plonger dans une bataille à 360° plus vraie que nature !\n Inspiré des plus grands jeux de tir, ce jeu t\’embarque dans un univers ultra-immersif où chaque mouvement compte et où stratégie et réflexes feront la différence.',
+      image: 'https://i.ibb.co/dwhM60Rg/Virtual-Army-Revolution.jpg',
       platform: 'Tapis Omnidirectionnel'
     },
     {
@@ -45,7 +45,7 @@ export function Games() {
     {
       id: '5',
       title: 'Acan\'s Call',
-      description: 'Plongez dans une aventure mystique en réalité virtuelle',
+      description: 'Explore le Manoir hanté ! Utilise ta torche pour éclairer ton chemin et choisis l’un des 3 parcours possibles.',
       image: 'https://i.ibb.co/zhzVywPm/Acan-s-Call.jpg',
       platform: 'CVR Autonome'
     },
@@ -107,13 +107,20 @@ export function Games() {
     },
     {
       id: '14',
-      title: 'VR Hero Sentry',
-      description: 'Défendez votre position contre des vagues d\'ennemis',
-      image: 'https://images.unsplash.com/photo-1709952565060-bd033682b54a?w=600',
-      platform: 'CVR Autonome'
+      title: 'Sairento VR',
+      description: 'Devenez un Ninja en réalité virtuelle !\n Affrontez vos ennemis à travers 5 cartes et 5 classes différentes.',
+      image: 'https://i.ibb.co/bjxPGjnr/sairentovr-header-700x400.jpg',
+      platform: 'tapis Omnidirectionnel'
     },
     {
       id: '15',
+      title: 'Virtual Army : Revolution',
+      description: 'Prépare-toi à plonger dans une bataille à 360° plus vraie que nature !\n Inspiré des plus grands jeux de tir, ce jeu t’embarque dans un univers ultra-immersif où chaque mouvement compte et où stratégie et réflexes feront la différence.',
+      image: 'https://i.ibb.co/dwhM60Rg/Virtual-Army-Revolution.jpg',
+      platform: 'Tapis Omnidirectionnel'
+    },
+    {
+      id: '16gi',
       title: 'VR Shooter Guns',
       description: 'Action FPS intense avec arsenal d\'armes varié',
       image: 'https://images.unsplash.com/photo-1709952565060-bd033682b54a?w=600',
