@@ -22,8 +22,8 @@ export function About() {
     },
     {
       icon: Award,
-      title: 'Bornes Arcade',
-      description: 'Profitez également de nos bornes d\'arcade pour une expérience gaming complète.',
+      title: 'Borne Arcade',
+      description: 'Profitez également de notre mode arcade pour une expérience gaming complète.',
       highlight: 'Arcade'
     }
   ];
@@ -65,7 +65,7 @@ export function About() {
           </div>
           <p className="text-center text-gray-300 max-w-3xl mx-auto">
             Nous sommes fiers d'être les <span className="text-cyan-400">seuls possesseurs en France</span> du tapis omnidirectionnel, 
-            vous offrant une expérience de réalité virtuelle sans précédent.<br></br> Pour une immersion optimale, il est recommandé de connaître votre écart interpupillaire afin de régler correctement la netteté de votre casque VR.<br></br><br></br> Venez découvrir ce qui fait de VRtueux une destination gaming d'exception !
+            vous offrant une expérience de réalité virtuelle sans précédent.\n Pour une immersion optimale, il est recommandé de connaître votre écart interpupillaire afin de régler correctement la netteté de votre casque VR.\n\n Venez découvrir ce qui fait de VRtueux une destination gaming d'exception !
           </p>
         </div>
       </div>
