@@ -93,7 +93,7 @@ export function Contact() {
                   <p className="text-gray-300">
                     Réservation recommandée
                     <br />
-                    <span className="text-sm text-gray-400">Contactez-nous pour connaître nos horaires d'ouverture</span>
+                    <span className="text-sm text-cyan-400"> <a href="https://vrtueux.setmore.com/?fbclid=PAZXh0bgNhZW0CMTEAAacUMcGurlhlyC-GJgjzvhAmseVlvvBBXlMIgYa45i-3QmrmSqVdkvkKLCPdkQ_aem_g-L0mFxazO_YmhwD5o0rUQ"> Cliquez ici pour réserver.</a></span>
                   </p>
                 </div>
               </div>
