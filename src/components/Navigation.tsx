@@ -52,6 +52,7 @@ export function Navigation() {
             <button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-cyan-400 transition-colors">
               Contact
             </button>
+            <a href="https://vrtueux.setmore.com/?fbclid=PAZXh0bgNhZW0CMTEAAacUMcGurlhlyC-GJgjzvhAmseVlvvBBXlMIgYa45i-3QmrmSqVdkvkKLCPdkQ_aem_g-L0mFxazO_YmhwD5o0rUQ" className="text-purple-300 hover:text-cyan-400 transition-colors"> Réserver </a>
           </div>
 
           {/* Mobile menu button */}
@@ -100,6 +101,8 @@ export function Navigation() {
             >
               Contact
             </button>
+            <a href="https://vrtueux.setmore.com/?fbclid=PAZXh0bgNhZW0CMTEAAacUMcGurlhlyC-GJgjzvhAmseVlvvBBXlMIgYa45i-3QmrmSqVdkvkKLCPdkQ_aem_g-L0mFxazO_YmhwD5o0rUQ" className="block w-full text-left px-3 py-2 text-purple-300 hover:text-cyan-400 hover:bg-slate-800 rounded transition-colors"> Réserver </a>
+
           </div>
         </div>
       )}
