@@ -65,7 +65,7 @@ export function Games() {
     },
         {
  id: '8',
-      title: 'VRZ Torment'
+      title: 'VRZ Torment',
       description: 'Élimine un maximum de zombies et collecte les étoiles pour battre ton record.\n Plus tu tues de zombies, plus tu obtiens des améliorations d’armes. Plus tu joues longtemps, plus les zombies deviennent redoutables !',
       image: 'https://i.ibb.co/KpL2CpKV/VRZ-Torment.jpg',
       platform: 'Tapis Omnidirectionnel'
