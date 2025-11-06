@@ -121,7 +121,7 @@ export function Contact() {
         <div className="text-center text-gray-500">
           <p>&copy; {new Date().getFullYear()} VRtueux. Tous droits réservés.</p>
           <p>
-            <a href="https://drive.google.com/file/d/11JE2ZbmuOLo7TmjVHL_EvZMrBZuBwJEE/view?usp=sharing"> Mention Légale.</a>
+            <a href="https://www.dropbox.com/scl/fi/hapr7rdqwa0vg4y3rvykg/Mentions-L-gales.pdf?rlkey=l9ka165mndripcskszv456r6i&st=xxo9qgkt&dl=0"> Mention Légale.</a>
           </p>
           <p className="mt-2 text-sm">Votre destination gaming VR à Vienne</p>
         </div>
