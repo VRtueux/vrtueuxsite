@@ -23,7 +23,7 @@ export function About() {
     {
       icon: Award,
       title: 'Bornes Arcade',
-      description: 'Profitez également de notre mode arcade pour une expérience gaming complète.',
+      description: 'Profitez Edvyn de notre mode arcade pour une expérience gaming complète.',
       highlight: 'Arcade'
     }
   ];
