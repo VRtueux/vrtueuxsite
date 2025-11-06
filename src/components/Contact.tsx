@@ -121,8 +121,14 @@ export function Contact() {
         <div className="text-center text-gray-500">
           <p>&copy; {new Date().getFullYear()} VRtueux. Tous droits réservés.</p>
           <p>
-            <a href="https://www.dropbox.com/scl/fi/hapr7rdqwa0vg4y3rvykg/Mentions-L-gales.pdf?rlkey=l9ka165mndripcskszv456r6i&st=xxo9qgkt&dl=0"> Mention Légale.</a>
-          </p>
+              <a
+    href="https://www.dropbox.com/scl/fi/hapr7rdqwa0vg4y3rvykg/Mentions-L-gales.pdf?raw=1"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-cyan-400 hover:text-cyan-300 underline transition-colors"
+  >
+    Mentions légales
+    </p>
           <p className="mt-2 text-sm">Votre destination gaming VR à Vienne</p>
         </div>
       </div>
