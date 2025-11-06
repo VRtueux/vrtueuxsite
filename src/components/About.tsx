@@ -23,7 +23,7 @@ export function About() {
     {
       icon: Award,
       title: 'Mode Arcade',
-      description: 'Profitez également de notre mode arcade pour une expérience gaming complète.',
+      description: 'Profitez de notre mode arcade pour une expérience gaming complète.\n En bonus, participez au défi Beat Saber et tentez de gagner des cadeaux chaque mois !',
       highlight: 'Arcade'
     }
   ];
