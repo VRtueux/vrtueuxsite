@@ -91,9 +91,9 @@ export function Contact() {
                 <div>
                   <h3 className="text-white mb-2">Horaires</h3>
                   <p className="text-gray-300">
-                    Mardi - Dimanche : 11h00 - 22h00<br />
+                    Mardi au Dimanche : 11h à 22h
                     <br />
-                    <span className="text-sm text-cyan-400"> <a href="https://vrtueux.setmore.com/?fbclid=PAZXh0bgNhZW0CMTEAAacUMcGurlhlyC-GJgjzvhAmseVlvvBBXlMIgYa45i-3QmrmSqVdkvkKLCPdkQ_aem_g-L0mFxazO_YmhwD5o0rUQ"> Réserver maintenant.</a></span>
+                    <span className="text-sm text-cyan-400"> <a href="https://vrtueux.setmore.com/?fbclid=PAZXh0bgNhZW0CMTEAAacUMcGurlhlyC-GJgjzvhAmseVlvvBBXlMIgYa45i-3QmrmSqVdkvkKLCPdkQ_aem_g-L0mFxazO_YmhwD5o0rUQ"> Rerserver maintenant.</a></span>
                   </p>
                 </div>
               </div>
