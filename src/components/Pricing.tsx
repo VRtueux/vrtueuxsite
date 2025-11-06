@@ -13,10 +13,10 @@ export function Pricing() {
       name: 'SimRacing VR',
       duration: '30 min',
       price: '15€',
-      features: ['Simulateur de pointe', 'Retour de force réaliste', 'Courses en VR']
+      features: ['Simulateur de voiture', 'Retour de force réaliste', 'Courses en VR']
     },
     {
-      name: 'CVR Autonome',
+      name: 'Casque Autonome',
       duration: '30 min',
       price: '12€',
       features: ['Large catalogue de jeux', 'Sans fil', 'Graphismes immersifs']
@@ -35,7 +35,7 @@ export function Pricing() {
       duration: '10 x 30 min',
       price: '130€',
       popular: true,
-      features: ['Économisez 20€', 'Valable 6 mois', 'Partage possible']
+      features: ['Économisez 40€', 'Valable 6 mois', 'Partage possible']
     }
   ];
 
@@ -43,7 +43,7 @@ export function Pricing() {
     {
       name: '5 Parties',
       price: '12,50€',
-      features: ['Bornes arcade rétro', 'Jeux classiques']
+      features: ['battle', 'Jeux classiques']
     },
     {
       name: '12 Parties',
