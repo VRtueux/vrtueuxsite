@@ -117,22 +117,12 @@ export function Contact() {
       </div>
 
       {/* Footer */}
-<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 pt-8 border-t border-slate-800">
-  <div className="text-center text-gray-500">
-    <p>&copy; {new Date().getFullYear()} VRtueux. Tous droits réservés.</p>
-    <p>
-      <a
-        href="public/Mentions Légales.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-cyan-400 hover:text-cyan-300 underline transition-colors"
-      >
-        Mentions légales
-      </a>
-    </p>
-    <p className="mt-2 text-sm">Votre destination gaming VR à Vienne</p>
-  </div>
-</div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 pt-8 border-t border-slate-800">
+        <div className="text-center text-gray-500">
+          <p>&copy; {new Date().getFullYear()} VRtueux. Tous droits réservés.</p>
+          <p className="mt-2 text-sm">Votre destination gaming VR à Vienne</p>
+        </div>
+      </div>
     </section>
   );
 }
