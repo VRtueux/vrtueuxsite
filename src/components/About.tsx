@@ -16,13 +16,13 @@ export function About() {
     },
     {
       icon: Gamepad2,
-      title: 'CVR Autonome',
-      description: 'Découvrez une large gamme de jeux et expériences VR autonomes.',
+      title: 'Casque Autonome',
+      description: 'Une grande variété de jeux VR autonomes à découvrir et pour encore plus de fun, jouez aussi en multijoueur !',
       highlight: 'VR Autonome'
     },
     {
       icon: Award,
-      title: 'Bornes Arcade',
+      title: 'Mode Arcade',
       description: 'Profitez également de notre mode arcade pour une expérience gaming complète.',
       highlight: 'Arcade'
     }
@@ -36,7 +36,7 @@ export function About() {
             Bienvenue chez <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">VRtueux</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Votre destination gaming ultime à Vienne. Vivez des expériences immersives uniques avec nos équipements de pointe.
+            Votre destination gaming ultime à Vienne.<br></br>Vivez des expériences immersives uniques avec nos équipements de pointe.
           </p>
         </div>
 
