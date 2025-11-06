@@ -120,6 +120,9 @@ export function Contact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 pt-8 border-t border-slate-800">
         <div className="text-center text-gray-500">
           <p>&copy; {new Date().getFullYear()} VRtueux. Tous droits réservés.</p>
+          <p>
+              <span className="text-sm text-cyan-400"> <a href="https://drive.google.com/file/d/11JE2ZbmuOLo7TmjVHL_EvZMrBZuBwJEE/view?usp=sharing"> Mention Légale.</a></span>
+          </p>
           <p className="mt-2 text-sm">Votre destination gaming VR à Vienne</p>
         </div>
       </div>
