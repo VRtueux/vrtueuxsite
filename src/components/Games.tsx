@@ -56,7 +56,13 @@ export function Games() {
       image: 'https://i.ibb.co/fdJ3mW18/Affected-The-manor.jpg',
       platform: 'Tapis Omnidirectionnel'
     },
-      
+    {
+ id: '7',
+      title: 'Dreadhalls (Escape Game)',
+      description: 'Tente de t’échapper du labyrinthe en moins de 10 minutes !\n Utilise ta carte pour explorer méthodiquement et trouver la sortie avant qu’il ne soit trop tard.\n Mais prends garde : des créatures mortelles rôdent dans l’ombre…',
+      image: 'https://i.ibb.co/jPtjRkny/Dreadhalls.jpg',
+      platform: 'Tapis Omnidirectionnel'
+    },
   ];
 
   const platformColors = {
