@@ -23,7 +23,7 @@ export function About() {
     {
       icon: Award,
       title: 'Mode Arcade',
-      description: 'Profitez de notre mode arcade pour une expérience gaming complète.\n En bonus, participez au défi Beat Saber et tentez de gagner des cadeaux chaque mois !',
+      description: 'Profitez de notre mode arcade pour une expérience gaming complète.\nEn bonus, participez au défi Beat Saber et tentez de gagner des cadeaux chaque mois !',
       highlight: 'Arcade'
     }
   ];
@@ -34,7 +34,7 @@ export function About() {
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl text-white mb-4">
             Bienvenue chez <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">VRtueux</span>
-          </h2>
+          </h2><br></br>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Votre destination gaming ultime à Vienne.<br></br>Vivez des expériences immersives uniques avec nos équipements de pointe.
           </p>
