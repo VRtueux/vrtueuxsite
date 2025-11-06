@@ -122,7 +122,7 @@ export function Contact() {
     <p>&copy; {new Date().getFullYear()} VRtueux. Tous droits réservés.</p>
     <p>
       <a
-        href="https://www.dropbox.com/scl/fi/hapr7rdqwa0vg4y3rvykg/Mentions-L-gales.pdf?raw=1"
+        href="public/Mentions Légales.pdf"
         target="_blank"
         rel="noopener noreferrer"
         className="text-cyan-400 hover:text-cyan-300 underline transition-colors"
