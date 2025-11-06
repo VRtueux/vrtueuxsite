@@ -43,7 +43,7 @@ export function Pricing() {
     {
       name: '5 Parties',
       price: '12,50€',
-      features: ['battle', 'Jeux classiques']
+      features: ['Battle', 'Jeux classiques']
     },
     {
       name: '12 Parties',
