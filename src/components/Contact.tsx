@@ -89,8 +89,9 @@ export function Contact() {
                   <Clock className="text-white" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-white mb-2">Réservation et horaire</h3>
+                  <h3 className="text-white mb-2">Horaires</h3>
                   <p className="text-gray-300">
+                    Mardi - Dimanche : 11h00 - 22h00<br />
                     <br />
                     <span className="text-sm text-cyan-400"> <a href="https://vrtueux.setmore.com/?fbclid=PAZXh0bgNhZW0CMTEAAacUMcGurlhlyC-GJgjzvhAmseVlvvBBXlMIgYa45i-3QmrmSqVdkvkKLCPdkQ_aem_g-L0mFxazO_YmhwD5o0rUQ"> Cliquez ici pour réserver.</a></span>
                   </p>
