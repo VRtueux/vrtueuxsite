@@ -89,12 +89,21 @@ export function Contact() {
                   <Clock className="text-white" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-white mb-2">Horaires</h3>
+                  <h3 className="text-white mb-2">Réservation</h3>
                   <p className="text-gray-300">
-                    Réservation recommandée
                     <br />
-                    <span className="text-sm text-cyan-400"> <a href="https://vrtueux.setmore.com/?fbclid=PAZXh0bgNhZW0CMTEAAacUMcGurlhlyC-GJgjzvhAmseVlvvBBXlMIgYa45i-3QmrmSqVdkvkKLCPdkQ_aem_g-L0mFxazO_YmhwD5o0rUQ"> Cliquez ici pour réserver.</a></span>
-                  </p>
+                        <script 
+           id="setmore_script" 
+           type="text/javascript" 
+           src="https://assets.setmore.com/integration/static/setmoreIframeLive.js"></script>
+           <a style="float: none" 
+           id="Setmore_button_iframe" 
+           href="https://vrtueux.setmore.com"><img 
+           border="none" 
+           src="https://assets.setmore.com/integration/images/newdesign/others/book-now-button.svg" 
+           alt="Book an appointment with VRtueux using Setmore" />
+           </a>
+            </p>
                 </div>
               </div>
             </div>
