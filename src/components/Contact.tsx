@@ -90,21 +90,22 @@ export function Contact() {
                 </div>
                 <div>
                   <h3 className="text-white mb-2">Réservation</h3>
-                  <p className="text-gray-300">
                     <br />
                         <script 
-           id="setmore_script" 
-           type="text/javascript" 
-           src="https://assets.setmore.com/integration/static/setmoreIframeLive.js"></script>
-           <a style="float: none" 
-           id="Setmore_button_iframe" 
-           href="https://vrtueux.setmore.com"><img 
-           border="none" 
-           src="https://assets.setmore.com/integration/images/newdesign/others/book-now-button.svg" 
-           alt="Book an appointment with VRtueux using Setmore" />
-           </a>
-            </p>
-                </div>
+                          id="setmore_script" 
+                          type="text/javascript" 
+                          src="https://assets.setmore.com/integration/static/setmoreIframeLive.js">
+                          </script>
+                        <a 
+                          style="float: none" 
+                          id="Setmore_button_iframe" 
+                          href="https://vrtueux.setmore.com">
+                        <img 
+                          border="none" 
+                          src="https://assets.setmore.com/integration/images/newdesign/others/book-now-button.svg" 
+                          alt="Book an appointment with VRtueux using Setmore" />
+                        </a>
+                    </div>
               </div>
             </div>
           </div>
