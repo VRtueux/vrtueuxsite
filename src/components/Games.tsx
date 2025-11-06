@@ -63,20 +63,6 @@ export function Games() {
       image: 'https://i.ibb.co/jPtjRkny/Dreadhalls.jpg',
       platform: 'Tapis Omnidirectionnel'
     },
-        {
- id: '8',
-      title: 'VRZ Torment',
-      description: 'Élimine un maximum de zombies et collecte les étoiles pour battre ton record.\n Plus tu tues de zombies, plus tu obtiens des améliorations d’armes. Plus tu joues longtemps, plus les zombies deviennent redoutables !',
-      image: 'https://i.ibb.co/KpL2CpKV/VRZ-Torment.jpg',
-      platform: 'Tapis Omnidirectionnel'
-    },
-        {
- id: '9',
-      title: 'VR Shooter guns',
-      description: 'La station spatiale est attaquée !\n Rejoins les pods de secours et élimine le plus d’ennemis possible pour atteindre le meilleur score.',
-      image: 'https://i.ibb.co/ZpjMHBZ5/VR-shooter-gun.jpg',
-      platform: 'Tapis Omnidirectionnel'
-    },
   ];
 
   const platformColors = {
