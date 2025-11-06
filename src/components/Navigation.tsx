@@ -54,7 +54,7 @@ export function Navigation() {
             </button>
             <a href="https://vrtueux.setmore.com/?fbclid=PAZXh0bgNhZW0CMTEAAacUMcGurlhlyC-GJgjzvhAmseVlvvBBXlMIgYa45i-3QmrmSqVdkvkKLCPdkQ_aem_g-L0mFxazO_YmhwD5o0rUQ" className="text-purple-300 hover:text-cyan-400 transition-colors"> Réserver </a>
           </div>
-<script id="setmore_script" type="text/javascript" src="https://assets.setmore.com/integration/static/setmoreIframeLive.js"></script><a style="position: fixed; right: 0px; top: 25%; display: block; z-index: 20000" id="Setmore_button_iframe" href="https://vrtueux.setmore.com"><img border="none" src="https://assets.setmore.com/integration/images/newdesign/others/book-now-button-float.svg" alt="Book an appointment with VRtueux using Setmore" /></a>
+
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
