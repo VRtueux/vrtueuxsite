@@ -38,10 +38,10 @@ export function Pricing() {
       features: ['-5 % pour 2, -10 % pour 3, -15 % pour 4', 'Une aventure partagée en famille ou entre amis', 'Des souvenirs immersifs à vivre à plusieurs']
     },
     {
-      name: 'Casque Autonome',
-      duration: '30 min',
-      price: '12€',
-      features: ['Large catalogue de jeux', 'Sans fil', 'Graphismes immersifs']
+      name: 'Pack Arcade',
+      duration: '50 sessions d’arcade VR',
+      price: '25€',
+      features: ['Accès libre aux jeux d\’arcade VR', 'Parfait pour s\’entraîner et battre les meilleurs scores (Beat Saber)', 'Expérience fun, rapide et addictive']
     }
   ];
 
