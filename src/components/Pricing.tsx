@@ -29,7 +29,7 @@ export function Pricing() {
       duration: 'Privatisation de 2 heures pour 2 personnes',
       price: '150€',
       highlight: true,
-      features: ['Boissons et snacks inclus pour un confort premium', 'Vivez la réalité virtuelle comme des VIP','Economie de 54€']
+      features: ['Economie de 54€', 'Vivez la réalité virtuelle comme des VIP','Boissons et snacks inclus pour un confort premium']
     },
     {
       name: 'Pack Familial',
