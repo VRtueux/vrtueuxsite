@@ -25,11 +25,11 @@ export function Pricing() {
 
    const cn = [
     {
-      name: 'Tapis Omnidirectionnel',
-      duration: '30 min',
-      price: '24€',
+      name: 'Ultimate Christmas',
+      duration: 'Privatisation de 2 heures pour 2 personnes',
+      price: '150€ (économie de 54€)',
       highlight: true,
-      features: ['Unique en France', 'Expérience immersive totale', 'Déplacement naturel']
+      features: ['Boissons et snacks inclus pour un confort premium', 'Vivez la réalité virtuelle comme des VIP']
     },
     {
       name: 'SimRacing VR',
