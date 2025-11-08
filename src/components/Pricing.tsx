@@ -23,7 +23,7 @@ export function Pricing() {
     }
   ];
 
-   const Cadeau Noel = [
+   const cn = [
     {
       name: 'Tapis Omnidirectionnel',
       duration: '30 min',
@@ -137,7 +137,7 @@ export function Pricing() {
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">VR Christmas</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {vrPricing.map((item, index) => (
+            {cn.map((item, index) => (
               <div
                 key={index}
                 className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
