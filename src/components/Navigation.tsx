@@ -93,7 +93,7 @@ export function Navigation() {
               onClick={() => scrollToSection('pricing')}
               className="block w-full text-left px-3 py-2 text-gray-300 hover:text-cyan-400 hover:bg-slate-800 rounded transition-colors"
             >
-              Tarifs
+              Tarifs & Cartes Cadeaux
             </button>
             <button
               onClick={() => scrollToSection('contact')}
