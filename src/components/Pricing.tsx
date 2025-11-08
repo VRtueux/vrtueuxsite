@@ -146,10 +146,12 @@ export function Pricing() {
   </h3>
 
   <div className="flex justify-center mb-8">
-        <p className="text-lg text-gray-400 text-center">À retirer sur place</p>
-    <p className="text-sm text-gray-500 mt-1 text-center">
-      Carte valable 6 mois après date d'achat
-    </p>
+  <p className="text-lg text-gray-400 mb-1">
+    À retirer sur place
+  </p>
+  <p className="text-sm text-gray-500 mb-8">
+    Carte valable 6 mois après date d'achat
+  </p>
   </div>
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
     {cn.map((item, index) => (
