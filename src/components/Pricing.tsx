@@ -50,7 +50,7 @@ export function Pricing() {
       name: 'Gift Card',
       duration: 'Carte Cadeau à prix libre',
       price: 'A partir de 15 €',
-      features: ['Montant libre', 'Laisse le choix de l’expérience à offrir', 'Idéal pour découvrir la VR sans limite']
+      features: ['Montant libre', 'Laisse le choix de l’expérience à offrir', 'CIdéal pour découvrir la VR sans limite']
     },
     {
       name: 'Pack Découverte',
@@ -141,7 +141,11 @@ export function Pricing() {
 
                 {/* Cadeau Noel */}
         <div className="mb-16">
-          <h3 className="text-2xl text-white mb-8 text-center">Cartes Cadeaux : VR Christmas\n A retirer sur place</h3>
+          <h3 className="text-2xl text-white mb-8 text-center">Cartes Cadeaux : VR Christmas</h3>
+             </h4>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+           A retirer sur place
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {cn.map((item, index) => (
               <div
