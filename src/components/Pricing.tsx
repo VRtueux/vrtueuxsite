@@ -139,17 +139,18 @@ export function Pricing() {
           </div>
         </div>
 
-              {/* Cadeau Noel */}
-<div className="mb-16">
-  <h3 className="text-2xl text-white mb-8 text-center">
+    {/* Cadeau Noel */}
+<div className="mb-16 text-center">
+  <h3 className="text-2xl text-white mb-2">
     Cartes Cadeaux : VR Christmas
   </h3>
 
-    <div className="mb-1">
-    <span className="text-lg text-gray-400">À retirer sur place</span>
-  </div>
-  <div className="mb-8">
-    <span className="text-sm text-gray-500">
+
+  <div className="flex flex-col items-center mb-8">
+    <span className="text-lg text-gray-400 mb-1 text-center">
+      À retirer sur place
+    </span>
+    <span className="text-sm text-gray-500 text-center">
       Carte valable 6 mois après date d'achat
     </span>
   </div>
