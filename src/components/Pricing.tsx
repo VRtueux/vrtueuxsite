@@ -142,7 +142,8 @@ export function Pricing() {
                 {/* Cadeau Noel */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Cartes Cadeaux : VR Christmas</h3>
-               <p className="text-lg text-gray-400 mb-8">À retirer sur place</p>
+                 <div className="flex justify-center mb-8">
+    <p className="text-lg text-gray-400 text-center">À retirer sur place</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {cn.map((item, index) => (
               <div
