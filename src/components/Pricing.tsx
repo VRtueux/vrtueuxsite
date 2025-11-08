@@ -145,12 +145,12 @@ export function Pricing() {
     Cartes Cadeaux : VR Christmas
   </h3>
 
-  {/* ✅ Texte centré sous le titre */}
   <div className="flex justify-center mb-8">
-    <p className="text-lg text-gray-400 text-center">À retirer sur place</p>
+        <p className="text-lg text-gray-400 text-center">À retirer sur place</p>
+    <p className="text-sm text-gray-500 mt-1 text-center">
+      Carte valable 6 mois après date d'achat
+    </p>
   </div>
-
-  {/* ✅ Grille des cartes */}
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
     {cn.map((item, index) => (
       <div
