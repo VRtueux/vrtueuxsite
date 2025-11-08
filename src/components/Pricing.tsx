@@ -147,10 +147,10 @@ export function Pricing() {
 
   {/* Chaque ligne en <p> pour être à la ligne */}
   <p className="text-lg text-gray-400 mb-1">
-    À retirer sur place
+   Carte valable 6 mois après date d'achat
   </p>
   <p className="text-sm text-gray-500 mb-8">
-    Carte valable 6 mois après date d'achat
+     À retirer sur place
   </p>
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
     {cn.map((item, index) => (
