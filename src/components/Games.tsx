@@ -63,6 +63,20 @@ export function Games() {
       image: 'https://i.ibb.co/jPtjRkny/Dreadhalls.jpg',
       platform: 'Tapis Omnidirectionnel'
     },
+    {
+ id: '8',
+      title: 'VRZ : Torment',
+      description: 'Tente de t\’échapper du labyrinthe en moins de 10 minutes !\n Utilise ta carte pour explorer méthodiquement et trouver la sortie avant qu’il ne soit trop tard.\n Mais prends garde : des créatures mortelles rôdent dans l’ombre',
+      image: 'https://i.ibb.co/jPtjRkny/Dreadhalls.jpg',
+      platform: 'Tapis Omnidirectionnel'
+    },
+    {
+ id: '9',
+      title: 'Dreadhalls <span className="text-blue-500">(Escape Game)</span>',
+      description: 'Tente de t\’échapper du labyrinthe en moins de 10 minutes !\n Utilise ta carte pour explorer méthodiquement et trouver la sortie avant qu’il ne soit trop tard.\n Mais prends garde : des créatures mortelles rôdent dans l’ombre',
+      image: 'https://i.ibb.co/jPtjRkny/Dreadhalls.jpg',
+      platform: 'Tapis Omnidirectionnel'
+    },
   ];
 
   const platformColors = {
