@@ -145,13 +145,13 @@ export function Pricing() {
     Cartes Cadeaux : VR Christmas
   </h3>
 
-  <div className="flex justify-center mb-8">
-  <p className="text-lg text-gray-400 mb-1">
-    À retirer sur place
-  </p>
-  <p className="text-sm text-gray-500 mb-8">
-    Carte valable 6 mois après date d'achat
-  </p>
+    <div className="mb-1">
+    <span className="text-lg text-gray-400">À retirer sur place</span>
+  </div>
+  <div className="mb-8">
+    <span className="text-sm text-gray-500">
+      Carte valable 6 mois après date d'achat
+    </span>
   </div>
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
     {cn.map((item, index) => (
