@@ -47,7 +47,7 @@ export function Navigation() {
               Jeux
             </button>
             <button onClick={() => scrollToSection('pricing')} className="text-gray-300 hover:text-cyan-400 transition-colors">
-              Tarifs
+              Tarifs & Cartes Cadeaux
             </button>
             <button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-cyan-400 transition-colors">
               Contact
