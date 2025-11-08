@@ -27,15 +27,15 @@ export function Pricing() {
     {
       name: 'Ultimate Christmas',
       duration: 'Privatisation de 2 heures pour 2 personnes',
-      price: '150€ (économie de 54€)',
+      price: '150€',
       highlight: true,
-      features: ['Boissons et snacks inclus pour un confort premium', 'Vivez la réalité virtuelle comme des VIP']
+      features: ['Boissons et snacks inclus pour un confort premium', 'Vivez la réalité virtuelle comme des VIP','Economie de 54€']
     },
     {
-      name: 'SimRacing VR',
-      duration: '30 min',
-      price: '15€',
-      features: ['Simulateur de voiture', 'Retour de force réaliste', 'Courses en VR']
+      name: 'Pack Familial',
+      duration: '30 min/personne',
+      price: '24€',
+      features: ['-5 % pour 2, -10 % pour 3, -15 % pour 4', 'Une aventure partagée en famille ou entre amis', 'Des souvenirs immersifs à vivre à plusieurs']
     },
     {
       name: 'Casque Autonome',
