@@ -144,8 +144,6 @@ export function Pricing() {
   <h3 className="text-2xl text-white mb-2">
     Cartes Cadeaux : VR Christmas
   </h3>
-
-  {/* Chaque ligne en <p> pour être à la ligne */}
   <p className="text-lg text-gray-400 mb-1">
    Carte valable 6 mois après date d'achat
   </p>
@@ -180,7 +178,7 @@ export function Pricing() {
           <div className="text-gray-500 text-sm">TTC</div>
         </div>
 
-        <ul className="space-y-3">
+        <ul className="space-y-3 text-left">
           {item.features.map((feature, idx) => (
             <li key={idx} className="flex items-start gap-2 text-gray-300">
               <Check
