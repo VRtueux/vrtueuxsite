@@ -9,14 +9,6 @@ export function Hero() {
     }
   };
 
-  // Nouveau : fonction pour scroller vers Hero si besoin
-  const scrollToHero = () => {
-    const element = document.getElementById('hero');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
