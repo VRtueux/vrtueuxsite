@@ -27,14 +27,28 @@ export function Hero() {
           VRtueux
         </h1>
         <p className="text-xl sm:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto">
-          Plongez dans l'univers de la réalité virtuelle à Vienne 38
+          Plongez dans l'univers de la réalité virtuelle à Vienne
         </p>
-        <button
-          onClick={scrollToAbout}
-          className="bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-8 py-4 rounded-full hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105"
-        >
-          Découvrir nos expériences
-        </button>
+
+        {/* Boutons */}
+        <div className="flex justify-center gap-4">
+          <button
+            onClick={scrollToAbout}
+            className="bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-8 py-4 rounded-full hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105"
+          >
+            Découvrir nos expériences
+          </button>
+
+          <button
+            onClick={() => {
+              const element = document.getElementById('christmas-cards');
+              if (element) element.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-8 py-4 rounded-full hover:shadow-lg hover:shadow-pink-500/50 transition-all duration-300 transform hover:scale-105"
+          >
+            Cartes Cadeaux Noël
+          </button>
+        </div>
       </div>
 
       {/* Scroll Indicator */}
@@ -45,6 +59,7 @@ export function Hero() {
         <ChevronDown size={32} />
       </button>
 
+      {/* Styles Animations */}
       <style>{`
         @keyframes blob {
           0% { transform: translate(0px, 0px) scale(1); }
