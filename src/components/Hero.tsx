@@ -56,7 +56,7 @@ export function Hero() {
                        transition-all duration-300 transform hover:scale-105 
                        animate-pulse"
           >
-            Cartes Cadeaux Noël
+            Cadeaux de Noël
           </button>
         </div>
       </div>
