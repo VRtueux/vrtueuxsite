@@ -9,6 +9,16 @@ export function Hero() {
     }
   };
 
+  const scrollToChristmasCards = () => {
+    const element = document.getElementById('christmas-cards');
+    if (element) {
+      // Décalage de 50px pour que le titre reste visible
+      const yOffset = -50;
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
@@ -41,10 +51,7 @@ export function Hero() {
           </button>
 
           <button
-            onClick={() => {
-              const element = document.getElementById('christmas-cards');
-              if (element) element.scrollIntoView({ behavior: 'smooth' });
-            }}
+            onClick={scrollToChristmasCards}
             className="bg-gradient-to-r from-red-500 via-green-500 to-red-500 text-white px-8 py-4 rounded-full 
                        shadow-lg shadow-red-500/40 hover:shadow-green-500/50 
                        transition-all duration-300 transform hover:scale-105 
