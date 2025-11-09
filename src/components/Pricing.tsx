@@ -147,7 +147,6 @@ export function Pricing() {
     onClick={() =>
       document.getElementById('christmas-cards')?.scrollIntoView({ behavior: 'smooth' })
     }
-    className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-lg mb-8 transition-all duration-300"
   >
   </button>
 
