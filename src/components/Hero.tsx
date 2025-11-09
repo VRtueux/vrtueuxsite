@@ -27,7 +27,7 @@ export function Hero() {
           VRtueux
         </h1>
         <p className="text-xl sm:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto">
-          Plongez dans l'univers de la réalité virtuelle à Vienne
+          Plongez dans l'univers de la réalité virtuelle à Vienne 38
         </p>
         <button
           onClick={scrollToAbout}
