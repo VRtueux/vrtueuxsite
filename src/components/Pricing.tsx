@@ -139,16 +139,16 @@ export function Pricing() {
           </div>
         </div>
 
-    {/* Cadeau Noel */}
-<div className="mb-16 text-center">
+{/* Cadeau Noel */}
+<div id="christmas-cards" className="mb-16 text-center">
   <h3 className="text-2xl text-white mb-2">
     Cartes Cadeaux : VR Christmas
   </h3>
   <p className="text-lg text-gray-400 mb-1">
-   Carte valable 6 mois après date d'achat
+    Carte valable 6 mois après date d'achat
   </p>
   <p className="text-sm text-gray-500 mb-8">
-     À retirer sur place
+    À retirer sur place
   </p>
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
     {cn.map((item, index) => (
@@ -193,6 +193,7 @@ export function Pricing() {
     ))}
   </div>
 </div>
+
 
         {/* Packs */}
         <div className="mb-16">
