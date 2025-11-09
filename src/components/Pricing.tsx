@@ -143,14 +143,12 @@ export function Pricing() {
   <p className="text-lg text-gray-400 mb-1">Carte valable 6 mois après date d'achat</p>
   <p className="text-sm text-gray-500 mb-8">À retirer sur place</p>
 
-  {/* Bouton pour revenir ici depuis le Hero ou autre */}
   <button
     onClick={() =>
       document.getElementById('christmas-cards')?.scrollIntoView({ behavior: 'smooth' })
     }
     className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-lg mb-8 transition-all duration-300"
   >
-    Voir les Cartes Cadeaux
   </button>
 
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
