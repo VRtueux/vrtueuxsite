@@ -139,7 +139,7 @@ export function Pricing() {
           </div>
         </div>
 
- {/* Cadeau Noel */}
+{/* Cadeau Noel */}
 <div id="christmas-cards" className="mb-16 text-center">
   <h3 className="text-2xl text-white mb-2">
     Cartes Cadeaux : VR Christmas
@@ -156,13 +156,18 @@ export function Pricing() {
         key={index}
         className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
           item.highlight
-            ? 'border-red-500 shadow-lg shadow-red-500/20'
+            ? 'border-red-500 shadow-lg shadow-red-500/30'
             : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
         }`}
       >
         {item.highlight && (
           <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-            <span className="bg-gradient-to-r from-red-500 to-green-500 text-white px-4 py-1 rounded-full text-sm flex items-center gap-1">
+            <span className="px-4 py-1 rounded-full text-sm flex items-center gap-1 text-white font-semibold"
+                  style={{
+                    background: 'linear-gradient(90deg, rgba(220,38,38,1) 0%, rgba(16,185,129,0.85) 100%)',
+                    boxShadow: '0 0 10px rgba(220,38,38,0.6), 0 0 20px rgba(16,185,129,0.4)'
+                  }}
+            >
               <Sparkles size={14} />
               VIP
             </span>
