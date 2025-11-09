@@ -34,7 +34,8 @@ export function Hero() {
         <div className="flex justify-center gap-4">
           <button
             onClick={scrollToAbout}
-            className="bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-8 py-4 rounded-full hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105"
+            className="bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-8 py-4 rounded-full 
+                       hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105"
           >
             Découvrir nos expériences
           </button>
@@ -44,7 +45,10 @@ export function Hero() {
               const element = document.getElementById('christmas-cards');
               if (element) element.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-8 py-4 rounded-full hover:shadow-lg hover:shadow-pink-500/50 transition-all duration-300 transform hover:scale-105"
+            className="bg-gradient-to-r from-red-500 via-green-500 to-red-500 text-white px-8 py-4 rounded-full 
+                       shadow-lg shadow-red-500/40 hover:shadow-green-500/50 
+                       transition-all duration-300 transform hover:scale-105 
+                       animate-pulse"
           >
             Cartes Cadeaux Noël
           </button>
@@ -82,6 +86,13 @@ export function Hero() {
         }
         .animate-float {
           animation: float 3s ease-in-out infinite;
+        }
+        @keyframes pulse {
+          0%, 100% { transform: scale(1); box-shadow: 0 0 15px rgba(255,0,0,0.4); }
+          50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(0,255,0,0.6); }
+        }
+        .animate-pulse {
+          animation: pulse 2s infinite;
         }
       `}</style>
     </section>
