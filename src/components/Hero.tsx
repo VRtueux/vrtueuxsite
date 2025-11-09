@@ -12,7 +12,7 @@ export function Hero() {
   const scrollToChristmasCards = () => {
     const element = document.getElementById('christmas-cards');
     if (element) {
-      const yOffset = -150;
+      const yOffset = -135;
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
