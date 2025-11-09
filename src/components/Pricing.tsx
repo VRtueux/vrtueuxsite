@@ -143,17 +143,15 @@ export function Pricing() {
   <p className="text-lg text-gray-400 mb-1">Carte valable 6 mois après date d'achat</p>
   <p className="text-sm text-gray-500 mb-8">À retirer sur place</p>
 
-  {/* Bouton pour remonter/naviguer vers la section */}
-  <div className="mb-8">
-    <button
-      onClick={() =>
-        document.getElementById('christmas-cards')?.scrollIntoView({ behavior: 'smooth' })
-      }
-      className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-lg transition-all duration-300"
-    >
-      Voir les Cartes Cadeaux
-    </button>
-  </div>
+  {/* Bouton pour revenir ici depuis le Hero ou autre */}
+  <button
+    onClick={() =>
+      document.getElementById('christmas-cards')?.scrollIntoView({ behavior: 'smooth' })
+    }
+    className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-lg mb-8 transition-all duration-300"
+  >
+    Voir les Cartes Cadeaux
+  </button>
 
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
     {cn.map((item, index) => (
@@ -161,13 +159,13 @@ export function Pricing() {
         key={index}
         className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
           item.highlight
-            ? 'border-red-500 shadow-lg shadow-red-500/40'
+            ? 'border-purple-500 shadow-lg shadow-purple-500/20'
             : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
         }`}
       >
         {item.highlight && (
-          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-            <span className="bg-gradient-to-r from-red-500 via-green-500 to-red-500 text-white px-4 py-1 rounded-full text-sm flex items-center gap-1">
+          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            <span className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-1 rounded-full text-sm flex items-center gap-1">
               <Sparkles size={14} />
               VIP
             </span>
@@ -195,6 +193,7 @@ export function Pricing() {
     ))}
   </div>
 </div>
+
         {/* Packs & Forfaits */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
