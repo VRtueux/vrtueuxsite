@@ -154,46 +154,38 @@ export function Pricing() {
 {cn.map((item, index) => (
   <div
     key={index}
-    className={`relative rounded-xl transition-all duration-300 hover:-translate-y-2 ${
+    className={`relative rounded-xl p-8 transition-all duration-300 hover:-translate-y-2 ${
       item.highlight
-        ? 'p-[2px] bg-gradient-to-br from-red-500 via-green-500 to-red-500 shadow-lg shadow-red-500/40'
-        : 'bg-slate-800/50 backdrop-blur-sm border border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
-    }`}
+        ? 'border-pink-500 shadow-lg shadow-pink-500/20'
+        : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
+    } bg-slate-800/50 backdrop-blur-sm`}
   >
     {item.highlight && (
-      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-        <span
-          className="px-4 py-1 rounded-full text-sm flex items-center gap-1 text-white font-semibold"
-          style={{
-            background: 'linear-gradient(90deg, rgba(220,38,38,1) 0%, rgba(16,185,129,0.85) 100%)',
-            boxShadow: '0 0 10px rgba(220,38,38,0.6), 0 0 20px rgba(16,185,129,0.4)',
-          }}
-        >
+      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+        <span className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-1 rounded-full text-sm flex items-center gap-1">
           <Sparkles size={14} />
           VIP
         </span>
       </div>
     )}
 
-    <div className="rounded-xl bg-slate-800/50 backdrop-blur-sm h-full w-full p-6">
-      <div className="text-center mb-6">
-        <h4 className="text-xl text-white mb-2">{item.name}</h4>
-        <div className="text-gray-400 mb-4">{item.duration}</div>
-        <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">
-          {item.price}
-        </div>
-        <div className="text-gray-500 text-sm">TTC</div>
+    <div className="text-center mb-6">
+      <h4 className="text-xl text-white mb-2">{item.name}</h4>
+      <div className="text-gray-400 mb-4">{item.duration}</div>
+      <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">
+        {item.price}
       </div>
-
-      <ul className="space-y-3 text-left">
-        {item.features.map((feature, idx) => (
-          <li key={idx} className="flex items-start gap-2 text-gray-300">
-            <Check className="text-cyan-400 flex-shrink-0 mt-0.5" size={18} />
-            <span>{feature}</span>
-          </li>
-        ))}
-      </ul>
+      <div className="text-gray-500 text-sm">TTC</div>
     </div>
+
+    <ul className="space-y-3 text-left">
+      {item.features.map((feature, idx) => (
+        <li key={idx} className="flex items-start gap-2 text-gray-300">
+          <Check className="text-cyan-400 flex-shrink-0 mt-0.5" size={18} />
+          <span>{feature}</span>
+        </li>
+      ))}
+    </ul>
   </div>
 ))}
        {/* Arcade */}
