@@ -1,7 +1,6 @@
 import { Check, Sparkles } from 'lucide-react';
 
 export function Pricing() {
-  // === Expériences VR Individuelles ===
   const vrPricing = [
     {
       name: 'Tapis Omnidirectionnel',
@@ -24,7 +23,6 @@ export function Pricing() {
     }
   ];
 
-  // === Cartes Cadeaux / Noël ===
   const cn = [
     {
       name: 'Ultimate Christmas',
@@ -47,7 +45,6 @@ export function Pricing() {
     }
   ];
 
-  // === Packs & Forfaits ===
   const packs = [
     {
       name: 'Gift Card',
@@ -70,7 +67,6 @@ export function Pricing() {
     }
   ];
 
-  // === Bornes Arcade ===
   const arcadePricing = [
     {
       name: '5 Parties',
@@ -89,7 +85,6 @@ export function Pricing() {
     }
   ];
 
-  // === Nexus Club ===
   const nexusPricing = [
     {
       name: "Qu'est-ce que le Nexus Club ?",
@@ -108,7 +103,6 @@ export function Pricing() {
     }
   ];
 
-  // Fonction pour rendre les blocs
   const renderBlock = (item: any, highlightColor?: string, popular?: boolean) => (
     <div
       className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
@@ -164,16 +158,6 @@ export function Pricing() {
           </div>
         </div>
 
-        {/* Bouton Cartes Cadeaux Noël */}
-        <div className="mb-8 text-center">
-          <button
-            onClick={() => document.getElementById('christmas-cards')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform"
-          >
-            Voir les Cartes Cadeaux de Noël 🎁
-          </button>
-        </div>
-
         {/* Cartes Cadeaux / Noël */}
         <div id="christmas-cards" className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Cartes Cadeaux / Noël</h3>
@@ -185,7 +169,7 @@ export function Pricing() {
         {/* Packs & Forfaits */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {packs.map((item, idx) => renderBlock(item, undefined, item.popular))}
           </div>
         </div>
