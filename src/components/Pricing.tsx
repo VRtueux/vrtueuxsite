@@ -141,10 +141,14 @@ export function Pricing() {
   href="https://discord.gg/aVsYRYJP"
   target="_blank"
   rel="noopener noreferrer"
-  className="inline-flex items-center justify-center gap-3 bg-[#7289da] hover:bg-[#5b6eae] text-white font-semibold px-8 py-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
+  className="inline-flex items-center justify-center gap-3 bg-[#7289da] text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 transition-transform hover:shadow-2xl"
 >
-  <span>Rejoindre le Discord VRtueux</span>
-  <img src="https://i.ibb.co/dsBr3HpT/t-l-chargement-3.png" alt="Discord Logo" className="w-6 h-6" />
+  <img
+    src="https://i.ibb.co/dsBr3HpT/t-l-chargement-3.png"
+    alt="Discord Logo"
+    className="h-6 w-6"
+  />
+  Discord VRtueux
 </a>
 
         </div>
