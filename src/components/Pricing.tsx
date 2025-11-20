@@ -1,8 +1,7 @@
 import { Check, Sparkles } from 'lucide-react';
-import { useState } from 'react';
 
 export function Pricing() {
-  // === Expériences VR individuelles ===
+  // === Expériences VR Individuelles ===
   const vrPricing = [
     {
       name: 'Tapis Omnidirectionnel',
@@ -26,41 +25,41 @@ export function Pricing() {
   ];
 
   // === Cartes Cadeaux / Noël ===
-  const cnPricing = [
+  const cn = [
     {
       name: 'Ultimate Christmas',
-      duration: 'Privatisation 2h pour 2 personnes',
+      duration: 'Privatisation de 2 heures pour 2 personnes',
       price: '150€',
       highlight: true,
-      features: ['Économie de 54€', 'Vivez la VR comme des VIP', 'Boissons et snacks inclus']
+      features: ['Économie de 54€', 'Vivez la réalité virtuelle comme des VIP', 'Boissons et snacks inclus pour un confort premium']
     },
     {
       name: 'Pack Familial',
       duration: '30 min/personne',
       price: '24€',
-      features: ['-5% pour 2, -10% pour 3, -15% pour 4', 'Aventure en famille ou entre amis', 'Souvenirs immersifs à plusieurs']
+      features: ['-5 % pour 2, -10 % pour 3, -15 % pour 4', 'Aventure partagée en famille ou entre amis', 'Souvenirs immersifs à vivre à plusieurs']
     },
     {
       name: 'Pack Arcade',
       duration: '50 sessions d’arcade VR',
       price: '25€',
-      features: ['Accès libre aux jeux d’arcade VR', 'S’entraîner et battre les meilleurs scores', 'Expérience fun et rapide']
+      features: ['Accès libre aux jeux d’arcade VR', 'Parfait pour s’entraîner et battre les meilleurs scores (Beat Saber)', 'Expérience fun, rapide et addictive']
     }
   ];
 
   // === Packs & Forfaits ===
-  const packsPricing = [
+  const packs = [
     {
       name: 'Gift Card',
-      duration: 'Carte cadeau à prix libre',
+      duration: 'Carte Cadeau à prix libre',
       price: 'À partir de 15€',
-      features: ['Montant libre', 'Choix de l’expérience à offrir', 'Découvrir la VR sans limite']
+      features: ['Montant libre', 'Laisse le choix de l’expérience à offrir', 'Idéal pour découvrir la VR sans limite']
     },
     {
       name: 'Pack Découverte',
       duration: '1h',
       price: '49€',
-      features: ['Idéal pour débuter', 'Tester plusieurs expériences', 'Conseils personnalisés']
+      features: ['Idéal pour débuter', 'Testez plusieurs expériences', 'Conseils personnalisés']
     },
     {
       name: 'Pass 10 Sessions',
@@ -93,23 +92,25 @@ export function Pricing() {
   // === Nexus Club ===
   const nexusPricing = [
     {
-      name: "C'est quoi ?",
-      description: 'Le Nexus Club rassemble les passionnés de VR : participez à des événements, relevez des défis et profitez pleinement de l’univers VRtueux'
+      name: "Qu'est-ce que le Nexus Club ?",
+      description:
+        'Le VRtueux Nexus Club est le cercle premium officiel de VRtueux. C’est une communauté réservée aux passionnés de VR offrant : avantages exclusifs, événements privés, tests anticipés et connexion privilégiée avec l’univers VRtueux.'
     },
     {
-      name: 'Prix / Abonnement',
-      price: '150€ / an',
-      description: 'Accès aux contenus exclusifs, défis spéciaux et événements privés.'
+      name: 'Prix / Avantages',
+      description:
+        '💰 Adhésion annuelle : 150€ / an\n-10% sur toutes les sessions\nAccès aux soirées privées du Nexus (2/mois)\nE-sport Battle mensuel : tournois Beat Saber et autres compétitions VR\nRéservations prioritaires pour tapis directionnel & simulateur\nCanal Discord privé “Nexus Lounge”\nAccès en avant-première aux nouveaux jeux\n1 goodie exclusif VRtueux offert chaque année'
     },
     {
       name: 'Pour qui ?',
-      description: 'Gamers réguliers, participants aux événements VR et toute personne souhaitant accéder à des contenus exclusifs.'
+      description:
+        'Gamers passionnés, clients réguliers, fans de technologie et de science-fiction, habitués du tapis directionnel ou simulateur, membres d’associations partenaires, communautés e-sport, groupes d’amis, toute personne souhaitant accéder au cercle VIP VRtueux.'
     }
   ];
 
+  // Fonction pour rendre les blocs
   const renderBlock = (item: any, highlightColor?: string, popular?: boolean) => (
     <div
-      key={item.name}
       className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
         highlightColor
           ? `border-${highlightColor}-500 shadow-lg shadow-${highlightColor}-500/20`
@@ -126,13 +127,9 @@ export function Pricing() {
       <div className="text-center mb-6">
         <h4 className="text-xl text-white mb-2">{item.name}</h4>
         {item.duration && <div className="text-gray-400 mb-4">{item.duration}</div>}
-        {item.price && (
-          <>
-            <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">{item.price}</div>
-            <div className="text-gray-500 text-sm">TTC</div>
-          </>
-        )}
-        {item.description && <p className="text-gray-300">{item.description}</p>}
+        {item.price && <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">{item.price}</div>}
+        {item.price && <div className="text-gray-500 text-sm">TTC</div>}
+        {item.description && <p className="text-gray-300 whitespace-pre-line">{item.description}</p>}
       </div>
       {item.features && (
         <ul className="space-y-3 text-left">
@@ -159,39 +156,37 @@ export function Pricing() {
           </p>
         </div>
 
-        {/* Expériences VR */}
+        {/* Expériences VR Individuelles */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Expériences VR Individuelles</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {vrPricing.map((item) => renderBlock(item, item.highlight ? 'purple' : undefined))}
+            {vrPricing.map((item, idx) => renderBlock(item, item.highlight ? 'purple' : undefined))}
           </div>
         </div>
 
+        {/* Bouton Cartes Cadeaux Noël */}
+        <div className="mb-8 text-center">
+          <button
+            onClick={() => document.getElementById('christmas-cards')?.scrollIntoView({ behavior: 'smooth' })}
+            className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform"
+          >
+            Voir les Cartes Cadeaux de Noël 🎁
+          </button>
+        </div>
+
         {/* Cartes Cadeaux / Noël */}
-        <div id="cn-section" className="mb-16">
+        <div id="christmas-cards" className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Cartes Cadeaux / Noël</h3>
-
-          <div className="text-center mb-6">
-            <button
-              onClick={() =>
-                document.getElementById('cn-section')?.scrollIntoView({ behavior: 'smooth' })
-              }
-              className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full shadow-lg hover:scale-105 transition-transform"
-            >
-              Voir les cartes
-            </button>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {cnPricing.map((item) => renderBlock(item, item.highlight ? 'purple' : undefined))}
+            {cn.map((item, idx) => renderBlock(item, item.highlight ? 'purple' : undefined))}
           </div>
         </div>
 
         {/* Packs & Forfaits */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {packsPricing.map((item) => renderBlock(item, undefined, item.popular))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {packs.map((item, idx) => renderBlock(item, undefined, item.popular))}
           </div>
         </div>
 
@@ -199,7 +194,26 @@ export function Pricing() {
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Bornes Arcade</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {arcadePricing.map((item) => renderBlock(item, 'green'))}
+            {arcadePricing.map((item, idx) => (
+              <div
+                key={idx}
+                className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700 hover:border-green-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-green-500/20"
+              >
+                <div className="text-center mb-6">
+                  <h4 className="text-xl text-white mb-4">{item.name}</h4>
+                  <div className="text-4xl text-transparent bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text">{item.price}</div>
+                  <div className="text-gray-500 text-sm">TTC</div>
+                </div>
+                <ul className="space-y-3">
+                  {item.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-gray-300">
+                      <Check className="text-green-400 flex-shrink-0 mt-0.5" size={18} />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -210,7 +224,6 @@ export function Pricing() {
               Nexus Club
             </span>
           </h3>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {nexusPricing.map((item, idx) => (
               <div
@@ -227,10 +240,7 @@ export function Pricing() {
                 )}
                 <div className="text-center mb-6">
                   <h4 className="text-xl sm:text-2xl text-white mb-2">{item.name}</h4>
-                  {item.price && (
-                    <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">{item.price}</div>
-                  )}
-                  <p className="text-gray-300">{item.description}</p>
+                  {item.description && <p className="text-gray-300 whitespace-pre-line">{item.description}</p>}
                 </div>
               </div>
             ))}
