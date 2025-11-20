@@ -202,35 +202,66 @@ export function Pricing() {
           </div>
         </div>
 
-        {/* Nexus Club */}
-        <div className="mb-16">
-          <h3 className="text-2xl sm:text-4xl font-bold mb-8 text-center">
-            <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x">
+       {/* Nexus Club */}
+<div id="nexus-club" className="mb-16">
+  <h3 className="text-2xl sm:text-4xl font-bold mb-8 text-center">
+    <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x">
+      Nexus Club
+    </span>
+  </h3>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {nexusPricing.map((item, idx) => (
+      <div
+        key={idx}
+        className="relative bg-gradient-to-br from-purple-700/40 via-pink-700/30 to-cyan-700/40 backdrop-blur-sm rounded-xl p-8 border border-purple-500 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50"
+      >
+        {idx === 0 && (
+          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            <span className="bg-gradient-to-r from-cyan-400 to-purple-400 text-white px-4 py-1 rounded-full text-sm flex items-center gap-1">
+              <Sparkles size={14} />
               Nexus Club
             </span>
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {nexusPricing.map((item, idx) => (
-              <div
-                key={idx}
-                className="relative bg-gradient-to-br from-purple-700/40 via-pink-700/30 to-cyan-700/40 backdrop-blur-sm rounded-xl p-8 border border-purple-500 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50"
-              >
-                {idx === 0 && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-cyan-400 to-purple-400 text-white px-4 py-1 rounded-full text-sm flex items-center gap-1">
-                      <Sparkles size={14} />
-                      Nexus Club
-                    </span>
-                  </div>
-                )}
-                <div className="text-center mb-6">
-                  <h4 className="text-xl sm:text-2xl text-white mb-2">{item.name}</h4>
-                  {item.description && <p className="text-gray-300 whitespace-pre-line">{item.description}</p>}
-                </div>
-              </div>
-            ))}
           </div>
+        )}
+
+        <div className="text-center mb-6">
+          <h4 className="text-xl sm:text-2xl text-white mb-2">{item.name}</h4>
+          {item.description && (
+            <p className="text-gray-300 whitespace-pre-line">{item.description}</p>
+          )}
+
+          {/* Bloc Avantages / Bouton pour le bloc “Prix / Avantages” */}
+          {item.name === 'Prix / Avantages' && (
+            <div className="mt-4">
+              <ul className="text-left text-gray-300 space-y-2 mb-4">
+                <li>💰 Adhésion annuelle : 150 €/an</li>
+                <li>🎁 Réduction de <span className="text-cyan-400 font-semibold">-10%</span> sur toutes les sessions</li>
+                <li>🎮 Accès aux soirées privées du Nexus (2/mois)</li>
+                <li>🏆 E-sport Battle mensuel : Beat Saber & autres compétitions VR</li>
+                <li>⏱ Réservations prioritaires pour tapis & simulateur</li>
+                <li>💬 Canal Discord privé “Nexus Lounge”</li>
+                <li>🕹 Accès en avant-première aux nouveaux jeux</li>
+                <li>🎁 1 goodie exclusif VRtueux offert chaque année</li>
+              </ul>
+              <button
+                onClick={() =>
+                  document
+                    .getElementById('pricing')
+                    ?.scrollIntoView({ behavior: 'smooth' })
+                }
+                className="bg-gradient-to-r from-cyan-400 to-purple-400 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:scale-105 transition-transform"
+              >
+                Rejoindre le Nexus Club
+              </button>
+            </div>
+          )}
         </div>
+      </div>
+    ))}
+  </div>
+</div>
+
 
         <div className="mt-12 text-center">
           <p className="text-gray-400 text-sm">

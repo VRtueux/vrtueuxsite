@@ -20,7 +20,6 @@ export function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-purple-950/20 to-cyan-950/20">
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-20 left-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
@@ -61,7 +60,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
       <button
         onClick={scrollToAbout}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-400 animate-bounce cursor-pointer"
@@ -69,7 +67,6 @@ export function Hero() {
         <ChevronDown size={32} />
       </button>
 
-      {/* Styles Animations */}
       <style>{`
         @keyframes blob {
           0% { transform: translate(0px, 0px) scale(1); }

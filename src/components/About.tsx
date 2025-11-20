@@ -1,4 +1,4 @@
-import { Gamepad2, Move, Car } from 'lucide-react';
+import { Gamepad2, Move, Car, Sparkles } from 'lucide-react';
 
 export function About() {
   const features = [
@@ -25,7 +25,8 @@ export function About() {
       title: 'Nexus Club',
       description: 'Rejoignez notre Club Nexus, accédez à des avantages uniques, des défis spéciaux et des sessions VIP pour vivre la VR comme jamais auparavant.',
       highlight: 'Club Gamer',
-      imgSrc: 'https://i.ibb.co/0pZH1PBj/NEXUS-Logo.png'
+      imgSrc: 'https://i.ibb.co/0pZH1PBj/NEXUS-Logo.png',
+      hasButton: true
     }
   ];
 
@@ -41,7 +42,6 @@ export function About() {
               VRtueux
             </span>
           </h2>
-          <br />
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Votre destination gaming ultime à Vienne.<br />
             Vivez des expériences immersives uniques avec nos équipements de pointe.
@@ -69,7 +69,24 @@ export function About() {
                 {feature.highlight}
               </div>
               <h3 className="text-xl text-white mb-2">{feature.title}</h3>
-              <p className="text-gray-400">{feature.description}</p>
+              <p className="text-gray-400 mb-4">{feature.description}</p>
+
+              {/* Bouton Nexus Club */}
+              {feature.hasButton && (
+                <div className="text-center mt-4">
+                  <button
+                    onClick={() =>
+                      document
+                        .getElementById('nexus-club')
+                        ?.scrollIntoView({ behavior: 'smooth' })
+                    }
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-purple-400 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:scale-105 transition-transform"
+                  >
+                    <Sparkles size={20} />
+                    Découvrir le Nexus Club
+                  </button>
+                </div>
+              )}
             </div>
           ))}
         </div>
