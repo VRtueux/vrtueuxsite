@@ -167,12 +167,13 @@ export function Pricing() {
         </div>
 
         {/* Packs & Forfaits */}
-        <div className="mb-16">
-          <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {packs.map((item, idx) => renderBlock(item, undefined, item.popular))}
-          </div>
-        </div>
+<div className="mb-16">
+  <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {packs.map((item, idx) => renderBlock(item, undefined, item.popular))}
+  </div>
+</div>
+
 
         {/* Bornes Arcade */}
         <div className="mb-16">
