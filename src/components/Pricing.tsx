@@ -191,44 +191,45 @@ export function Pricing() {
   </div>
 </div>
 
-        {/* Packs & Forfaits */}
-        <div className="mb-16">
-          <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {packs.map((pack, index) => (
-              <div
-                key={index}
-                className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
-                  pack.popular
-                    ? 'border-cyan-500 shadow-lg shadow-cyan-500/20'
-                    : 'border-slate-700 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20'
-                }`}
-              >
-                {pack.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-1 rounded-full text-sm">
-                      Populaire
-                    </span>
-                  </div>
-                )}
-                <div className="text-center mb-6">
-                  <h4 className="text-xl text-white mb-2">{pack.name}</h4>
-                  <div className="text-gray-400 mb-4">{pack.duration}</div>
-                  <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">{pack.price}</div>
-                  <div className="text-gray-500 text-sm">TTC</div>
-                </div>
-                <ul className="space-y-3">
-                  {pack.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-gray-300">
-                      <Check className="text-cyan-400 flex-shrink-0 mt-0.5" size={18} />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+{/* Packs & Forfaits */}
+<div className="mb-16">
+  <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+    {packs.map((pack, index) => (
+      <div
+        key={index}
+        className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
+          pack.popular
+            ? 'border-cyan-500 shadow-lg shadow-cyan-500/20'
+            : 'border-slate-700 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20'
+        }`}
+      >
+        {pack.popular && (
+          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            <span className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-1 rounded-full text-sm">
+              Populaire
+            </span>
           </div>
+        )}
+        <div className="text-center mb-6">
+          <h4 className="text-xl text-white mb-2">{pack.name}</h4>
+          <div className="text-gray-400 mb-4">{pack.duration}</div>
+          <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">{pack.price}</div>
+          <div className="text-gray-500 text-sm">TTC</div>
         </div>
+        <ul className="space-y-3">
+          {pack.features.map((feature, idx) => (
+            <li key={idx} className="flex items-start gap-2 text-gray-300">
+              <Check className="text-cyan-400 flex-shrink-0 mt-0.5" size={18} />
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</div>
+
 
         {/* Mode Arcade */}
         <div>
