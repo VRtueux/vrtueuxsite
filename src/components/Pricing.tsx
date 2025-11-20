@@ -93,11 +93,12 @@ export function Pricing() {
   const nexusPricing = [
     {
       name: "C'est quoi ?",
-      description: 'Le Nexus Club est un programme exclusif pour les passionnés de VR. Rejoignez une communauté de gamers et bénéficiez d’avantages uniques.',
+      description: 'Le Nexus Club rassemble les passionnés de VR : participez à des événements, relevez des défis et profitez pleinement de l’univers VRtueux',
     },
     {
       name: 'Prix / Abonnement',
-      description: '1€/mois. Accès aux contenus exclusifs, défis spéciaux et événements privés.',
+      price : '150€ / ans',
+      description: 'Accès aux contenus exclusifs, défis spéciaux et événements privés.',
     },
     {
       name: 'Pour qui ?',
@@ -105,7 +106,6 @@ export function Pricing() {
     }
   ];
 
-  // === Composant de rendu d’un bloc ===
   const renderBlock = (item: any, highlightColor?: string, popular?: boolean) => (
     <div
       className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
@@ -183,18 +183,35 @@ export function Pricing() {
 
         {/* Nexus Club */}
         <div className="mb-16">
-          <h3 className="text-2xl text-white mb-8 text-center">Nexus Club</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {nexusPricing.map((item, idx) => renderBlock(item))}
-          </div>
-        </div>
+          <h3 className="text-2xl sm:text-4xl font-bold mb-8 text-center">
+           <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x">
+           Nexus Club
+          </span>
+          </h3>
 
-        <div className="mt-12 text-center">
-          <p className="text-gray-400 text-sm">
-            * Tous les prix sont TTC. Les sessions sont à réserver à l'avance.
-          </p>
+         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {nexusPricing.map((item, idx) => (
+        <div
+         key={idx}
+         className="relative bg-gradient-to-br from-purple-700/40 via-pink-700/30 to-cyan-700/40 backdrop-blur-sm rounded-xl p-8 border border-purple-500 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50"
+       >
+        {idx === 0 && (
+          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            <span className="bg-gradient-to-r from-cyan-400 to-purple-400 text-white px-4 py-1 rounded-full text-sm flex items-center gap-1">
+              <Sparkles size={14} />
+              Nexus Club
+            </span>
+          </div>
+        )}
+        <div className="text-center mb-6">
+          <h4 className="text-xl sm:text-2xl text-white mb-2">{item.name}</h4>
+          {item.description && <p className="text-gray-300">{item.description}</p>}
         </div>
       </div>
+    ))}
+  </div>
+</div>
+
     </section>
   );
 }
