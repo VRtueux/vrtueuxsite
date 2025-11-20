@@ -1,4 +1,5 @@
 import { Check, Sparkles } from 'lucide-react';
+import { useState } from 'react';
 
 export function Pricing() {
   // === Expériences VR individuelles ===
@@ -93,35 +94,44 @@ export function Pricing() {
   const nexusPricing = [
     {
       name: "C'est quoi ?",
-      description: 'Le Nexus Club rassemble les passionnés de VR : participez à des événements, relevez des défis et profitez pleinement de l’univers VRtueux',
+      description: 'Le Nexus Club rassemble les passionnés de VR : participez à des événements, relevez des défis et profitez pleinement de l’univers VRtueux'
     },
     {
       name: 'Prix / Abonnement',
-      price : '150€ / ans',
-      description: 'Accès aux contenus exclusifs, défis spéciaux et événements privés.',
+      price: '150€ / an',
+      description: 'Accès aux contenus exclusifs, défis spéciaux et événements privés.'
     },
     {
       name: 'Pour qui ?',
-      description: 'Gamers réguliers, participants aux événements VR et toute personne souhaitant accéder à des contenus exclusifs.',
+      description: 'Gamers réguliers, participants aux événements VR et toute personne souhaitant accéder à des contenus exclusifs.'
     }
   ];
 
   const renderBlock = (item: any, highlightColor?: string, popular?: boolean) => (
     <div
+      key={item.name}
       className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
-        highlightColor ? `border-${highlightColor}-500 shadow-lg shadow-${highlightColor}-500/20` : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
+        highlightColor
+          ? `border-${highlightColor}-500 shadow-lg shadow-${highlightColor}-500/20`
+          : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
       }`}
     >
       {popular && (
         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-          <span className={`bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-1 rounded-full text-sm`}>Populaire</span>
+          <span className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-1 rounded-full text-sm">
+            Populaire
+          </span>
         </div>
       )}
       <div className="text-center mb-6">
         <h4 className="text-xl text-white mb-2">{item.name}</h4>
         {item.duration && <div className="text-gray-400 mb-4">{item.duration}</div>}
-        {item.price && <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">{item.price}</div>}
-        {item.price && <div className="text-gray-500 text-sm">TTC</div>}
+        {item.price && (
+          <>
+            <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">{item.price}</div>
+            <div className="text-gray-500 text-sm">TTC</div>
+          </>
+        )}
         {item.description && <p className="text-gray-300">{item.description}</p>}
       </div>
       {item.features && (
@@ -153,15 +163,27 @@ export function Pricing() {
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Expériences VR Individuelles</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {vrPricing.map((item, idx) => renderBlock(item, item.highlight ? 'purple' : undefined))}
+            {vrPricing.map((item) => renderBlock(item, item.highlight ? 'purple' : undefined))}
           </div>
         </div>
 
-        {/* Cartes Cadeaux */}
-        <div className="mb-16">
+        {/* Cartes Cadeaux / Noël */}
+        <div id="cn-section" className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Cartes Cadeaux / Noël</h3>
+
+          <div className="text-center mb-6">
+            <button
+              onClick={() =>
+                document.getElementById('cn-section')?.scrollIntoView({ behavior: 'smooth' })
+              }
+              className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full shadow-lg hover:scale-105 transition-transform"
+            >
+              Voir les cartes
+            </button>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {cnPricing.map((item, idx) => renderBlock(item, item.highlight ? 'purple' : undefined))}
+            {cnPricing.map((item) => renderBlock(item, item.highlight ? 'purple' : undefined))}
           </div>
         </div>
 
@@ -169,7 +191,7 @@ export function Pricing() {
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {packsPricing.map((item, idx) => renderBlock(item, undefined, item.popular))}
+            {packsPricing.map((item) => renderBlock(item, undefined, item.popular))}
           </div>
         </div>
 
@@ -177,41 +199,50 @@ export function Pricing() {
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Bornes Arcade</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {arcadePricing.map((item, idx) => renderBlock(item, 'green'))}
+            {arcadePricing.map((item) => renderBlock(item, 'green'))}
           </div>
         </div>
 
         {/* Nexus Club */}
         <div className="mb-16">
           <h3 className="text-2xl sm:text-4xl font-bold mb-8 text-center">
-           <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x">
-           Nexus Club
-          </span>
-          </h3>
-
-         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {nexusPricing.map((item, idx) => (
-        <div
-         key={idx}
-         className="relative bg-gradient-to-br from-purple-700/40 via-pink-700/30 to-cyan-700/40 backdrop-blur-sm rounded-xl p-8 border border-purple-500 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50"
-       >
-        {idx === 0 && (
-          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-            <span className="bg-gradient-to-r from-cyan-400 to-purple-400 text-white px-4 py-1 rounded-full text-sm flex items-center gap-1">
-              <Sparkles size={14} />
+            <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x">
               Nexus Club
             </span>
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {nexusPricing.map((item, idx) => (
+              <div
+                key={idx}
+                className="relative bg-gradient-to-br from-purple-700/40 via-pink-700/30 to-cyan-700/40 backdrop-blur-sm rounded-xl p-8 border border-purple-500 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50"
+              >
+                {idx === 0 && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-gradient-to-r from-cyan-400 to-purple-400 text-white px-4 py-1 rounded-full text-sm flex items-center gap-1">
+                      <Sparkles size={14} />
+                      Nexus Club
+                    </span>
+                  </div>
+                )}
+                <div className="text-center mb-6">
+                  <h4 className="text-xl sm:text-2xl text-white mb-2">{item.name}</h4>
+                  {item.price && (
+                    <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">{item.price}</div>
+                  )}
+                  <p className="text-gray-300">{item.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
-        )}
-        <div className="text-center mb-6">
-          <h4 className="text-xl sm:text-2xl text-white mb-2">{item.name}</h4>
-          {item.description && <p className="text-gray-300">{item.description}</p>}
+        </div>
+
+        <div className="mt-12 text-center">
+          <p className="text-gray-400 text-sm">
+            * Tous les prix sont TTC. Les sessions sont à réserver à l'avance.
+          </p>
         </div>
       </div>
-    ))}
-  </div>
-</div>
-
     </section>
   );
 }
