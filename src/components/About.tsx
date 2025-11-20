@@ -96,14 +96,10 @@ export function About() {
                         .getElementById('nexus-club')
                         ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
                     }
-                    className="inline-flex items-center gap-2 bg-[#7289da] text-white font-semibold px-6 py-2 rounded-full shadow-lg hover:scale-105 transition-transform"
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-purple-400 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:scale-105 transition-transform"
                   >
-                    <img
-                      src="https://i.ibb.co/dsBr3HpT/t-l-chargement-3.png"
-                      alt="Discord"
-                      className="h-5 w-5"
-                    />
-                    Discord VRtueux
+                    <Sparkles size={30} />
+                    Découvrir le Nexus Club
                   </button>
                 </div>
               )}
