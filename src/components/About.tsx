@@ -56,7 +56,7 @@ export function About() {
               className="group bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2"
             >
               <div
-                className={`inline-flex items-center justify-center w-14 h-14 rounded-lg mb-4 group-hover:scale-110 transition-transform
+                className={`flex items-center justify-center w-14 h-14 rounded-lg mb-4 group-hover:scale-110 transition-transform
                   ${feature.icon ? 'bg-gradient-to-br from-cyan-500 to-purple-500' : ''}`}
               >
                 {feature.icon ? (
@@ -65,9 +65,11 @@ export function About() {
                   <img src={feature.imgSrc} alt={feature.title} className="w-10 h-10 object-contain" />
                 ) : null}
               </div>
-              <div className="inline-block bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm mb-3">
+
+              <div className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm mb-3 text-center">
                 {feature.highlight}
               </div>
+
               <h3 className="text-xl text-white mb-2">{feature.title}</h3>
               <p className="text-gray-400 mb-4">{feature.description}</p>
 
@@ -78,7 +80,7 @@ export function About() {
                     onClick={() =>
                       document
                         .getElementById('nexus-club')
-                        ?.scrollIntoView({ behavior: 'smooth' })
+                        ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
                     }
                     className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-purple-400 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:scale-105 transition-transform"
                   >
@@ -92,14 +94,10 @@ export function About() {
         </div>
 
         {/* SECTION UNIQUE EN FRANCE */}
-        <div className="mt-16 bg-gradient-to-r from-purple-900/30 to-cyan-900/30 rounded-2xl p-8 border border-purple-500/20">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <h3 className="text-2xl text-white">Un équipement unique en France</h3>
-          </div>
-
-          <p className="text-center text-gray-300 max-w-3xl mx-auto">
-            Nous sommes fiers d'être les{' '}
-            <span className="text-cyan-400">seuls possesseurs en France</span> du tapis omnidirectionnel,
+        <div className="mt-16 bg-gradient-to-r from-purple-900/30 to-cyan-900/30 rounded-2xl p-8 border border-purple-500/20 text-center">
+          <h3 className="text-2xl text-white mb-4">Un équipement unique en France</h3>
+          <p className="text-gray-300 max-w-3xl mx-auto">
+            Nous sommes fiers d'être les <span className="text-cyan-400">seuls possesseurs en France</span> du tapis omnidirectionnel,
             vous offrant une expérience de réalité virtuelle sans précédent.<br /><br />
             Pour une immersion optimale, il est recommandé de connaître votre écart interpupillaire
             afin de régler correctement la netteté de votre casque VR.<br /><br />
