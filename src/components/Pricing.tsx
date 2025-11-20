@@ -88,16 +88,16 @@ export function Pricing() {
   const nexusPricing = [
     {
       name: "Qu'est-ce que le Nexus Club ?",
-      features: ['Le VRtueux Nexus Club est le cercle premium officiel de VRtueux.', 'C’est une communauté réservée aux passionnés de VR.'],
-          },
+      features: ['Le VRtueux Nexus Club est le cercle premium officiel de VRtueux', 'Communauté réservée aux passionnés de VR']
+    },
     {
       name: 'Prix / Avantages',
-      price: 'Adhésion annuelle : 150 €/an',
-      features: ['-10% sur toutes les sessions','Accès aux évènements privés du Nexus','E-sport : tournois Beat Saber et autres compétitions VR','Et encore plein d’autres évènements.']
+      price: '150€ / an',
+      features: ['-10% sur toutes les sessions', 'Accès aux évènements privés du Nexus', 'E-sport : tournois Beat Saber et autres compétitions', 'Goodies exclusifs VRtueux']
     },
     {
       name: 'Pour qui ?',
-      features: ['Gamers passionnés, clients réguliers','Membres d’associations partenaires','Communautés e-sport, groupes d’amis','Toute personne souhaitant accéder au cercle VIP VRtueux']
+      features: ['Gamers passionnés', 'Clients réguliers', 'Membres d’associations partenaires', 'Communautés e-sport, groupes d’amis', 'Toute personne souhaitant accéder au cercle VIP VRtueux']
     }
   ];
 
@@ -177,26 +177,7 @@ export function Pricing() {
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Bornes Arcade</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {arcadePricing.map(item => (
-              <div
-                key={item.name}
-                className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700 hover:border-green-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-green-500/20"
-              >
-                <div className="text-center mb-6">
-                  <h4 className="text-xl text-white mb-4">{item.name}</h4>
-                  <div className="text-4xl text-transparent bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text">{item.price}</div>
-                  <div className="text-gray-500 text-sm">TTC</div>
-                </div>
-                <ul className="space-y-3">
-                  {item.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-gray-300">
-                      <Check className="text-green-400 flex-shrink-0 mt-0.5" size={18} />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            {arcadePricing.map(item => renderBlock(item))}
           </div>
         </div>
 
@@ -208,37 +189,7 @@ export function Pricing() {
             </span>
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {nexusPricing.map((item, idx) => (
-              <div
-                key={idx}
-                className="relative bg-gradient-to-br from-purple-700/40 via-pink-700/30 to-cyan-700/40 backdrop-blur-sm rounded-xl p-8 border border-purple-500 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50"
-              >
-                {idx === 0 && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-cyan-400 to-purple-400 text-white px-4 py-1 rounded-full text-sm flex items-center gap-1">
-                      <Sparkles size={14} /> Nexus Club
-                    </span>
-                  </div>
-                )}
-                <div className="text-center mb-6">
-                  <h4 className="text-xl sm:text-2xl text-white mb-2">{item.name}</h4>
-                  {item.description && <p className="text-gray-300 whitespace-pre-line">{item.description}</p>}
-
-                  {item.name === 'Prix / Avantages' && (
-                    <div className="mt-4">
-                      <ul className="text-left text-gray-300 space-y-2 mb-4">
-                        <li>🎁 Réduction de <span className="text-cyan-400 font-semibold">-10%</span> sur toutes les sessions</li>
-                        <li>🎮 Accès aux évènements privés du Nexus</li>
-                        <li>🏆 E-sport Battle mensuel : Beat Saber et autres compétitions VR</li>
-                        <br></br>
-                        <li>Accès en avant-première aux nouveaux jeux</li>
-                        <li>Goodie exclusif VRtueux offert chaque année</li>
-                      </ul>
-                      </div>
-                  )}
-                </div>
-              </div>
-            ))}
+            {nexusPricing.map((item, idx) => renderBlock(item))}
           </div>
         </div>
 
