@@ -97,7 +97,6 @@ export function Pricing() {
     },
     {
       name: 'Pour qui ?',
-      description: 'Le Nexus Club est destiné à :',
       features: ['Gamers passionnés, clients réguliers','Membres d’associations partenaires','Communautés e-sport, groupes d’amis','Toute personne souhaitant accéder au cercle VIP VRtueux']
     }
   ];

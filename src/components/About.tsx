@@ -82,7 +82,7 @@ export function About() {
                     }
                     className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-purple-400 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:scale-105 transition-transform"
                   >
-                    <Sparkles size={32} />
+                    <Sparkles size={15} />
                     Découvrir le Nexus Club
                   </button>
                 </div>
