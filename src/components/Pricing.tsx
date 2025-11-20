@@ -89,17 +89,17 @@ export function Pricing() {
     {
       name: "Qu'est-ce que le Nexus Club ?",
       description:
-        'Le VRtueux Nexus Club est le cercle premium officiel de VRtueux. C’est une communauté réservée aux passionnés de VR offrant : avantages exclusifs, événements privés, tests anticipés et connexion privilégiée avec l’univers VRtueux.'
+        'Le VRtueux Nexus Club est le cercle premium officiel de VRtueux. C’est une communauté réservée aux passionnés de VR.'
     },
     {
       name: 'Prix / Avantages',
       description:
-        '💰 Adhésion annuelle : 150€ / an\n-10% sur toutes les sessions\nAccès aux soirées privées du Nexus (2/mois)\nE-sport Battle mensuel : tournois Beat Saber et autres compétitions VR\nRéservations prioritaires pour tapis directionnel & simulateur\nCanal Discord privé “Nexus Lounge”\nAccès en avant-première aux nouveaux jeux\n1 goodie exclusif VRtueux offert chaque année'
-    },
+      price ; '150€ /an'
+      features : ['-10% sur toutes les sessions', 'Accès aux évènements privées du Nexus', 'E-sport : tournois Beat Saber et autres compétitions VR', 'Et encore plein d\'autres évènements.']    },
     {
       name: 'Pour qui ?',
       description:
-        'Gamers passionnés, clients réguliers, fans de technologie et de science-fiction, habitués du tapis directionnel ou simulateur, membres d’associations partenaires, communautés e-sport, groupes d’amis, toute personne souhaitant accéder au cercle VIP VRtueux.'
+      features : ['Gamers passionnés, clients réguliers', 'membres d’associations partenaires', 'communautés e-sport, groupes d’amis', 'toute personne souhaitant accéder au cercle VIP VRtueux.']
     }
   ];
 
