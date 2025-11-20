@@ -1,6 +1,7 @@
 import { Check, Sparkles } from 'lucide-react';
 
 export function Pricing() {
+  // === Expériences VR individuelles ===
   const vrPricing = [
     {
       name: 'Tapis Omnidirectionnel',
@@ -23,40 +24,42 @@ export function Pricing() {
     }
   ];
 
-  const cn = [
+  // === Cartes Cadeaux / Noël ===
+  const cnPricing = [
     {
       name: 'Ultimate Christmas',
-      duration: 'Privatisation de 2 heures pour 2 personnes',
+      duration: 'Privatisation 2h pour 2 personnes',
       price: '150€',
       highlight: true,
-      features: ['Économie de 54€', 'Vivez la réalité virtuelle comme des VIP', 'Boissons et snacks inclus pour un confort premium']
+      features: ['Économie de 54€', 'Vivez la VR comme des VIP', 'Boissons et snacks inclus']
     },
     {
       name: 'Pack Familial',
       duration: '30 min/personne',
       price: '24€',
-      features: ['-5 % pour 2, -10 % pour 3, -15 % pour 4', 'Une aventure partagée en famille ou entre amis', 'Des souvenirs immersifs à vivre à plusieurs']
+      features: ['-5% pour 2, -10% pour 3, -15% pour 4', 'Aventure en famille ou entre amis', 'Souvenirs immersifs à plusieurs']
     },
     {
       name: 'Pack Arcade',
       duration: '50 sessions d’arcade VR',
       price: '25€',
-      features: ['Accès libre aux jeux d’arcade VR', 'Parfait pour s’entraîner et battre les meilleurs scores (Beat Saber)', 'Expérience fun, rapide et addictive']
+      features: ['Accès libre aux jeux d’arcade VR', 'S’entraîner et battre les meilleurs scores', 'Expérience fun et rapide']
     }
   ];
 
-  const packs = [
+  // === Packs & Forfaits ===
+  const packsPricing = [
     {
       name: 'Gift Card',
-      duration: 'Carte Cadeau à prix libre',
-      price: 'À partir de 15 €',
-      features: ['Montant libre', 'Laisse le choix de l’expérience à offrir', 'Idéal pour découvrir la VR sans limite']
+      duration: 'Carte cadeau à prix libre',
+      price: 'À partir de 15€',
+      features: ['Montant libre', 'Choix de l’expérience à offrir', 'Découvrir la VR sans limite']
     },
     {
       name: 'Pack Découverte',
       duration: '1h',
       price: '49€',
-      features: ['Idéal pour débuter', 'Testez plusieurs expériences', 'Conseils personnalisés']
+      features: ['Idéal pour débuter', 'Tester plusieurs expériences', 'Conseils personnalisés']
     },
     {
       name: 'Pass 10 Sessions',
@@ -67,6 +70,7 @@ export function Pricing() {
     }
   ];
 
+  // === Bornes Arcade ===
   const arcadePricing = [
     {
       name: '5 Parties',
@@ -85,6 +89,54 @@ export function Pricing() {
     }
   ];
 
+  // === Nexus Club ===
+  const nexusPricing = [
+    {
+      name: "C'est quoi ?",
+      description: 'Le Nexus Club est un programme exclusif pour les passionnés de VR. Rejoignez une communauté de gamers et bénéficiez d’avantages uniques.',
+    },
+    {
+      name: 'Prix / Abonnement',
+      description: '1€/mois. Accès aux contenus exclusifs, défis spéciaux et événements privés.',
+    },
+    {
+      name: 'Pour qui ?',
+      description: 'Gamers réguliers, participants aux événements VR et toute personne souhaitant accéder à des contenus exclusifs.',
+    }
+  ];
+
+  // === Composant de rendu d’un bloc ===
+  const renderBlock = (item: any, highlightColor?: string, popular?: boolean) => (
+    <div
+      className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
+        highlightColor ? `border-${highlightColor}-500 shadow-lg shadow-${highlightColor}-500/20` : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
+      }`}
+    >
+      {popular && (
+        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+          <span className={`bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-1 rounded-full text-sm`}>Populaire</span>
+        </div>
+      )}
+      <div className="text-center mb-6">
+        <h4 className="text-xl text-white mb-2">{item.name}</h4>
+        {item.duration && <div className="text-gray-400 mb-4">{item.duration}</div>}
+        {item.price && <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">{item.price}</div>}
+        {item.price && <div className="text-gray-500 text-sm">TTC</div>}
+        {item.description && <p className="text-gray-300">{item.description}</p>}
+      </div>
+      {item.features && (
+        <ul className="space-y-3 text-left">
+          {item.features.map((feature: string, idx: number) => (
+            <li key={idx} className="flex items-start gap-2 text-gray-300">
+              <Check className="text-cyan-400 flex-shrink-0 mt-0.5" size={18} />
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+
   return (
     <section id="pricing" className="py-20 bg-slate-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -97,122 +149,27 @@ export function Pricing() {
           </p>
         </div>
 
-        {/* VR Individuelles */}
+        {/* Expériences VR */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Expériences VR Individuelles</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {vrPricing.map((item, index) => (
-              <div
-                key={index}
-                className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
-                  item.highlight
-                    ? 'border-purple-500 shadow-lg shadow-purple-500/20'
-                    : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
-                }`}
-              >
-                {item.highlight && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-1 rounded-full text-sm flex items-center gap-1">
-                      <Sparkles size={14} /> Exclusif
-                    </span>
-                  </div>
-                )}
-                <div className="text-center mb-6">
-                  <h4 className="text-xl text-white mb-2">{item.name}</h4>
-                  <div className="text-gray-400 mb-4">{item.duration}</div>
-                  <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">{item.price}</div>
-                  <div className="text-gray-500 text-sm">TTC</div>
-                </div>
-                <ul className="space-y-3">
-                  {item.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-gray-300">
-                      <Check className="text-cyan-400 flex-shrink-0 mt-0.5" size={18} />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            {vrPricing.map((item, idx) => renderBlock(item, item.highlight ? 'purple' : undefined))}
           </div>
         </div>
 
-        {/* Cartes Cadeaux Noël */}
-        <div id="christmas-cards" className="mb-16 text-center">
-          <h3 className="text-2xl text-white mb-2">Cartes Cadeaux : VR Christmas</h3>
-          <p className="text-lg text-gray-400 mb-1">Carte valable 6 mois après date d'achat</p>
-          <p className="text-sm text-gray-500 mb-8">À retirer sur place</p>
+        {/* Cartes Cadeaux */}
+        <div className="mb-16">
+          <h3 className="text-2xl text-white mb-8 text-center">Cartes Cadeaux / Noël</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {cn.map((item, index) => (
-              <div
-                key={index}
-                className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
-                  item.highlight
-                    ? 'border-purple-500 shadow-lg shadow-purple-500/20'
-                    : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
-                }`}
-              >
-                {item.highlight && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-1 rounded-full text-sm flex items-center gap-1">
-                      <Sparkles size={14} /> VIP
-                    </span>
-                  </div>
-                )}
-                <div className="text-center mb-6">
-                  <h4 className="text-xl text-white mb-2">{item.name}</h4>
-                  <div className="text-gray-400 mb-4">{item.duration}</div>
-                  <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">{item.price}</div>
-                  <div className="text-gray-500 text-sm">TTC</div>
-                </div>
-                <ul className="space-y-3 text-left">
-                  {item.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-gray-300">
-                      <Check className="text-cyan-400 flex-shrink-0 mt-0.5" size={18} />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            {cnPricing.map((item, idx) => renderBlock(item, item.highlight ? 'purple' : undefined))}
           </div>
         </div>
 
         {/* Packs & Forfaits */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {packs.map((pack, index) => (
-              <div
-                key={index}
-                className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
-                  pack.popular
-                    ? 'border-cyan-500 shadow-lg shadow-cyan-500/20'
-                    : 'border-slate-700 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20'
-                }`}
-              >
-                {pack.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-1 rounded-full text-sm">
-                      Populaire
-                    </span>
-                  </div>
-                )}
-                <div className="text-center mb-6">
-                  <h4 className="text-xl text-white mb-2">{pack.name}</h4>
-                  <div className="text-gray-400 mb-4">{pack.duration}</div>
-                  <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">{pack.price}</div>
-                  <div className="text-gray-500 text-sm">TTC</div>
-                </div>
-                <ul className="space-y-3">
-                  {pack.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-gray-300">
-                      <Check className="text-cyan-400 flex-shrink-0 mt-0.5" size={18} />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {packsPricing.map((item, idx) => renderBlock(item, undefined, item.popular))}
           </div>
         </div>
 
@@ -220,59 +177,15 @@ export function Pricing() {
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Bornes Arcade</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {arcadePricing.map((item, index) => (
-              <div
-                key={index}
-                className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700 hover:border-green-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-green-500/20"
-              >
-                <div className="text-center mb-6">
-                  <h4 className="text-xl text-white mb-4">{item.name}</h4>
-                  <div className="text-4xl text-transparent bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text">{item.price}</div>
-                  <div className="text-gray-500 text-sm">TTC</div>
-                </div>
-                <ul className="space-y-3">
-                  {item.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-gray-300">
-                      <Check className="text-green-400 flex-shrink-0 mt-0.5" size={18} />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            {arcadePricing.map((item, idx) => renderBlock(item, 'green'))}
           </div>
         </div>
 
         {/* Nexus Club */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Nexus Club</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {/* Bloc 1 : C'est quoi */}
-            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20">
-              <h4 className="text-xl text-white mb-4">C'est quoi ?</h4>
-              <p className="text-gray-300">
-                Le Nexus Club est notre programme exclusif pour les passionnés de VR. 
-                Rejoignez une communauté de gamers, bénéficiez d’avantages uniques et d’événements privés.
-              </p>
-            </div>
-
-            {/* Bloc 2 : Prix / Abonnement */}
-            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700 transition-all duration-300 hover:-translate-y-2 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20">
-              <h4 className="text-xl text-white mb-4">Prix / Abonnement</h4>
-              <p className="text-gray-300 mb-2">Abonnement : 1€/mois</p>
-              <p className="text-gray-300 mb-2">Accès aux contenus exclusifs et défis spéciaux</p>
-              <p className="text-gray-300">Paiement flexible et sans engagement</p>
-            </div>
-
-            {/* Bloc 3 : Pour qui / Avantages */}
-            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700 transition-all duration-300 hover:-translate-y-2 hover:border-green-500 hover:shadow-lg hover:shadow-green-500/20">
-              <h4 className="text-xl text-white mb-4">Pour qui ?</h4>
-              <ul className="list-disc list-inside text-gray-300 space-y-2">
-                <li>Gamers réguliers et passionnés de VR</li>
-                <li>Participants aux événements et compétitions VR</li>
-                <li>Personnes souhaitant bénéficier de contenus et défis exclusifs</li>
-              </ul>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {nexusPricing.map((item, idx) => renderBlock(item))}
           </div>
         </div>
 
