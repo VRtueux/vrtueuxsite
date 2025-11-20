@@ -29,7 +29,7 @@ export function Pricing() {
       duration: 'Privatisation de 2 heures pour 2 personnes',
       price: '150€',
       highlight: true,
-      features: ['Economie de 54€', 'Vivez la réalité virtuelle comme des VIP','Boissons et snacks inclus pour un confort premium']
+      features: ['Économie de 54€', 'Vivez la réalité virtuelle comme des VIP', 'Boissons et snacks inclus pour un confort premium']
     },
     {
       name: 'Pack Familial',
@@ -49,7 +49,7 @@ export function Pricing() {
     {
       name: 'Gift Card',
       duration: 'Carte Cadeau à prix libre',
-      price: 'A partir de 15 €',
+      price: 'À partir de 15 €',
       features: ['Montant libre', 'Laisse le choix de l’expérience à offrir', 'Idéal pour découvrir la VR sans limite']
     },
     {
@@ -113,8 +113,7 @@ export function Pricing() {
                 {item.highlight && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <span className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-1 rounded-full text-sm flex items-center gap-1">
-                      <Sparkles size={14} />
-                      Exclusif
+                      <Sparkles size={14} /> Exclusif
                     </span>
                   </div>
                 )}
@@ -137,102 +136,88 @@ export function Pricing() {
           </div>
         </div>
 
-      {/* Cartes Cadeaux Noël */}
-<div id="christmas-cards" className="mb-16 text-center">
-  <h3 className="text-2xl text-white mb-2">Cartes Cadeaux : VR Christmas</h3>
-  <p className="text-lg text-gray-400 mb-1">Carte valable 6 mois après date d'achat</p>
-  <p className="text-sm text-gray-500 mb-1">À retirer sur place</p>
-
-  <button
-    onClick={() =>
-      document.getElementById('christmas-cards')?.scrollIntoView({ behavior: 'smooth' })
-    }
-  >
-  </button>
-
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-    {cn.map((item, index) => (
-      <div
-        key={index}
-        className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
-          item.highlight
-            ? 'border-purple-500 shadow-lg shadow-purple-500/20'
-            : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
-        }`}
-      >
-        {item.highlight && (
-          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-            <span className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-1 rounded-full text-sm flex items-center gap-1">
-              <Sparkles size={14} />
-              VIP
-            </span>
+        {/* Cartes Cadeaux Noël */}
+        <div id="christmas-cards" className="mb-16 text-center">
+          <h3 className="text-2xl text-white mb-2">Cartes Cadeaux : VR Christmas</h3>
+          <p className="text-lg text-gray-400 mb-1">Carte valable 6 mois après date d'achat</p>
+          <p className="text-sm text-gray-500 mb-8">À retirer sur place</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {cn.map((item, index) => (
+              <div
+                key={index}
+                className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
+                  item.highlight
+                    ? 'border-purple-500 shadow-lg shadow-purple-500/20'
+                    : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
+                }`}
+              >
+                {item.highlight && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-1 rounded-full text-sm flex items-center gap-1">
+                      <Sparkles size={14} /> VIP
+                    </span>
+                  </div>
+                )}
+                <div className="text-center mb-6">
+                  <h4 className="text-xl text-white mb-2">{item.name}</h4>
+                  <div className="text-gray-400 mb-4">{item.duration}</div>
+                  <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">{item.price}</div>
+                  <div className="text-gray-500 text-sm">TTC</div>
+                </div>
+                <ul className="space-y-3 text-left">
+                  {item.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-gray-300">
+                      <Check className="text-cyan-400 flex-shrink-0 mt-0.5" size={18} />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-        )}
-
-        <div className="text-center mb-6">
-          <h4 className="text-xl text-white mb-2">{item.name}</h4>
-          <div className="text-gray-400 mb-4">{item.duration}</div>
-          <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">
-            {item.price}
-          </div>
-          <div className="text-gray-500 text-sm">TTC</div>
         </div>
 
-        <ul className="space-y-3 text-left">
-          {item.features.map((feature, idx) => (
-            <li key={idx} className="flex items-start gap-2 text-gray-300">
-              <Check className="text-cyan-400 flex-shrink-0 mt-0.5" size={18} />
-              <span>{feature}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    ))}
-  </div>
-</div>
-
-{/* Packs & Forfaits */}
-<div className="mb-16">
-  <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-    {packs.map((pack, index) => (
-      <div
-        key={index}
-        className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
-          pack.popular
-            ? 'border-cyan-500 shadow-lg shadow-cyan-500/20'
-            : 'border-slate-700 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20'
-        }`}
-      >
-        {pack.popular && (
-          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-            <span className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-1 rounded-full text-sm">
-              Populaire
-            </span>
+        {/* Packs & Forfaits */}
+        <div className="mb-16">
+          <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {packs.map((pack, index) => (
+              <div
+                key={index}
+                className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
+                  pack.popular
+                    ? 'border-cyan-500 shadow-lg shadow-cyan-500/20'
+                    : 'border-slate-700 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20'
+                }`}
+              >
+                {pack.popular && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-1 rounded-full text-sm">
+                      Populaire
+                    </span>
+                  </div>
+                )}
+                <div className="text-center mb-6">
+                  <h4 className="text-xl text-white mb-2">{pack.name}</h4>
+                  <div className="text-gray-400 mb-4">{pack.duration}</div>
+                  <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">{pack.price}</div>
+                  <div className="text-gray-500 text-sm">TTC</div>
+                </div>
+                <ul className="space-y-3">
+                  {pack.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-gray-300">
+                      <Check className="text-cyan-400 flex-shrink-0 mt-0.5" size={18} />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-        )}
-        <div className="text-center mb-6">
-          <h4 className="text-xl text-white mb-2">{pack.name}</h4>
-          <div className="text-gray-400 mb-4">{pack.duration}</div>
-          <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">{pack.price}</div>
-          <div className="text-gray-500 text-sm">TTC</div>
         </div>
-        <ul className="space-y-3">
-          {pack.features.map((feature, idx) => (
-            <li key={idx} className="flex items-start gap-2 text-gray-300">
-              <Check className="text-cyan-400 flex-shrink-0 mt-0.5" size={18} />
-              <span>{feature}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    ))}
-  </div>
-</div>
 
-
-        {/* Mode Arcade */}
-        <div>
+        {/* Bornes Arcade */}
+        <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Bornes Arcade</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {arcadePricing.map((item, index) => (
@@ -255,6 +240,39 @@ export function Pricing() {
                 </ul>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Nexus Club */}
+        <div className="mb-16">
+          <h3 className="text-2xl text-white mb-8 text-center">Nexus Club</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {/* Bloc 1 : C'est quoi */}
+            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20">
+              <h4 className="text-xl text-white mb-4">C'est quoi ?</h4>
+              <p className="text-gray-300">
+                Le Nexus Club est notre programme exclusif pour les passionnés de VR. 
+                Rejoignez une communauté de gamers, bénéficiez d’avantages uniques et d’événements privés.
+              </p>
+            </div>
+
+            {/* Bloc 2 : Prix / Abonnement */}
+            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700 transition-all duration-300 hover:-translate-y-2 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20">
+              <h4 className="text-xl text-white mb-4">Prix / Abonnement</h4>
+              <p className="text-gray-300 mb-2">Abonnement : 1€/mois</p>
+              <p className="text-gray-300 mb-2">Accès aux contenus exclusifs et défis spéciaux</p>
+              <p className="text-gray-300">Paiement flexible et sans engagement</p>
+            </div>
+
+            {/* Bloc 3 : Pour qui / Avantages */}
+            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700 transition-all duration-300 hover:-translate-y-2 hover:border-green-500 hover:shadow-lg hover:shadow-green-500/20">
+              <h4 className="text-xl text-white mb-4">Pour qui ?</h4>
+              <ul className="list-disc list-inside text-gray-300 space-y-2">
+                <li>Gamers réguliers et passionnés de VR</li>
+                <li>Participants aux événements et compétitions VR</li>
+                <li>Personnes souhaitant bénéficier de contenus et défis exclusifs</li>
+              </ul>
+            </div>
           </div>
         </div>
 
