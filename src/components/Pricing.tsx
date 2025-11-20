@@ -88,9 +88,8 @@ export function Pricing() {
   const nexusPricing = [
     {
       name: "Qu'est-ce que le Nexus Club ?",
-      description: 'Le VRtueux Nexus Club est le cercle premium officiel de VRtueux. C’est une communauté réservée aux passionnés de VR.',
-      features: []
-    },
+      features: ['Le VRtueux Nexus Club est le cercle premium officiel de VRtueux.', 'C’est une communauté réservée aux passionnés de VR.'],
+          },
     {
       name: 'Prix / Avantages',
       price: 'Adhésion annuelle : 150 €/an',
@@ -232,6 +231,7 @@ export function Pricing() {
                         <li>🎁 Réduction de <span className="text-cyan-400 font-semibold">-10%</span> sur toutes les sessions</li>
                         <li>🎮 Accès aux évènements privés du Nexus</li>
                         <li>🏆 E-sport Battle mensuel : Beat Saber et autres compétitions VR</li>
+                        <br></br>
                         <li>Accès en avant-première aux nouveaux jeux</li>
                         <li>Goodie exclusif VRtueux offert chaque année</li>
                       </ul>
