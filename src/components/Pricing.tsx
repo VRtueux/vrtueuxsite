@@ -1,4 +1,5 @@
 import { Check, Sparkles } from 'lucide-react';
+import discordLogo from '@/assets/discord-logo.png'; // Assure-toi d'avoir téléchargé ton logo à cet emplacement
 
 export function Pricing() {
   const vrPricing = [
@@ -68,36 +69,37 @@ export function Pricing() {
   ];
 
   const arcadePricing = [
-    {
-      name: '5 Parties',
-      price: '12,50€',
-      features: ['Battle', 'Jeux classiques']
-    },
-    {
-      name: '12 Parties',
-      price: '29,95€',
-      features: ['Meilleur rapport qualité/prix', 'Économisez 5€']
-    },
-    {
-      name: '20 Parties',
-      price: '49,90€',
-      features: ['Offre famille', 'Économisez 12,50€']
-    }
+    { name: '5 Parties', price: '12,50€', features: ['Battle', 'Jeux classiques'] },
+    { name: '12 Parties', price: '29,95€', features: ['Meilleur rapport qualité/prix', 'Économisez 5€'] },
+    { name: '20 Parties', price: '49,90€', features: ['Offre famille', 'Économisez 12,50€'] }
   ];
 
   const nexusPricing = [
     {
       name: "Qu'est-ce que le Nexus Club ?",
-      features: ['Le VRtueux Nexus Club est le cercle premium officiel de VRtueux', 'Communauté réservée aux passionnés de VR']
+      features: [
+        'Le VRtueux Nexus Club est le cercle premium officiel de VRtueux.',
+        'C’est une communauté réservée aux passionnés de VR.'
+      ]
     },
     {
       name: 'Prix / Avantages',
-      price: '150€ / an',
-      features: ['-10% sur toutes les sessions', 'Accès aux évènements privés du Nexus', 'E-sport : tournois Beat Saber et autres compétitions', 'Goodies exclusifs VRtueux']
+      price: '150€/an',
+      features: [
+        '-10% sur toutes les sessions',
+        'Accès aux évènements privés du Nexus',
+        'E-sport : tournois Beat Saber et autres compétitions VR',
+        'Et encore plein d’autres évènements.'
+      ]
     },
     {
       name: 'Pour qui ?',
-      features: ['Gamers passionnés', 'Clients réguliers', 'Membres d’associations partenaires', 'Communautés e-sport, groupes d’amis', 'Toute personne souhaitant accéder au cercle VIP VRtueux']
+      features: [
+        'Gamers passionnés, clients réguliers',
+        'Membres d’associations partenaires',
+        'Communautés e-sport, groupes d’amis',
+        'Toute personne souhaitant accéder au cercle VIP VRtueux'
+      ]
     }
   ];
 
@@ -122,10 +124,9 @@ export function Pricing() {
         {item.duration && <div className="text-gray-400 mb-4">{item.duration}</div>}
         {item.price && <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">{item.price}</div>}
         {item.price && <div className="text-gray-500 text-sm">TTC</div>}
-        {item.description && <p className="text-gray-300 whitespace-pre-line">{item.description}</p>}
       </div>
       {item.features && item.features.length > 0 && (
-        <ul className="space-y-3 text-left">
+        <ul className="space-y-2 text-left">
           {item.features.map((feature: string, idx: number) => (
             <li key={idx} className="flex items-start gap-2 text-gray-300">
               <Check className="text-cyan-400 flex-shrink-0 mt-0.5" size={18} />
@@ -133,6 +134,21 @@ export function Pricing() {
             </li>
           ))}
         </ul>
+      )}
+
+      {/* Bouton Discord uniquement pour le bloc Qu'est-ce que le Nexus Club ? */}
+      {item.name === "Qu'est-ce que le Nexus Club ?" && (
+        <div className="mt-6 text-center">
+          <a
+            href="https://discord.gg/aVsYRYJP"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 bg-[#7289da] text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:scale-105 transition-transform"
+          >
+            <img src={discordLogo} alt="Discord" className="h-6 w-6" />
+            Rejoindre le Discord VRtueux
+          </a>
+        </div>
       )}
     </div>
   );
@@ -189,7 +205,7 @@ export function Pricing() {
             </span>
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {nexusPricing.map((item, idx) => renderBlock(item))}
+            {nexusPricing.map(item => renderBlock(item))}
           </div>
         </div>
 
