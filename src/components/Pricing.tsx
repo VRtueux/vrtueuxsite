@@ -136,7 +136,6 @@ export function Pricing() {
     alt="Discord Logo"
     className="h-4 w-4"
   />
-  Discord VRtueux
 </a>
 
 
