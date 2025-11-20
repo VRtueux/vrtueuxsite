@@ -1,5 +1,5 @@
-import { Check, Sparkles } from 'lucide-react';
-import discordLogo from 'https://i.ibb.co/dsBr3HpT/t-l-chargement-3.png'; 
+import { Check } from 'lucide-react';
+
 export function Pricing() {
   const vrPricing = [
     {
@@ -124,7 +124,7 @@ export function Pricing() {
         {item.price && <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">{item.price}</div>}
         {item.price && <div className="text-gray-500 text-sm">TTC</div>}
       </div>
-      {item.features && item.features.length > 0 && (
+      {item.features && (
         <ul className="space-y-2 text-left">
           {item.features.map((feature: string, idx: number) => (
             <li key={idx} className="flex items-start gap-2 text-gray-300">
@@ -143,7 +143,7 @@ export function Pricing() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 bg-[#7289da] text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:scale-105 transition-transform"
           >
-            <img src={discordLogo} alt="Discord" className="h-6 w-6" />
+            <img src="https://i.ibb.co/dsBr3HpT/t-l-chargement-3.png" alt="Discord" className="h-6 w-6" />
             Rejoindre le Discord VRtueux
           </a>
         </div>
@@ -196,7 +196,7 @@ export function Pricing() {
         </div>
 
         {/* Nexus Club */}
-        <div id="nexus-club" className="mb-16">
+        <div id="nexus-club" className="mb-16 scroll-mt-24">
           <h3 className="text-2xl sm:text-4xl font-bold mb-8 text-center">
             <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x">
               Nexus Club

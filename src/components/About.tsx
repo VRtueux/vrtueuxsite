@@ -24,7 +24,7 @@ export function About() {
       icon: null,
       title: 'Nexus Club',
       description: 'Rejoignez notre Club Nexus, accédez à des avantages uniques, des défis spéciaux et des sessions VIP pour vivre la VR comme jamais auparavant.',
-      highlight: 'Club Gamer',
+      highlight: 'Game Club',
       imgSrc: 'https://i.ibb.co/0pZH1PBj/NEXUS-Logo.png',
       hasButton: true
     }
