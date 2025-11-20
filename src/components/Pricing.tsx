@@ -138,14 +138,15 @@ export function Pricing() {
       {item.name === "Qu'est-ce que le Nexus Club ?" && (
         <div className="mt-6 text-center">
           <a
-            href="https://discord.gg/aVsYRYJP"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-[#7289da] text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:scale-105 transition-transform"
-          >
-            <img src="https://i.ibb.co/dsBr3HpT/t-l-chargement-3.png" alt="Discord" className="h-6 w-6" />
-            Rejoindre le Discord VRtueux
-          </a>
+  href="https://discord.gg/aVsYRYJP"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center justify-center gap-3 bg-[#7289da] hover:bg-[#5b6eae] text-white font-semibold px-8 py-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
+>
+  <span>Rejoindre le Discord VRtueux</span>
+  <img src="https://i.ibb.co/dsBr3HpT/t-l-chargement-3.png" alt="Discord Logo" className="w-6 h-6" />
+</a>
+
         </div>
       )}
     </div>
