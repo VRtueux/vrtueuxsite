@@ -93,7 +93,7 @@ export function Pricing() {
     },
     {
       name: 'Prix / Avantages',
-      description: 'Adhésion annuelle : 150 €/an',
+      price: 'Adhésion annuelle : 150 €/an',
       features: ['-10% sur toutes les sessions','Accès aux évènements privés du Nexus','E-sport : tournois Beat Saber et autres compétitions VR','Et encore plein d’autres évènements.']
     },
     {
@@ -229,26 +229,13 @@ export function Pricing() {
                   {item.name === 'Prix / Avantages' && (
                     <div className="mt-4">
                       <ul className="text-left text-gray-300 space-y-2 mb-4">
-                        <li>💰 Adhésion annuelle : 150 €/an</li>
                         <li>🎁 Réduction de <span className="text-cyan-400 font-semibold">-10%</span> sur toutes les sessions</li>
-                        <li>🎮 Accès aux soirées privées du Nexus (2/mois)</li>
-                        <li>🏆 E-sport Battle mensuel : Beat Saber & autres compétitions VR</li>
-                        <li>⏱ Réservations prioritaires pour tapis & simulateur</li>
-                        <li>💬 Canal Discord privé “Nexus Lounge”</li>
-                        <li>🕹 Accès en avant-première aux nouveaux jeux</li>
-                        <li>🎁 1 goodie exclusif VRtueux offert chaque année</li>
+                        <li>🎮 Accès aux évènements privés du Nexus</li>
+                        <li>🏆 E-sport Battle mensuel : Beat Saber et autres compétitions VR</li>
+                        <li>Accès en avant-première aux nouveaux jeux</li>
+                        <li>Goodie exclusif VRtueux offert chaque année</li>
                       </ul>
-                      <button
-                        onClick={() =>
-                          document
-                            .getElementById('pricing')
-                            ?.scrollIntoView({ behavior: 'smooth' })
-                        }
-                        className="bg-gradient-to-r from-cyan-400 to-purple-400 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:scale-105 transition-transform"
-                      >
-                        Rejoindre le Nexus Club
-                      </button>
-                    </div>
+                      </div>
                   )}
                 </div>
               </div>
