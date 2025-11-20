@@ -88,23 +88,24 @@ export function Pricing() {
   const nexusPricing = [
     {
       name: "Qu'est-ce que le Nexus Club ?",
-      description:
-        'Le VRtueux Nexus Club est le cercle premium officiel de VRtueux. C’est une communauté réservée aux passionnés de VR.'
+      description: 'Le VRtueux Nexus Club est le cercle premium officiel de VRtueux. C’est une communauté réservée aux passionnés de VR.',
+      features: []
     },
     {
       name: 'Prix / Avantages',
-      description:
-      price ; '150€ /an'
-      features : ['-10% sur toutes les sessions', 'Accès aux évènements privées du Nexus', 'E-sport : tournois Beat Saber et autres compétitions VR', 'Et encore plein d\'autres évènements.']    },
+      description: 'Adhésion annuelle : 150 €/an',
+      features: ['-10% sur toutes les sessions','Accès aux évènements privés du Nexus','E-sport : tournois Beat Saber et autres compétitions VR','Et encore plein d’autres évènements.']
+    },
     {
       name: 'Pour qui ?',
-      description:
-      features : ['Gamers passionnés, clients réguliers', 'membres d’associations partenaires', 'communautés e-sport, groupes d’amis', 'toute personne souhaitant accéder au cercle VIP VRtueux.']
+      description: 'Le Nexus Club est destiné à :',
+      features: ['Gamers passionnés, clients réguliers','Membres d’associations partenaires','Communautés e-sport, groupes d’amis','Toute personne souhaitant accéder au cercle VIP VRtueux']
     }
   ];
 
   const renderBlock = (item: any, highlightColor?: string, popular?: boolean) => (
     <div
+      key={item.name}
       className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
         highlightColor
           ? `border-${highlightColor}-500 shadow-lg shadow-${highlightColor}-500/20`
@@ -125,7 +126,7 @@ export function Pricing() {
         {item.price && <div className="text-gray-500 text-sm">TTC</div>}
         {item.description && <p className="text-gray-300 whitespace-pre-line">{item.description}</p>}
       </div>
-      {item.features && (
+      {item.features && item.features.length > 0 && (
         <ul className="space-y-3 text-left">
           {item.features.map((feature: string, idx: number) => (
             <li key={idx} className="flex items-start gap-2 text-gray-300">
@@ -154,7 +155,7 @@ export function Pricing() {
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Expériences VR Individuelles</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {vrPricing.map((item, idx) => renderBlock(item, item.highlight ? 'purple' : undefined))}
+            {vrPricing.map(item => renderBlock(item, item.highlight ? 'purple' : undefined))}
           </div>
         </div>
 
@@ -162,26 +163,25 @@ export function Pricing() {
         <div id="christmas-cards" className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Cartes Cadeaux / Noël</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {cn.map((item, idx) => renderBlock(item, item.highlight ? 'purple' : undefined))}
+            {cn.map(item => renderBlock(item, item.highlight ? 'purple' : undefined))}
           </div>
         </div>
 
         {/* Packs & Forfaits */}
-<div className="mb-16">
-  <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-    {packs.map((item, idx) => renderBlock(item, undefined, item.popular))}
-  </div>
-</div>
-
+        <div className="mb-16">
+          <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {packs.map(item => renderBlock(item, undefined, item.popular))}
+          </div>
+        </div>
 
         {/* Bornes Arcade */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Bornes Arcade</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {arcadePricing.map((item, idx) => (
+            {arcadePricing.map(item => (
               <div
-                key={idx}
+                key={item.name}
                 className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700 hover:border-green-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-green-500/20"
               >
                 <div className="text-center mb-6">
@@ -202,66 +202,59 @@ export function Pricing() {
           </div>
         </div>
 
-       {/* Nexus Club */}
-<div id="nexus-club" className="mb-16">
-  <h3 className="text-2xl sm:text-4xl font-bold mb-8 text-center">
-    <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x">
-      Nexus Club
-    </span>
-  </h3>
-
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-    {nexusPricing.map((item, idx) => (
-      <div
-        key={idx}
-        className="relative bg-gradient-to-br from-purple-700/40 via-pink-700/30 to-cyan-700/40 backdrop-blur-sm rounded-xl p-8 border border-purple-500 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50"
-      >
-        {idx === 0 && (
-          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-            <span className="bg-gradient-to-r from-cyan-400 to-purple-400 text-white px-4 py-1 rounded-full text-sm flex items-center gap-1">
-              <Sparkles size={14} />
+        {/* Nexus Club */}
+        <div id="nexus-club" className="mb-16">
+          <h3 className="text-2xl sm:text-4xl font-bold mb-8 text-center">
+            <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x">
               Nexus Club
             </span>
-          </div>
-        )}
-
-        <div className="text-center mb-6">
-          <h4 className="text-xl sm:text-2xl text-white mb-2">{item.name}</h4>
-          {item.description && (
-            <p className="text-gray-300 whitespace-pre-line">{item.description}</p>
-          )}
-
-          {/* Bloc Avantages / Bouton pour le bloc “Prix / Avantages” */}
-          {item.name === 'Prix / Avantages' && (
-            <div className="mt-4">
-              <ul className="text-left text-gray-300 space-y-2 mb-4">
-                <li>💰 Adhésion annuelle : 150 €/an</li>
-                <li>🎁 Réduction de <span className="text-cyan-400 font-semibold">-10%</span> sur toutes les sessions</li>
-                <li>🎮 Accès aux soirées privées du Nexus (2/mois)</li>
-                <li>🏆 E-sport Battle mensuel : Beat Saber & autres compétitions VR</li>
-                <li>⏱ Réservations prioritaires pour tapis & simulateur</li>
-                <li>💬 Canal Discord privé “Nexus Lounge”</li>
-                <li>🕹 Accès en avant-première aux nouveaux jeux</li>
-                <li>🎁 1 goodie exclusif VRtueux offert chaque année</li>
-              </ul>
-              <button
-                onClick={() =>
-                  document
-                    .getElementById('pricing')
-                    ?.scrollIntoView({ behavior: 'smooth' })
-                }
-                className="bg-gradient-to-r from-cyan-400 to-purple-400 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:scale-105 transition-transform"
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {nexusPricing.map((item, idx) => (
+              <div
+                key={idx}
+                className="relative bg-gradient-to-br from-purple-700/40 via-pink-700/30 to-cyan-700/40 backdrop-blur-sm rounded-xl p-8 border border-purple-500 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50"
               >
-                Rejoindre le Nexus Club
-              </button>
-            </div>
-          )}
-        </div>
-      </div>
-    ))}
-  </div>
-</div>
+                {idx === 0 && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-gradient-to-r from-cyan-400 to-purple-400 text-white px-4 py-1 rounded-full text-sm flex items-center gap-1">
+                      <Sparkles size={14} /> Nexus Club
+                    </span>
+                  </div>
+                )}
+                <div className="text-center mb-6">
+                  <h4 className="text-xl sm:text-2xl text-white mb-2">{item.name}</h4>
+                  {item.description && <p className="text-gray-300 whitespace-pre-line">{item.description}</p>}
 
+                  {item.name === 'Prix / Avantages' && (
+                    <div className="mt-4">
+                      <ul className="text-left text-gray-300 space-y-2 mb-4">
+                        <li>💰 Adhésion annuelle : 150 €/an</li>
+                        <li>🎁 Réduction de <span className="text-cyan-400 font-semibold">-10%</span> sur toutes les sessions</li>
+                        <li>🎮 Accès aux soirées privées du Nexus (2/mois)</li>
+                        <li>🏆 E-sport Battle mensuel : Beat Saber & autres compétitions VR</li>
+                        <li>⏱ Réservations prioritaires pour tapis & simulateur</li>
+                        <li>💬 Canal Discord privé “Nexus Lounge”</li>
+                        <li>🕹 Accès en avant-première aux nouveaux jeux</li>
+                        <li>🎁 1 goodie exclusif VRtueux offert chaque année</li>
+                      </ul>
+                      <button
+                        onClick={() =>
+                          document
+                            .getElementById('pricing')
+                            ?.scrollIntoView({ behavior: 'smooth' })
+                        }
+                        className="bg-gradient-to-r from-cyan-400 to-purple-400 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:scale-105 transition-transform"
+                      >
+                        Rejoindre le Nexus Club
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
         <div className="mt-12 text-center">
           <p className="text-gray-400 text-sm">
