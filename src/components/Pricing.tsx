@@ -77,28 +77,16 @@ export function Pricing() {
     {
       name: "Qu'est-ce que le Nexus Club ?",
       features: [
-        'Le VRtueux Nexus Club est le cercle premium officiel de VRtueux.',
-        'C’est une communauté réservée aux passionnés de VR.'
-      ]
+        'Le VRtueux Nexus Club est le cercle premium officiel de VRtueux.','C’est une communauté réservée aux passionnés de VR.']
     },
     {
       name: 'Prix / Avantages',
       price: '150€/an',
-      features: [
-        '-10% sur toutes les sessions',
-        'Accès aux évènements privés du Nexus',
-        'E-sport : tournois Beat Saber et autres compétitions VR',
-        'Et encore plein d’autres évènements.'
-      ]
+      features: ['-10% sur toutes les sessions','Accès aux évènements privés du Nexus','E-sport : tournois Beat Saber et autres compétitions VR','Et encore plein d’autres évènements.']
     },
     {
       name: 'Pour qui ?',
-      features: [
-        'Gamers passionnés, clients réguliers',
-        'Membres d’associations partenaires',
-        'Communautés e-sport, groupes d’amis',
-        'Toute personne souhaitant accéder au cercle VIP VRtueux'
-      ]
+      features: ['Gamers passionnés, clients réguliers','Membres d’associations partenaires','Communautés e-sport, groupes d’amis','Toute personne souhaitant accéder au cercle VIP VRtueux']
     }
   ];
 
@@ -141,15 +129,16 @@ export function Pricing() {
   href="https://discord.gg/aVsYRYJP"
   target="_blank"
   rel="noopener noreferrer"
-  className="inline-flex items-center justify-center gap-3 bg-[#7289da] text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 transition-transform hover:shadow-2xl"
+  className="inline-flex items-center gap-2 bg-[#7289da] text-white font-semibold px-4 py-2 rounded-full shadow-md hover:scale-105 transition-transform hover:shadow-lg"
 >
   <img
     src="https://i.ibb.co/dsBr3HpT/t-l-chargement-3.png"
     alt="Discord Logo"
-    className="h-6 w-6"
+    className="h-4 w-4"
   />
   Discord VRtueux
 </a>
+
 
         </div>
       )}
