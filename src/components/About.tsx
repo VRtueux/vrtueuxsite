@@ -21,11 +21,10 @@ export function About() {
       highlight: 'VR Autonome'
     },
     {
-      icon: null,
-      title: 'Mode Arcade',
-      description:
-        'Profitez de notre mode arcade pour une expérience gaming complète.\nEn bonus, participez au défi Beat Saber et tentez de gagner des cadeaux chaque mois !',
-      highlight: 'Arcade'
+      icon: null, // Logo à la place d'une icône Lucide
+      title: 'Nexus Club',
+      description: 'Rejoignez notre Club Nexus, accédez à des avantages uniques, des défis spéciaux et des sessions VIP pour vivre la VR comme jamais auparavant.',
+      highlight: 'Club Gamer'
     }
   ];
 
@@ -55,7 +54,7 @@ export function About() {
               key={index}
               className="group bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2"
             >
-              <div className="inline-flex items-center justify-center w-14 h-14 bg-black from-cyan-500 to-purple-500 rounded-lg mb-4 group-hover:scale-110 transition-transform">
+              <div className="inline-flex items-center justify-center w-14 h-14 bg-black rounded-lg mb-4 group-hover:scale-110 transition-transform">
                 {feature.icon ? (
                   <feature.icon className="text-white" size={28} />
                 ) : (
