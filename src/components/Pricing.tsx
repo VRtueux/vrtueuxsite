@@ -1,6 +1,5 @@
 import { Check, Sparkles } from 'lucide-react';
-import discordLogo from '@/assets/discord-logo.png'; // Assure-toi d'avoir téléchargé ton logo à cet emplacement
-
+import discordLogo from 'https://i.ibb.co/dsBr3HpT/t-l-chargement-3.png'; 
 export function Pricing() {
   const vrPricing = [
     {
@@ -136,7 +135,6 @@ export function Pricing() {
         </ul>
       )}
 
-      {/* Bouton Discord uniquement pour le bloc Qu'est-ce que le Nexus Club ? */}
       {item.name === "Qu'est-ce que le Nexus Club ?" && (
         <div className="mt-6 text-center">
           <a
