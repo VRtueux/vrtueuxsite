@@ -34,10 +34,9 @@ export function About() {
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl text-white mb-4">
             Bienvenue chez <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">VRtueux</span>
-          </h2><br />
+          </h2><br></br>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Votre destination gaming ultime à Vienne.<br />
-            Vivez des expériences immersives uniques avec nos équipements de pointe.
+            Votre destination gaming ultime à Vienne.<br></br>Vivez des expériences immersives uniques avec nos équipements de pointe.
           </p>
         </div>
 
@@ -61,19 +60,12 @@ export function About() {
 
         <div className="mt-16 bg-gradient-to-r from-purple-900/30 to-cyan-900/30 rounded-2xl p-8 border border-purple-500/20">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <img
-              src="https://i.ibb.co/0pZH1PBj/NEXUS-Logo.png"
-              alt="Nexus Logo"
-              className="w-10 h-10 object-contain"
-            />
+            <Award className="text-cyan-400" size={32} />
             <h3 className="text-2xl text-white">Un équipement unique en France</h3>
           </div>
-
           <p className="text-center text-gray-300 max-w-3xl mx-auto">
             Nous sommes fiers d'être les <span className="text-cyan-400">seuls possesseurs en France</span> du tapis omnidirectionnel, 
-            vous offrant une expérience de réalité virtuelle sans précédent.<br /><br />
-            Pour une immersion optimale, il est recommandé de connaître votre écart interpupillaire afin de régler correctement la netteté de votre casque VR.<br /><br />
-            Venez découvrir ce qui fait de VRtueux une destination gaming d'exception !
+            vous offrant une expérience de réalité virtuelle sans précédent.<br></br>Pour une immersion optimale, il est recommandé de connaître votre écart interpupillaire afin de régler correctement la netteté de votre casque VR. <br></br><br></br>Venez découvrir ce qui fait de VRtueux une destination gaming d'exception !
           </p>
         </div>
       </div>
