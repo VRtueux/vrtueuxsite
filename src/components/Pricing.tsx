@@ -115,29 +115,28 @@ export function Pricing() {
           : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
       }`}
     >
-      {/* Badge Populaire / Exclusif / VIP */}
-{(popular || item.highlight || item.name === 'Ultimate Christmas') && (
-  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-    <span
-      className={`inline-block px-6 py-2 text-sm font-semibold text-white rounded-full ${
-        item.name === 'Ultimate Christmas'
-          ? 'bg-gradient-to-r from-red-600 via-yellow-400 to-green-500' // VIP Noël
-          : item.highlight
-          ? 'bg-purple-500' // Exclusif violet uni
-          : popular
-          ? 'bg-gradient-to-r from-cyan-500 to-blue-500' // Populaire
-          : ''
-      }`}
-    >
-      {item.name === 'Ultimate Christmas'
-        ? 'VIP'
-        : item.highlight
-        ? 'Exclusif'
-        : 'Populaire'}
-    </span>
-  </div>
-)}
-
+      {/* BADGE Populaire / Exclusif / VIP Noël */}
+      {(popular || item.highlight || item.name === 'Ultimate Christmas') && (
+        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+          <span
+            className={`px-8 py-2 rounded-full text-lg font-bold text-white text-center shadow-lg ${
+              item.name === 'Ultimate Christmas'
+                ? 'bg-gradient-to-r from-red-600 via-yellow-400 to-green-500 border-2 border-yellow-400 shadow-red-500/70 animate-pulse'
+                : item.highlight
+                ? 'bg-purple-600' // Violet plein
+                : popular
+                ? 'bg-gradient-to-r from-cyan-500 to-blue-500 border-2 border-blue-400 shadow-blue-500/50'
+                : ''
+            }`}
+          >
+            {item.name === 'Ultimate Christmas'
+              ? 'VIP'
+              : item.highlight
+              ? 'Exclusif'
+              : 'Populaire'}
+          </span>
+        </div>
+      )}
 
       {/* NOM + DUREE + PRIX */}
       <div className="text-center mb-6">
