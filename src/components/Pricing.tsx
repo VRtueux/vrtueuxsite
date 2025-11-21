@@ -109,17 +109,21 @@ export function Pricing() {
   const renderBlock = (item: any, highlightColor?: string, popular?: boolean) => (
     <div
       key={item.name}
-      className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2`}
+      className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
+        highlightColor
+          ? `border-${highlightColor}-500 shadow-lg shadow-${highlightColor}-500/20`
+          : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
+      }`}
     >
-      {/* Badge Populaire / Exclusif / VIP */}
+      {/* BADGE Populaire / Exclusif / VIP Noël */}
       {(popular || item.highlight || item.name === 'Ultimate Christmas') && (
         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
           <span
-            className={`px-6 py-2 text-base font-bold text-white rounded-full text-center shadow-lg ${
+            className={`px-6 py-1 rounded-full text-base font-bold text-white text-center shadow-lg ${
               item.name === 'Ultimate Christmas'
                 ? 'bg-gradient-to-r from-red-600 via-yellow-400 to-green-500 border-2 border-yellow-400 shadow-red-500/70 animate-pulse'
                 : item.highlight
-                ? 'bg-purple-500/70 border-2 border-purple-400 shadow-purple-500/50'
+                ? 'bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-500 border-2 border-purple-400 shadow-purple-500/50 animate-pulse'
                 : popular
                 ? 'bg-gradient-to-r from-cyan-500 to-blue-500 border-2 border-blue-400 shadow-blue-500/50'
                 : ''
@@ -136,7 +140,7 @@ export function Pricing() {
 
       {/* NOM + DUREE + PRIX */}
       <div className="text-center mb-6">
-        <h4 className="text-xl text-white font-bold mb-2">{item.name}</h4>
+        <h4 className="text-xl text-white mb-2">{item.name}</h4>
         {item.duration && <div className="text-gray-400 mb-4">{item.duration}</div>}
         {item.price && (
           <>
@@ -163,8 +167,8 @@ export function Pricing() {
       {/* BLOCS “QUI ?” et “QUAND ?” */}
       {item.when && (
         <div className="mt-6 text-center text-gray-300">
-          <h5 className="text-xl text-white font-bold mb-2">{item.when.title}</h5>
-          <p className="whitespace-pre-line">{item.when.description}</p>
+          <h5 className="text-xl text-white mb-2">{item.when.title}</h5>
+          <p className="whitespace-pre-line mt-2">{item.when.description}</p>
         </div>
       )}
 
@@ -200,7 +204,6 @@ export function Pricing() {
           </p>
         </div>
 
-        {/* Expériences VR */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Expériences VR Individuelles</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -208,7 +211,6 @@ export function Pricing() {
           </div>
         </div>
 
-        {/* Cartes Cadeaux */}
         <div id="christmas-cards" className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Cartes Cadeaux / Noël</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -216,7 +218,6 @@ export function Pricing() {
           </div>
         </div>
 
-        {/* Packs & Forfaits */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -224,7 +225,6 @@ export function Pricing() {
           </div>
         </div>
 
-        {/* Bornes Arcade */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Bornes Arcade</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -232,7 +232,6 @@ export function Pricing() {
           </div>
         </div>
 
-        {/* Nexus Club */}
         <div id="nexus-club" className="mb-16 scroll-mt-24">
           <h3 className="text-2xl sm:text-4xl font-bold mb-8 text-center">
             <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x">
