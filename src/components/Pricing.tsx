@@ -1,4 +1,5 @@
 import { Check } from 'lucide-react';
+import { features } from 'process';
 
 export function Pricing() {
   const vrPricing = [
@@ -85,9 +86,14 @@ export function Pricing() {
       features: ['-10% sur toutes les sessions','Accès aux évènements privés du Nexus','E-sport : tournois Beat Saber et autres compétitions VR','Et encore plein d’autres évènements.']
     },
     {
-      name: 'Pour qui ?',
-      features: ['Gamers passionnés, clients réguliers','Membres d’associations partenaires','Communautés e-sport, groupes d’amis','Toute personne souhaitant accéder au cercle VIP VRtueux']
-    }
+  name: 'Pour qui ?',
+  features: ['Gamers passionnés, clients réguliers','Membres d’associations partenaires','Communautés e-sport, groupes d’amis','Toute personne souhaitant accéder au cercle VIP VRtueux'],
+  when: {
+    title: 'Quand ?',
+    description: 'Inscription annuelle.\n Rdv les Mercredi et Dimanche pour des sessions exclusives.'
+  }
+}
+
   ];
 
   const renderBlock = (item: any, highlightColor?: string, popular?: boolean) => (
