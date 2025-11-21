@@ -101,7 +101,7 @@ export function Pricing() {
       ],
       when: {
         title: 'Quand ?',
-        description: 'Inscription annuelle.\n RDV les Mercredi et Dimanche pour des sessions exclusives.'
+        description: 'Inscription annuelle.\nRdv les Mercredi et Dimanche pour des sessions exclusives.'
       }
     }
   ];
@@ -119,11 +119,11 @@ export function Pricing() {
       {(popular || item.highlight || item.name === 'Ultimate Christmas') && (
         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
           <span
-            className={`px-6 py-1 rounded-full text-base font-bold text-white text-center shadow-lg ${
+            className={`px-8 py-2 rounded-full text-lg font-bold text-white text-center shadow-lg ${
               item.name === 'Ultimate Christmas'
                 ? 'bg-gradient-to-r from-red-600 via-yellow-400 to-green-500 border-2 border-yellow-400 shadow-red-500/70 animate-pulse'
                 : item.highlight
-                ? 'bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-500 border-2 border-purple-400 shadow-purple-500/50 animate-pulse'
+                ? 'bg-purple-600 border-2 border-purple-400 shadow-purple-500/50'
                 : popular
                 ? 'bg-gradient-to-r from-cyan-500 to-blue-500 border-2 border-blue-400 shadow-blue-500/50'
                 : ''
