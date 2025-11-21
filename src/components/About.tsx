@@ -1,5 +1,4 @@
 import { Gamepad2, Move, Car, Sparkles } from 'lucide-react';
-import { useEffect, useState } from 'react';
 
 export function About() {
   const features = [
@@ -35,20 +34,10 @@ export function About() {
     },
   ];
 
-  // Pour gérer l'animation des étoiles autour du logo
-  const [stars, setStars] = useState<number[]>([]);
-
-  useEffect(() => {
-    const starCount = 8;
-    const interval = setInterval(() => {
-      setStars(Array.from({ length: starCount }, () => Math.random() * 360));
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section id="about" className="py-20 bg-slate-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* TITRE */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl text-white mb-4">
@@ -68,10 +57,10 @@ export function About() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 relative"
+              className="group bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2"
             >
               {/* Icon + Highlight sur la même ligne */}
-              <div className="flex items-center gap-3 mb-4 relative">
+              <div className="flex items-center gap-3 mb-4">
                 <div
                   className={`flex items-center justify-center w-14 h-14 rounded-lg transition-transform ${
                     feature.icon
@@ -82,44 +71,11 @@ export function About() {
                   {feature.icon ? (
                     <feature.icon className="text-white" size={28} />
                   ) : feature.imgSrc ? (
-                    <div className="relative w-12 h-12">
-                      {/* Néon + étoiles autour du logo */}
-                      <div className="absolute inset-0 rounded-full">
-                        {/* Néon pulsant */}
-                        <div className="w-full h-full rounded-full animate-pulse bg-gradient-to-r from-cyan-400 to-purple-400 opacity-30"></div>
-
-                        {/* Étoiles tournantes */}
-                        {stars.map((angle, i) => {
-                          const rad = (angle * Math.PI) / 180;
-                          const radius = 18;
-                          const x = radius * Math.cos(rad) + 24;
-                          const y = radius * Math.sin(rad) + 24;
-                          return (
-                            <div
-                              key={i}
-                              style={{
-                                position: 'absolute',
-                                left: `${x}px`,
-                                top: `${y}px`,
-                                width: '4px',
-                                height: '4px',
-                                backgroundColor: '#fff',
-                                borderRadius: '50%',
-                                boxShadow: '0 0 8px #fff',
-                                transform: 'translate(-50%, -50%)',
-                                transition: 'all 0.5s linear',
-                              }}
-                            />
-                          );
-                        })}
-
-                        <img
-                          src={feature.imgSrc}
-                          alt={feature.title}
-                          className="w-12 h-12 object-contain relative z-10"
-                        />
-                      </div>
-                    </div>
+                    <img
+                      src={feature.imgSrc}
+                      alt={feature.title}
+                      className="w-12 h-12 object-contain mx-auto"
+                    />
                   ) : null}
                 </div>
 
