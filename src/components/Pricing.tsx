@@ -101,7 +101,7 @@ export function Pricing() {
       ],
       when: {
         title: 'Quand ?',
-        description: 'Inscription annuelle.\nRdv les Mercredi et Dimanche pour des sessions exclusives.'
+        description: 'Inscription annuelle. RDV les Mercredi et Dimanche pour des sessions exclusives.'
       }
     }
   ];
