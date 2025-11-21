@@ -106,90 +106,91 @@ export function Pricing() {
     }
   ];
 
-  const renderBlock = (item: any, popular?: boolean) => {
-    let badgeClass = '';
-    let badgeText = '';
-
-    if (item.name === 'Ultimate Christmas') {
-      badgeClass =
-        'inline-block px-12 py-3 text-lg font-bold text-white rounded-full border-4 text-center shadow-lg bg-gradient-to-r from-red-600 via-yellow-400 to-green-500 border-yellow-400 shadow-red-500/70 animate-pulse';
-      badgeText = 'VIP';
-    } else if (item.highlight) {
-      badgeClass =
-        'inline-block px-12 py-3 text-lg font-bold text-white rounded-full border-4 text-center shadow-lg bg-gradient-to-r from-cyan-500 to-purple-500 border-purple-400 shadow-purple-500/50';
-      badgeText = 'Exclusif';
-    } else if (popular) {
-      badgeClass =
-        'inline-block px-12 py-3 text-lg font-bold text-white rounded-full border-4 text-center shadow-lg bg-gradient-to-r from-cyan-500 to-blue-500 border-blue-400 shadow-blue-500/50';
-      badgeText = 'Populaire';
-    }
-
-    return (
-      <div
-        key={item.name}
-        className="relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-cyan-500/20"
-      >
-        {/* BADGE EN TÊTE */}
-        {(popular || item.highlight || item.name === 'Ultimate Christmas') && (
-          <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
-            <span className={badgeClass}>{badgeText}</span>
-          </div>
-        )}
-
-        {/* NOM + DUREE + PRIX */}
-        <div className="text-center mt-8 mb-6">
-          <h4 className="text-xl text-white mb-2">{item.name}</h4>
-          {item.duration && <div className="text-gray-400 mb-4">{item.duration}</div>}
-          {item.price && (
-            <>
-              <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">
-                {item.price}
-              </div>
-              <div className="text-gray-500 text-sm">TTC</div>
-            </>
-          )}
+  const renderBlock = (item: any, highlightColor?: string, popular?: boolean) => (
+    <div
+      key={item.name}
+      className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
+        highlightColor
+          ? `border-${highlightColor}-500 shadow-lg shadow-${highlightColor}-500/20`
+          : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
+      }`}
+    >
+      {/* BADGE */}
+      {(popular || item.highlight || item.name === 'Ultimate Christmas') && (
+        <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+          <span
+            className={`inline-block px-10 py-2 text-base font-bold text-white rounded-full border-4 text-center shadow-lg ${
+              item.name === 'Ultimate Christmas'
+                ? 'bg-gradient-to-r from-red-600 via-yellow-400 to-green-500 border-yellow-400 shadow-red-500/70 animate-pulse'
+                : item.highlight
+                ? 'bg-gradient-to-r from-cyan-500 to-purple-500 border-purple-400 shadow-purple-500/50'
+                : popular
+                ? 'bg-gradient-to-r from-cyan-500 to-blue-500 border-blue-400 shadow-blue-500/50'
+                : ''
+            }`}
+          >
+            {item.name === 'Ultimate Christmas'
+              ? 'VIP'
+              : item.highlight
+              ? 'Exclusif'
+              : 'Populaire'}
+          </span>
         </div>
+      )}
 
-        {/* FEATURES */}
-        {item.features && (
-          <ul className="space-y-2 text-left">
-            {item.features.map((feature: string, idx: number) => (
-              <li key={idx} className="flex items-start gap-2 text-gray-300">
-                <Check className="text-cyan-400 flex-shrink-0 mt-0.5" size={18} />
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
-        )}
-
-        {/* BLOCS “QUI ?” et “QUAND ?” */}
-        {item.when && (
-          <div className="mt-6 text-left text-gray-300">
-            <h5 className="text-lg text-white mb-2">{item.when.title}</h5>
-            <p className="whitespace-pre-line ml-2 mt-2">{item.when.description}</p>
-          </div>
-        )}
-
-        {/* NEXUS CLUB DISCORD */}
-        {item.name === "Qu'est-ce que le Nexus Club ?" && (
-          <div className="mt-6 text-center">
-            <a
-              href="https://discord.gg/aVsYRYJP"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#7289da] text-white font-semibold px-4 py-2 rounded-full shadow-md hover:scale-105 transition-transform hover:shadow-lg"
-            >
-              <img
-                src="https://i.ibb.co/dsBr3HpT/t-l-chargement-3.png"
-                alt="Discord Logo"
-                className="h-4 w-4"
-              />
-            </a>
-          </div>
+      {/* NOM + DUREE + PRIX */}
+      <div className="text-center mt-8 mb-6">
+        <h4 className="text-xl text-white mb-2">{item.name}</h4>
+        {item.duration && <div className="text-gray-400 mb-4">{item.duration}</div>}
+        {item.price && (
+          <>
+            <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">
+              {item.price}
+            </div>
+            <div className="text-gray-500 text-sm">TTC</div>
+          </>
         )}
       </div>
-    );
-  };
+
+      {/* FEATURES */}
+      {item.features && (
+        <ul className="space-y-2 text-left">
+          {item.features.map((feature: string, idx: number) => (
+            <li key={idx} className="flex items-start gap-2 text-gray-300">
+              <Check className="text-cyan-400 flex-shrink-0 mt-0.5" size={18} />
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {/* BLOCS “QUI ?” et “QUAND ?” */}
+      {item.when && (
+        <div className="mt-6 text-left text-gray-300">
+          <h5 className="text-lg text-white mb-2">{item.when.title}</h5>
+          <p className="whitespace-pre-line ml-2 mt-1">{item.when.description}</p>
+        </div>
+      )}
+
+      {/* NEXUS CLUB DISCORD */}
+      {item.name === "Qu'est-ce que le Nexus Club ?" && (
+        <div className="mt-6 text-center">
+          <a
+            href="https://discord.gg/aVsYRYJP"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-[#7289da] text-white font-semibold px-4 py-2 rounded-full shadow-md hover:scale-105 transition-transform hover:shadow-lg"
+          >
+            <img
+              src="https://i.ibb.co/dsBr3HpT/t-l-chargement-3.png"
+              alt="Discord Logo"
+              className="h-4 w-4"
+            />
+          </a>
+        </div>
+      )}
+    </div>
+  );
 
   return (
     <section id="pricing" className="py-20 bg-slate-900 relative">
@@ -206,15 +207,13 @@ export function Pricing() {
           </p>
         </div>
 
-        {/* VR INDIVIDUEL */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Expériences VR Individuelles</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {vrPricing.map(item => renderBlock(item))}
+            {vrPricing.map(item => renderBlock(item, item.highlight))}
           </div>
         </div>
 
-        {/* CARTES CADEAUX */}
         <div id="christmas-cards" className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Cartes Cadeaux / Noël</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -222,15 +221,13 @@ export function Pricing() {
           </div>
         </div>
 
-        {/* PACKS & FORFAITS */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {packs.map(item => renderBlock(item, item.popular))}
+            {packs.map(item => renderBlock(item, undefined, item.popular))}
           </div>
         </div>
 
-        {/* ARCADE */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Bornes Arcade</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -238,7 +235,6 @@ export function Pricing() {
           </div>
         </div>
 
-        {/* NEXUS CLUB */}
         <div id="nexus-club" className="mb-16 scroll-mt-24">
           <h3 className="text-2xl sm:text-4xl font-bold mb-8 text-center">
             <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x">
