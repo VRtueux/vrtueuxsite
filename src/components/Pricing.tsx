@@ -101,7 +101,7 @@ export function Pricing() {
       ],
       when: {
         title: 'Quand ?',
-        description: 'Inscription annuelle.\nRdv les Mercredi et Dimanche pour des sessions exclusives.'
+        description: 'Inscription annuelle.\n\nRdv les Mercredi et Dimanche pour des sessions exclusives.' // <- espace ajouté
       }
     }
   ];
@@ -115,19 +115,25 @@ export function Pricing() {
           : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
       }`}
     >
-      {/* Badge Populaire / Exclusif / VIP */}
+      {/* Badge */}
       {(popular || item.highlight || item.name === 'Ultimate Christmas') && (
         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
           <span
-            className={`px-4 py-1 rounded-full text-sm font-semibold text-white ${
-              popular
-                ? 'bg-gradient-to-r from-cyan-500 to-blue-500' // Populaire
+            className={`inline-block px-5 py-1 text-sm font-semibold text-white rounded-full border-2 shadow-lg ${
+              item.name === 'Ultimate Christmas'
+                ? 'bg-gradient-to-r from-red-600 via-yellow-400 to-green-500 border-yellow-300 shadow-red-500/50'
                 : item.highlight
-                ? 'bg-purple-500/70' // Exclusif
-                : 'bg-red-500/80' // Ultimate Christmas -> VIP rouge Noël
+                ? 'bg-gradient-to-r from-cyan-500 to-purple-500 border-cyan-300 shadow-cyan-500/50'
+                : popular
+                ? 'bg-gradient-to-r from-cyan-500 to-blue-500 border-cyan-300 shadow-cyan-500/50'
+                : ''
             }`}
           >
-            {popular ? 'Populaire' : item.highlight ? 'Exclusif' : 'VIP'}
+            {item.name === 'Ultimate Christmas'
+              ? 'VIP'
+              : item.highlight
+              ? 'Exclusif'
+              : 'Populaire'}
           </span>
         </div>
       )}
@@ -204,7 +210,7 @@ export function Pricing() {
         <div id="christmas-cards" className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Cartes Cadeaux / Noël</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {cn.map(item => renderBlock(item, item.highlight ? 'purple' : undefined))}
+            {cn.map(item => renderBlock(item, item.highlight ? 'red' : undefined))}
           </div>
         </div>
 
