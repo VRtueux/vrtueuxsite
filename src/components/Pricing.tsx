@@ -1,5 +1,4 @@
 import { Check } from 'lucide-react';
-import { features } from 'process';
 
 export function Pricing() {
   const vrPricing = [
@@ -78,22 +77,33 @@ export function Pricing() {
     {
       name: "Qu'est-ce que le Nexus Club ?",
       features: [
-        'Le VRtueux Nexus Club est le cercle premium officiel de VRtueux.','C’est une communauté réservée aux passionnés de VR.']
+        'Le VRtueux Nexus Club est le cercle premium officiel de VRtueux.',
+        'C’est une communauté réservée aux passionnés de VR.'
+      ]
     },
     {
       name: 'Prix / Avantages',
       price: '150€/an',
-      features: ['-10% sur toutes les sessions','Accès aux évènements privés du Nexus','E-sport : tournois Beat Saber et autres compétitions VR','Et encore plein d’autres évènements.']
+      features: [
+        '-10% sur toutes les sessions',
+        'Accès aux évènements privés du Nexus',
+        'E-sport : tournois Beat Saber et autres compétitions VR',
+        'Et encore plein d’autres évènements.'
+      ]
     },
     {
-  name: 'Pour qui ?',
-  features: ['Gamers passionnés, clients réguliers','Membres d’associations partenaires','Communautés e-sport, groupes d’amis','Toute personne souhaitant accéder au cercle VIP VRtueux'],
-  when: {
-    title: 'Quand ?',
-    description: 'Inscription annuelle.\n Rdv les Mercredi et Dimanche pour des sessions exclusives.'
-  }
-}
-
+      name: 'Pour qui ?',
+      features: [
+        'Gamers passionnés, clients réguliers',
+        'Membres d’associations partenaires',
+        'Communautés e-sport, groupes d’amis',
+        'Toute personne souhaitant accéder au cercle VIP VRtueux'
+      ],
+      when: {
+        title: 'Quand ?',
+        description: 'Inscription annuelle.\nRdv les Mercredi et Dimanche pour des sessions exclusives.'
+      }
+    }
   ];
 
   const renderBlock = (item: any, highlightColor?: string, popular?: boolean) => (
@@ -112,12 +122,20 @@ export function Pricing() {
           </span>
         </div>
       )}
+
       <div className="text-center mb-6">
         <h4 className="text-xl text-white mb-2">{item.name}</h4>
         {item.duration && <div className="text-gray-400 mb-4">{item.duration}</div>}
-        {item.price && <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">{item.price}</div>}
-        {item.price && <div className="text-gray-500 text-sm">TTC</div>}
+        {item.price && (
+          <>
+            <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">
+              {item.price}
+            </div>
+            <div className="text-gray-500 text-sm">TTC</div>
+          </>
+        )}
       </div>
+
       {item.features && (
         <ul className="space-y-2 text-left">
           {item.features.map((feature: string, idx: number) => (
@@ -129,22 +147,28 @@ export function Pricing() {
         </ul>
       )}
 
+      {/* --- AJOUT : affichage du bloc "Quand ?" --- */}
+      {item.when && (
+        <div className="mt-6 text-left text-gray-300">
+          <h5 className="text-lg text-white mb-2">{item.when.title}</h5>
+          <p className="whitespace-pre-line">{item.when.description}</p>
+        </div>
+      )}
+
       {item.name === "Qu'est-ce que le Nexus Club ?" && (
         <div className="mt-6 text-center">
           <a
-  href="https://discord.gg/aVsYRYJP"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-flex items-center gap-2 bg-[#7289da] text-white font-semibold px-4 py-2 rounded-full shadow-md hover:scale-105 transition-transform hover:shadow-lg"
->
-  <img
-    src="https://i.ibb.co/dsBr3HpT/t-l-chargement-3.png"
-    alt="Discord Logo"
-    className="h-4 w-4"
-  />
-</a>
-
-
+            href="https://discord.gg/aVsYRYJP"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-[#7289da] text-white font-semibold px-4 py-2 rounded-full shadow-md hover:scale-105 transition-transform hover:shadow-lg"
+          >
+            <img
+              src="https://i.ibb.co/dsBr3HpT/t-l-chargement-3.png"
+              alt="Discord Logo"
+              className="h-4 w-4"
+            />
+          </a>
         </div>
       )}
     </div>
@@ -162,7 +186,6 @@ export function Pricing() {
           </p>
         </div>
 
-        {/* Expériences VR Individuelles */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Expériences VR Individuelles</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -170,7 +193,6 @@ export function Pricing() {
           </div>
         </div>
 
-        {/* Cartes Cadeaux / Noël */}
         <div id="christmas-cards" className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Cartes Cadeaux / Noël</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -178,7 +200,6 @@ export function Pricing() {
           </div>
         </div>
 
-        {/* Packs & Forfaits */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -186,7 +207,6 @@ export function Pricing() {
           </div>
         </div>
 
-        {/* Bornes Arcade */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Bornes Arcade</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -194,7 +214,6 @@ export function Pricing() {
           </div>
         </div>
 
-        {/* Nexus Club */}
         <div id="nexus-club" className="mb-16 scroll-mt-24">
           <h3 className="text-2xl sm:text-4xl font-bold mb-8 text-center">
             <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x">
