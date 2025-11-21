@@ -101,7 +101,7 @@ export function Pricing() {
       ],
       when: {
         title: 'Quand ?',
-        description: 'Inscription annuelle.\nRendez-vous les Mercredi et Dimanche pour des sessions exclusives.'
+        description: 'Inscription annuelle.\nRdv les Mercredi et Dimanche pour des sessions exclusives.'
       }
     }
   ];
@@ -129,7 +129,7 @@ export function Pricing() {
         key={item.name}
         className="relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-cyan-500/20"
       >
-        {/* BADGE */}
+        {/* BADGE EN TÊTE */}
         {(popular || item.highlight || item.name === 'Ultimate Christmas') && (
           <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
             <span className={badgeClass}>{badgeText}</span>
@@ -137,7 +137,7 @@ export function Pricing() {
         )}
 
         {/* NOM + DUREE + PRIX */}
-        <div className="text-center mb-6">
+        <div className="text-center mt-8 mb-6">
           <h4 className="text-xl text-white mb-2">{item.name}</h4>
           {item.duration && <div className="text-gray-400 mb-4">{item.duration}</div>}
           {item.price && (
@@ -196,13 +196,17 @@ export function Pricing() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl text-white mb-4">
-            Nos <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Tarifs</span>
+            Nos{' '}
+            <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              Tarifs
+            </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Des formules adaptées à tous vos besoins, que vous soyez débutant ou expert.
           </p>
         </div>
 
+        {/* VR INDIVIDUEL */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Expériences VR Individuelles</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -210,6 +214,7 @@ export function Pricing() {
           </div>
         </div>
 
+        {/* CARTES CADEAUX */}
         <div id="christmas-cards" className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Cartes Cadeaux / Noël</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -217,6 +222,7 @@ export function Pricing() {
           </div>
         </div>
 
+        {/* PACKS & FORFAITS */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -224,6 +230,7 @@ export function Pricing() {
           </div>
         </div>
 
+        {/* ARCADE */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Bornes Arcade</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -231,6 +238,7 @@ export function Pricing() {
           </div>
         </div>
 
+        {/* NEXUS CLUB */}
         <div id="nexus-club" className="mb-16 scroll-mt-24">
           <h3 className="text-2xl sm:text-4xl font-bold mb-8 text-center">
             <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x">
