@@ -109,31 +109,19 @@ export function Pricing() {
   const renderBlock = (item: any, highlightColor?: string, popular?: boolean) => (
     <div
       key={item.name}
-      className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
-        highlightColor
-          ? `border-${highlightColor}-500 shadow-lg shadow-${highlightColor}-500/20`
-          : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
-      }`}
+      className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2`}
     >
-      {/* BADGE */}
+      {/* Badge Populaire / Exclusif / VIP */}
       {(popular || item.highlight || item.name === 'Ultimate Christmas') && (
-        <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
-          <span
-            className={`inline-block px-10 py-2 text-base font-bold text-white rounded-full border-4 text-center shadow-lg ${
-              item.name === 'Ultimate Christmas'
-                ? 'bg-gradient-to-r from-red-600 via-yellow-400 to-green-500 border-yellow-400 shadow-red-500/70 animate-pulse'
-                : item.highlight
-                ? 'bg-gradient-to-r from-cyan-500 to-purple-500 border-purple-400 shadow-purple-500/50'
-                : popular
-                ? 'bg-gradient-to-r from-cyan-500 to-blue-500 border-blue-400 shadow-blue-500/50'
-                : ''
-            }`}
-          >
-            {item.name === 'Ultimate Christmas'
-              ? 'VIP'
+        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+          <span className={`px-4 py-1 rounded-full text-sm font-semibold text-white ${
+            item.name === 'Ultimate Christmas'
+              ? 'bg-gradient-to-r from-red-600 via-yellow-400 to-green-500 border border-yellow-400 shadow-lg animate-pulse'
               : item.highlight
-              ? 'Exclusif'
-              : 'Populaire'}
+              ? 'bg-purple-500/70 border border-purple-400 shadow-lg'
+              : 'bg-gradient-to-r from-cyan-500 to-blue-500 border border-blue-400 shadow-lg'
+          }`}>
+            {item.name === 'Ultimate Christmas' ? 'VIP' : item.highlight ? 'Exclusif' : 'Populaire'}
           </span>
         </div>
       )}
@@ -197,10 +185,7 @@ export function Pricing() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl text-white mb-4">
-            Nos{' '}
-            <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-              Tarifs
-            </span>
+            Nos <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Tarifs</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Des formules adaptées à tous vos besoins, que vous soyez débutant ou expert.
