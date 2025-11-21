@@ -116,27 +116,27 @@ export function Pricing() {
       }`}
     >
       {/* BADGE Populaire / Exclusif / VIP Noël */}
-      {(popular || item.highlight || item.name === 'Ultimate Christmas') && (
-        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-          <span
-            className={`px-8 py-2 rounded-full text-lg font-bold text-white text-center shadow-lg ${
-              item.name === 'Ultimate Christmas'
-                ? 'bg-gradient-to-r from-red-600 via-yellow-400 to-green-500 border-2 border-yellow-400 shadow-red-500/70 animate-pulse'
-                : item.highlight
-                ? 'bg-purple-600' // Violet plein
-                : popular
-                ? 'bg-gradient-to-r from-cyan-500 to-blue-500 border-2 border-blue-400 shadow-blue-500/50'
-                : ''
-            }`}
-          >
-            {item.name === 'Ultimate Christmas'
-              ? 'VIP'
-              : item.highlight
-              ? 'Exclusif'
-              : 'Populaire'}
-          </span>
-        </div>
-      )}
+{(popular || item.highlight || item.name === 'Ultimate Christmas') && (
+  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+    <span
+      className={`px-8 py-2 rounded-full text-lg font-bold text-white text-center shadow-lg ${
+        item.name === 'Ultimate Christmas'
+          ? 'bg-gradient-to-r from-red-600 via-yellow-400 to-green-500 border-2 border-yellow-400 shadow-red-500/70 animate-pulse'
+          : item.highlight
+          ? 'bg-purple-600'   // ← violet plein pour Exclusif
+          : popular
+          ? 'bg-gradient-to-r from-cyan-500 to-blue-500 border-2 border-blue-400 shadow-blue-500/50'
+          : ''
+      }`}
+    >
+      {item.name === 'Ultimate Christmas'
+        ? 'VIP'
+        : item.highlight
+        ? 'Exclusif'
+        : 'Populaire'}
+    </span>
+  </div>
+)}
 
       {/* NOM + DUREE + PRIX */}
       <div className="text-center mb-6">
