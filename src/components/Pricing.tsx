@@ -59,7 +59,7 @@ export function Pricing() {
       features: ['Idéal pour débuter', 'Testez plusieurs expériences', 'Conseils personnalisés']
     },
     {
-      name: 'Pass 10 Sessions',
+      name: 'Abonnement 10 Sessions',
       duration: '10 x 30 min',
       price: '130€',
       popular: true,
@@ -147,13 +147,12 @@ export function Pricing() {
         </ul>
       )}
 
-      {/* --- AJOUT : affichage du bloc "Quand ?" --- */}
       {item.when && (
-        <div className="mt-6 text-left text-gray-300">
-          <h5 className="text-lg text-white mb-2">{item.when.title}</h5>
-          <p className="whitespace-pre-line">{item.when.description}</p>
-        </div>
-      )}
+  <div className="mt-6 text-center text-gray-300">
+    <h5 className="text-lg text-white mb-2">{item.when.title}</h5>
+    <p className="whitespace-pre-line">{item.when.description}</p>
+  </div>
+)}
 
       {item.name === "Qu'est-ce que le Nexus Club ?" && (
         <div className="mt-6 text-center">
