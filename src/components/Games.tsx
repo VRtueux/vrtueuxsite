@@ -100,7 +100,9 @@ export function Games() {
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
             Découvrez notre sélection de jeux et expériences VR disponibles sur nos différentes plateformes.
-          </p>
+            <br></br>
+             Accessible dès 10 ans
+            </p>
 
           {/* FILTRES */}
           <div className="flex flex-wrap justify-center gap-3 mt-8">

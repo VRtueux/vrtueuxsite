@@ -115,10 +115,19 @@ export function Pricing() {
           : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
       }`}
     >
-      {popular && (
+      {/* Badge Populaire / Exclusif / VIP */}
+      {(popular || item.highlight || item.name === 'Ultimate Christmas') && (
         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-          <span className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-1 rounded-full text-sm">
-            Populaire
+          <span
+            className={`px-4 py-1 rounded-full text-sm font-semibold text-white ${
+              popular
+                ? 'bg-gradient-to-r from-cyan-500 to-blue-500' // Populaire
+                : item.highlight
+                ? 'bg-purple-500/70' // Exclusif
+                : 'bg-red-500/80' // Ultimate Christmas -> VIP rouge Noël
+            }`}
+          >
+            {popular ? 'Populaire' : item.highlight ? 'Exclusif' : 'VIP'}
           </span>
         </div>
       )}
@@ -148,11 +157,11 @@ export function Pricing() {
       )}
 
       {item.when && (
-  <div className="mt-6 text-center text-gray-300">
-    <h5 className="text-lg text-white mb-2">{item.when.title}</h5>
-    <p className="whitespace-pre-line">{item.when.description}</p>
-  </div>
-)}
+        <div className="mt-6 text-center text-gray-300">
+          <h5 className="text-lg text-white mb-2">{item.when.title}</h5>
+          <p className="whitespace-pre-line">{item.when.description}</p>
+        </div>
+      )}
 
       {item.name === "Qu'est-ce que le Nexus Club ?" && (
         <div className="mt-6 text-center">
