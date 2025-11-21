@@ -116,27 +116,28 @@ export function Pricing() {
       }`}
     >
       {/* Badge */}
-      {(popular || item.highlight || item.name === 'Ultimate Christmas') && (
-        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-          <span
-            className={`inline-block px-5 py-1 text-sm font-semibold text-white rounded-full border-2 shadow-lg ${
-              item.name === 'Ultimate Christmas'
-                ? 'bg-gradient-to-r from-red-600 via-yellow-400 to-green-500 border-yellow-300 shadow-red-500/50'
-                : item.highlight
-                ? 'bg-gradient-to-r from-cyan-500 to-purple-500 border-cyan-300 shadow-cyan-500/50'
-                : popular
-                ? 'bg-gradient-to-r from-cyan-500 to-blue-500 border-cyan-300 shadow-cyan-500/50'
-                : ''
-            }`}
-          >
-            {item.name === 'Ultimate Christmas'
-              ? 'VIP'
-              : item.highlight
-              ? 'Exclusif'
-              : 'Populaire'}
-          </span>
-        </div>
-      )}
+{(popular || item.highlight || item.name === 'Ultimate Christmas') && (
+  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+    <span
+      className={`inline-block px-6 py-1 text-sm font-bold text-white rounded-full border-4 shadow-lg ${
+        item.name === 'Ultimate Christmas'
+          ? 'bg-gradient-to-r from-red-600 via-yellow-400 to-green-500 border-yellow-300 shadow-red-500/70 animate-pulse'
+          : item.highlight
+          ? 'bg-gradient-to-r from-cyan-500 to-purple-500 border-cyan-300 shadow-cyan-500/50'
+          : popular
+          ? 'bg-gradient-to-r from-cyan-500 to-blue-500 border-cyan-300 shadow-cyan-500/50'
+          : ''
+      }`}
+    >
+      {item.name === 'Ultimate Christmas'
+        ? 'VIP'
+        : item.highlight
+        ? 'Exclusif'
+        : 'Populaire'}
+    </span>
+  </div>
+)}
+
 
       <div className="text-center mb-6">
         <h4 className="text-xl text-white mb-2">{item.name}</h4>
