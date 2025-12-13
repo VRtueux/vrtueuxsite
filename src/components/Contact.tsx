@@ -93,13 +93,13 @@ export function Contact() {
                 <div>
                   <h3 className="text-white mb-2">Horaires</h3>
                   <p className="text-gray-300">
-                    Mardi au Dimanche : 11h à 22h
-                    Exception :
-                    Mercredi 24 décembre : 10h à 17h
-                    Jeudi 25 décembre : Fermé
-                    Mercredi 31 décembre : 10h à 17h
-                    Jeudi 1er janvier : Fermé
-                    Vendredi 2 janvier : 13h à 22h
+                    Mardi au Dimanche : 11h à 22h<br />
+                    Exception :<br />
+                    Mercredi 24 décembre : 10h à 17h<br />
+                    Jeudi 25 décembre : Fermé<br />
+                    Mercredi 31 décembre : 10h à 17h<br />
+                    Jeudi 1er janvier : Fermé<br />
+                    Vendredi 2 janvier : 13h à 22h<br />
                     <br />
                     <span className="text-sm text-cyan-400"> <a href="https://vrtueux.setmore.com/?fbclid=PAZXh0bgNhZW0CMTEAAacUMcGurlhlyC-GJgjzvhAmseVlvvBBXlMIgYa45i-3QmrmSqVdkvkKLCPdkQ_aem_g-L0mFxazO_YmhwD5o0rUQ"> Rerserver maintenant.</a></span>
                   </p>
