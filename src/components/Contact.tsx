@@ -38,8 +38,8 @@ export function Contact() {
                 <div>
                   <h3 className="text-white mb-2">Email</h3>
                   <a href="mailto:Contact@vrtueux.fr" className="text-gray-400 hover:text-cyan-400 transition-colors">
-                    contact@vrtueux.fr
-                    reservation@vrtueux.fr
+                    contact@vrtueux.fr | 
+                    reservation@vrtueux.fr| 
                     nexus@vrtueux.fr
                   </a>
                 </div>
