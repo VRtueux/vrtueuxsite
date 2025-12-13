@@ -39,7 +39,7 @@ export function Contact() {
                   <h3 className="text-white mb-2">Email</h3>
                   <a href="mailto:Contact@vrtueux.fr" className="text-gray-400 hover:text-cyan-400 transition-colors">
                     contact@vrtueux.fr | 
-                    reservation@vrtueux.fr| 
+                    reservation@vrtueux.fr | 
                     nexus@vrtueux.fr
                   </a>
                 </div>
@@ -72,14 +72,22 @@ export function Contact() {
                   <Instagram className="text-white" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-white mb-2">Instagram</h3>
+                  <h3 className="text-white mb-2">Nos Réseaux</h3>
                   <a
                     href="https://www.instagram.com/vrtueux/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-cyan-400 transition-colors"
                   >
-                    @vrtueux
+                    Instagram
+                  </a>
+                  <a
+                    href="https://www.tiktok.com/@vrtueux"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-cyan-400 transition-colors"
+                  >
+                    Tiktok
                   </a>
                 </div>
               </div>
@@ -94,7 +102,9 @@ export function Contact() {
                   <h3 className="text-white mb-2">Horaires</h3>
                   <p className="text-gray-300">
                     Mardi au Dimanche : 11h à 22h<br />
+                    <br />
                     Exception :<br />
+                    <br />
                     Mercredi 24 décembre : 10h à 17h<br />
                     Jeudi 25 décembre : Fermé<br />
                     Mercredi 31 décembre : 10h à 17h<br />
