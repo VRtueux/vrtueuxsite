@@ -82,7 +82,7 @@ export function Games() {
       id: '10',
       title: 'Race Room',
       description: 'Courses réalistes en VR, voitures de compétition et sensations de pilotage intenses sur des circuits mythiques.',
-      image: 'https://i.ibb.co/KxhWw0s0/Race-room.webp',
+      image: 'https://i.ibb.co/mrgHg5Zm/Race-room.png',
       platform: 'Tapis Omnidirectionnel'
     },
     {
@@ -92,6 +92,7 @@ export function Games() {
       image: 'https://i.ibb.co/mrN9Zqwm/Horizon-Worlds-logo.jpg',
       platform: 'Tapis Omnidirectionnel'
     },
+    {
     id: '12',
       title: 'First Encounters',
       description: 'La réalité se transforme en monde virtuel : attrape les petits bonshommes qui apparaissent et dépose-les dans le vaisseau.',
