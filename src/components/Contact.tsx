@@ -89,6 +89,14 @@ export function Contact() {
                   >
                     <br />Tiktok
                   </a>
+                  <a
+                    href="https://discord.gg/N4BsUMNX"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-cyan-400 transition-colors"
+                  >
+                    <br />Discord
+                  </a>
                 </div>
               </div>
             </div>
