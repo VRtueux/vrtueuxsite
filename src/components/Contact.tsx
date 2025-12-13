@@ -87,7 +87,7 @@ export function Contact() {
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-cyan-400 transition-colors"
                   >
-                    Tiktok
+                    <br />Tiktok
                   </a>
                 </div>
               </div>
