@@ -83,21 +83,21 @@ export function Games() {
       title: 'Race Room',
       description: 'Courses réalistes en VR, voitures de compétition et sensations de pilotage intenses sur des circuits mythiques.',
       image: 'https://i.ibb.co/mrgHg5Zm/Race-room.png',
-      platform: 'Tapis Omnidirectionnel'
+      platform: 'SimRacing VR'
     },
     {
       id: '11',
       title: 'World Horizon',
       description: 'Pars à l’aventure dans World Horizon !\n Explore des mondes incroyables, découvre des paysages à couper le souffle et relève tous les défis.',
       image: 'https://i.ibb.co/mrN9Zqwm/Horizon-Worlds-logo.jpg',
-      platform: 'Tapis Omnidirectionnel'
+      platform: 'CVR Autonome'
     },
     {
     id: '12',
       title: 'First Encounters',
       description: 'La réalité se transforme en monde virtuel : attrape les petits bonshommes qui apparaissent et dépose-les dans le vaisseau.',
       image: 'https://i.ibb.co/d4ppX2D9/First-Encounters.jpg',
-      platform: 'Tapis Omnidirectionnel'
+      platform: 'CVR Autonome'
     },
   ];
 
