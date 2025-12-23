@@ -4,9 +4,12 @@ import { Gamepad2, Move, Car, Sparkles, X } from 'lucide-react';
 export function About() {
   const [showPopup, setShowPopup] = useState(true);
 
+  // Bloque le scroll UNIQUEMENT quand la popup est ouverte
   useEffect(() => {
     document.body.style.overflow = showPopup ? 'hidden' : 'auto';
-    return () => (document.body.style.overflow = 'auto');
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
   }, [showPopup]);
 
   const features = [
@@ -44,44 +47,55 @@ export function About() {
 
   return (
     <>
-      {/* POPUP NOUVELLE ANNÉE */}
-      {/* OVERLAY IMAGE NOUVELLE ANNÉE */}
-{showPopup && (
-  <div className="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-sm flex items-center justify-center px-4">
-    
-    {/* Bouton fermer */}
-    <button
-      onClick={() => setShowPopup(false)}
-      className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white hover:text-cyan-400 transition"
-      aria-label="Fermer"
-    >
-      <X size={36} />
-    </button>
+      {/* ================= POPUP MODALE ================= */}
+      {showPopup && (
+        <div className="fixed inset-0 z-[9999] bg-black/70 backdrop-blur-sm flex items-center justify-center px-4">
+          
+          {/* Fenêtre */}
+          <div
+            className="
+              relative
+              w-full
+              max-w-[420px]        /* mobile */
+              sm:max-w-[600px]     /* tablette */
+              lg:max-w-[720px]     /* PC */
+            "
+          >
+            {/* Croix (LIÉE À LA FENÊTRE) */}
+            <button
+              onClick={() => setShowPopup(false)}
+              className="
+                absolute
+                -top-4
+                -right-4
+                bg-black/80
+                text-white
+                rounded-full
+                p-2
+                hover:text-cyan-400
+                transition
+              "
+              aria-label="Fermer"
+            >
+              <X size={28} />
+            </button>
 
-    {/* Conteneur image (clé de la correction) */}
-    <div
-      className="
-        w-full
-        max-w-[420px]        /* MOBILE */
-        sm:max-w-[600px]     /* TABLET */
-        lg:max-w-[720px]     /* PC */
-      "
-    >
-      <img
-        src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
-        alt="VRtueux vous souhaite une bonne année 2026"
-        className="
-          w-full
-          h-auto
-          object-contain
-          rounded-2xl
-          shadow-[0_0_35px_rgba(0,200,255,0.45)]
-        "
-      />
-    </div>
-  </div>
-)}
-
+            {/* Image */}
+            <img
+              src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
+              alt="VRtueux vous souhaite une bonne année 2026"
+              className="
+                w-full
+                h-auto
+                object-contain
+                rounded-2xl
+                shadow-[0_0_35px_rgba(0,200,255,0.45)]
+              "
+            />
+          </div>
+        </div>
+      )}
+      {/* ================= FIN POPUP ================= */}
 
       <section id="about" className="py-20 bg-slate-900 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -157,13 +171,19 @@ export function About() {
 
           {/* SECTION UNIQUE EN FRANCE */}
           <div className="mt-16 bg-gradient-to-r from-purple-900/30 to-cyan-900/30 rounded-2xl p-8 border border-purple-500/20 text-center">
-            <h3 className="text-2xl text-white mb-4">Un équipement unique en France</h3>
+            <h3 className="text-2xl text-white mb-4">
+              Un équipement unique en France
+            </h3>
             <p className="text-gray-300 max-w-3xl mx-auto">
               Nous sommes fiers d'être les{' '}
-              <span className="text-cyan-400">seuls possesseurs en France</span> du tapis omnidirectionnel,
-              vous offrant une expérience de réalité virtuelle sans précédent.<br /><br />
+              <span className="text-cyan-400">
+                seuls possesseurs en France
+              </span>{' '}
+              du tapis omnidirectionnel, vous offrant une expérience de réalité virtuelle sans précédent.
+              <br /><br />
               Pour une immersion optimale, il est recommandé de connaître votre écart interpupillaire
-              afin de régler correctement la netteté de votre casque VR.<br /><br />
+              afin de régler correctement la netteté de votre casque VR.
+              <br /><br />
               Venez découvrir ce qui fait de VRtueux une destination gaming d'exception !
             </p>
           </div>
