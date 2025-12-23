@@ -130,29 +130,33 @@ export function About() {
       </div>
 
       {/* POPUP IMAGE FESTIVE */}
-      {showPopup && (
-        <div
-          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
-          onClick={() => setShowPopup(false)}
-        >
-          <div
-            className="relative max-w-full max-h-full"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <span
-              className="absolute top-2 right-2 text-white text-4xl cursor-pointer"
-              onClick={() => setShowPopup(false)}
-            >
-              &times;
-            </span>
-            <img
-              src="https://i.ibb.co/sJXNWRMt/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
-              alt="VRtueux vous souhaite une bonne année 2026"
-              className="max-w-full max-h-[90vh] rounded-lg shadow-lg"
-            />
-          </div>
-        </div>
-      )}
+{showPopup && (
+  <div
+    className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
+    onClick={() => setShowPopup(false)}
+  >
+    <div
+      className="relative w-full h-full flex items-center justify-center"
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* Croix de fermeture */}
+      <span
+        className="absolute top-4 right-4 text-white text-4xl cursor-pointer z-50"
+        onClick={() => setShowPopup(false)}
+      >
+        &times;
+      </span>
+
+      {/* Image responsive */}
+      <img
+        src="https://i.ibb.co/sJXNWRMt/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
+        alt="VRtueux vous souhaite une bonne année 2026"
+        className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
+      />
+    </div>
+  </div>
+)}
+
     </section>
   );
 }
