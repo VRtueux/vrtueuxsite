@@ -46,25 +46,26 @@ export function About() {
 
   return (
     <section id="about" className="py-20 bg-slate-900 relative">
-      {/* --- POPUP BONNE ANNÉE --- */}
-      {popupOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-          <div className="relative w-full max-w-sm md:max-w-md lg:max-w-md rounded-2xl overflow-hidden bg-gradient-to-tr from-cyan-800/80 to-purple-900/80 p-4 sm:p-6 shadow-2xl">
-            <button
-              className="absolute top-3 right-3 w-10 h-10 flex items-center justify-center rounded-full bg-slate-900/80 text-white hover:bg-purple-700 transition"
-              onClick={() => setPopupOpen(false)}
-              aria-label="Fermer la popup"
-            >
-              <X size={24} />
-            </button>
-            <img
-              src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
-              alt="VRtueux vous souhaite une bonne année 2026"
-              className="w-full h-auto rounded-xl"
-            />
-          </div>
-        </div>
-      )}
+{popupOpen && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+    <div className="relative rounded-2xl overflow-hidden bg-gradient-to-tr from-cyan-800/80 to-purple-900/80 p-4 sm:p-6 shadow-2xl">
+      <button
+        className="absolute top-3 right-3 w-10 h-10 flex items-center justify-center rounded-full bg-slate-900/80 text-white hover:bg-purple-700 transition"
+        onClick={() => setPopupOpen(false)}
+        aria-label="Fermer la popup"
+      >
+        <X size={24} />
+      </button>
+
+      {/* Image limitée en largeur */}
+      <img
+        src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
+        alt="VRtueux vous souhaite une bonne année 2026"
+        className="mx-auto rounded-xl w-full max-w-[400px] sm:max-w-[500px]"
+      />
+    </div>
+  </div>
+)}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* TITRE */}
