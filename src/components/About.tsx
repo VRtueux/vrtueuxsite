@@ -47,9 +47,15 @@ export function About() {
   return (
     <section id="about" className="py-20 bg-slate-900 relative">
 {popupOpen && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-    <div className="relative bg-gradient-to-tr from-cyan-800/80 to-purple-900/80 rounded-2xl shadow-2xl p-4 sm:p-6
-                    max-w-[500px] w-full max-h-[80vh] overflow-auto">
+  <div
+    className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center"
+    onClick={() => setPopupOpen(false)} // fermer en cliquant en dehors
+  >
+    <div
+      className="relative bg-gradient-to-tr from-cyan-800/80 to-purple-900/80 rounded-2xl shadow-2xl p-4 sm:p-6
+                 max-w-[500px] w-[90%] max-h-[80vh] overflow-auto"
+      onClick={(e) => e.stopPropagation()} // empêche fermeture quand on clique dedans
+    >
       {/* Bouton de fermeture */}
       <button
         className="absolute top-3 right-3 w-10 h-10 flex items-center justify-center rounded-full bg-slate-900/80 text-white hover:bg-purple-700 transition"
@@ -68,6 +74,7 @@ export function About() {
     </div>
   </div>
 )}
+
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* TITRE */}
