@@ -49,7 +49,7 @@ export function About() {
       {/* --- POPUP BONNE ANNÉE --- */}
       {popupOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-          <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl rounded-2xl overflow-hidden bg-gradient-to-tr from-cyan-800/80 to-purple-900/80 p-4 sm:p-6 shadow-2xl">
+          <div className="relative w-full max-w-sm md:max-w-md lg:max-w-md rounded-2xl overflow-hidden bg-gradient-to-tr from-cyan-800/80 to-purple-900/80 p-4 sm:p-6 shadow-2xl">
             <button
               className="absolute top-3 right-3 w-10 h-10 flex items-center justify-center rounded-full bg-slate-900/80 text-white hover:bg-purple-700 transition"
               onClick={() => setPopupOpen(false)}
