@@ -1,15 +1,28 @@
 import { useState, useEffect } from 'react';
-import { Gamepad2, Move, Car, Sparkles, X } from 'lucide-react';
+import { Gamepad2, Move, Car, Sparkles, X, ArrowDown } from 'lucide-react';
 
 export function About() {
-  const [popupOpen, setPopupOpen] = useState(true);
+  const [popupOpen, setPopupOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    document.body.style.overflow = popupOpen ? 'hidden' : 'auto';
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = popupOpen && isMobile ? 'hidden' : 'auto';
     return () => {
       document.body.style.overflow = 'auto';
     };
-  }, [popupOpen]);
+  }, [popupOpen, isMobile]);
+
+  // Affiche le popup automatiquement sur mobile
+  useEffect(() => {
+    if (isMobile) setPopupOpen(true);
+  }, [isMobile]);
 
   const features = [
     {
@@ -46,35 +59,54 @@ export function About() {
 
   return (
     <section id="about" className="py-20 bg-slate-900 relative">
-{popupOpen && (
-  <div
-    className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center"
-    onClick={() => setPopupOpen(false)} // fermer en cliquant en dehors
-  >
-    <div
-      className="relative bg-gradient-to-tr from-cyan-800/80 to-purple-900/80 rounded-2xl shadow-2xl p-4 sm:p-6
-                 max-w-[500px] w-[90%] max-h-[80vh] overflow-auto"
-      onClick={(e) => e.stopPropagation()} // empêche fermeture quand on clique dedans
-    >
-      {/* Bouton de fermeture */}
-      <button
-        className="absolute top-3 right-3 w-10 h-10 flex items-center justify-center rounded-full bg-slate-900/80 text-white hover:bg-purple-700 transition"
-        onClick={() => setPopupOpen(false)}
-        aria-label="Fermer la popup"
-      >
-        <X size={24} />
-      </button>
+      {/* --- MOBILE POPUP --- */}
+      {isMobile && popupOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={() => setPopupOpen(false)}
+        >
+          <div
+            className="relative bg-gradient-to-tr from-cyan-800/80 to-purple-900/80 rounded-2xl shadow-2xl p-4 sm:p-6
+                       max-w-[500px] w-[90%] max-h-[80vh] overflow-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-3 right-3 w-10 h-10 flex items-center justify-center rounded-full bg-slate-900/80 text-white hover:bg-purple-700 transition"
+              onClick={() => setPopupOpen(false)}
+              aria-label="Fermer la popup"
+            >
+              <X size={24} />
+            </button>
+            <img
+              src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
+              alt="VRtueux vous souhaite une bonne année 2026"
+              className="w-full h-auto rounded-xl"
+            />
+          </div>
+        </div>
+      )}
 
-      {/* Image */}
-      <img
-        src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
-        alt="VRtueux vous souhaite une bonne année 2026"
-        className="w-full h-auto rounded-xl"
-      />
-    </div>
-  </div>
-)}
-
+      {/* --- PC IMAGE --- */}
+      {!isMobile && (
+        <div className="flex flex-col items-center justify-center mb-12 relative">
+          <img
+            src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
+            alt="VRtueux vous souhaite une bonne année 2026"
+            className="w-[500px] sm:w-[600px] md:w-[700px] lg:w-[800px] h-auto rounded-xl shadow-2xl"
+          />
+          <button
+            onClick={() =>
+              document
+                .getElementById('about')
+                ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }
+            className="mt-4 flex flex-col items-center text-white text-lg font-semibold animate-bounce"
+          >
+            <ArrowDown size={32} />
+            Accueil
+          </button>
+        </div>
+      )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* TITRE */}
