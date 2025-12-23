@@ -45,29 +45,43 @@ export function About() {
   return (
     <>
       {/* POPUP NOUVELLE ANNÉE */}
-      {showPopup && (
-        <div className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-md flex items-center justify-center">
-          <button
-            onClick={() => setShowPopup(false)}
-            className="absolute top-5 right-5 text-white hover:text-cyan-400 transition"
-            aria-label="Fermer"
-          >
-            <X size={40} />
-          </button>
+      {/* OVERLAY IMAGE NOUVELLE ANNÉE */}
+{showPopup && (
+  <div className="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-sm flex items-center justify-center px-4">
+    
+    {/* Bouton fermer */}
+    <button
+      onClick={() => setShowPopup(false)}
+      className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white hover:text-cyan-400 transition"
+      aria-label="Fermer"
+    >
+      <X size={36} />
+    </button>
 
-          <img
-            src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
-            alt="VRtueux vous souhaite une bonne année 2026"
-            className="
-              max-w-[90vw]
-              max-h-[90vh]
-              object-contain
-              rounded-2xl
-              shadow-[0_0_40px_rgba(0,200,255,0.4)]
-            "
-          />
-        </div>
-      )}
+    {/* Conteneur image (clé de la correction) */}
+    <div
+      className="
+        w-full
+        max-w-[420px]        /* MOBILE */
+        sm:max-w-[600px]     /* TABLET */
+        lg:max-w-[720px]     /* PC */
+      "
+    >
+      <img
+        src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
+        alt="VRtueux vous souhaite une bonne année 2026"
+        className="
+          w-full
+          h-auto
+          object-contain
+          rounded-2xl
+          shadow-[0_0_35px_rgba(0,200,255,0.45)]
+        "
+      />
+    </div>
+  </div>
+)}
+
 
       <section id="about" className="py-20 bg-slate-900 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
