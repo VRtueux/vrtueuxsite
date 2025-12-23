@@ -94,14 +94,6 @@ export function About() {
             alt="VRtueux vous souhaite une bonne année 2026"
             className="w-[500px] sm:w-[600px] md:w-[700px] lg:w-[800px] h-auto rounded-xl shadow-2xl"
           />
-          <button
-            onClick={() =>
-              document
-                .getElementById('about')
-                ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-            }
-            className="mt-4 flex flex-col items-center text-white text-lg font-semibold animate-bounce"
-          >
             <ArrowDown size={32} />
             Accueil
           </button>
