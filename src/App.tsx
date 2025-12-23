@@ -5,10 +5,12 @@ import { Games } from './components/Games';
 import { Pricing } from './components/Pricing';
 import { Contact } from './components/Contact';
 import { Navigation } from './components/Navigation';
+import Popup from './components/popup'; // <-- import du popup
 
 export default function App() {
   return (
     <div className="min-h-screen bg-slate-950">
+      <Popup />           {/* ✅ popup au chargement */}
       <Navigation />
       <Hero />
       <About />
