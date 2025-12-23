@@ -1,6 +1,14 @@
+import { useState, useEffect } from 'react';
 import { Gamepad2, Move, Car, Sparkles } from 'lucide-react';
 
 export function About() {
+  const [showPopup, setShowPopup] = useState(false);
+
+  // Afficher la popup automatiquement au chargement
+  useEffect(() => {
+    setShowPopup(true);
+  }, []);
+
   const features = [
     {
       icon: Move,
@@ -37,7 +45,6 @@ export function About() {
   return (
     <section id="about" className="py-20 bg-slate-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* TITRE */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl text-white mb-4">
@@ -59,7 +66,7 @@ export function About() {
               key={index}
               className="group bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2"
             >
-              {/* Icon + Highlight sur la même ligne */}
+              {/* Icon + Highlight */}
               <div className="flex items-center gap-3 mb-4">
                 <div
                   className={`flex items-center justify-center w-14 h-14 rounded-lg transition-transform ${
@@ -86,11 +93,9 @@ export function About() {
                 )}
               </div>
 
-              {/* Title & Description */}
               <h3 className="text-xl text-white mb-2">{feature.title}</h3>
               <p className="text-gray-400 mb-4">{feature.description}</p>
 
-              {/* Bouton Nexus Club */}
               {feature.hasButton && (
                 <div className="text-center mt-4">
                   <button
@@ -123,7 +128,31 @@ export function About() {
           </p>
         </div>
       </div>
-      
+
+      {/* POPUP IMAGE FESTIVE */}
+      {showPopup && (
+        <div
+          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
+          onClick={() => setShowPopup(false)}
+        >
+          <div
+            className="relative max-w-full max-h-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <span
+              className="absolute top-2 right-2 text-white text-4xl cursor-pointer"
+              onClick={() => setShowPopup(false)}
+            >
+              &times;
+            </span>
+            <img
+              src="https://i.ibb.co/sJXNWRMt/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
+              alt="VRtueux vous souhaite une bonne année 2026"
+              className="max-w-full max-h-[90vh] rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
