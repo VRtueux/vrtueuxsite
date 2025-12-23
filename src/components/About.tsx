@@ -48,15 +48,18 @@ export function About() {
     <section id="about" className="py-20 bg-slate-900 relative">
 {popupOpen && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-    <div className="relative w-full max-w-[500px] max-h-[80vh] rounded-2xl overflow-auto bg-gradient-to-tr from-cyan-800/80 to-purple-900/80 p-4 sm:p-6 shadow-2xl">
+    <div className="relative bg-gradient-to-tr from-cyan-800/80 to-purple-900/80 rounded-2xl shadow-2xl p-4 sm:p-6
+                    max-w-[500px] w-full max-h-[80vh] overflow-auto">
+      {/* Bouton de fermeture */}
       <button
-        className="absolute top-3 right-3 w-10 h-10 flex items-center justify-center rounded-full bg-slate-900/80 text-white hover:bg-purple-700 transition z-50"
+        className="absolute top-3 right-3 w-10 h-10 flex items-center justify-center rounded-full bg-slate-900/80 text-white hover:bg-purple-700 transition"
         onClick={() => setPopupOpen(false)}
         aria-label="Fermer la popup"
       >
         <X size={24} />
       </button>
 
+      {/* Image */}
       <img
         src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
         alt="VRtueux vous souhaite une bonne année 2026"
@@ -65,7 +68,6 @@ export function About() {
     </div>
   </div>
 )}
-
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* TITRE */}
