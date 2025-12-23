@@ -86,19 +86,16 @@ export function About() {
         </div>
       )}
 
-      {/* --- PC IMAGE --- */}
-      {!isMobile && (
-        <div className="flex flex-col items-center justify-center mb-12 relative">
-          <img
-            src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
-            alt="VRtueux vous souhaite une bonne année 2026"
-            className="w-[500px] sm:w-[600px] md:w-[700px] lg:w-[800px] h-auto rounded-xl shadow-2xl"
-          />
-            <ArrowDown size={32} />
-            Accueil
-          </button>
-        </div>
-      )}
+{/* --- PC IMAGE --- */}
+{!isMobile && (
+  <div className="flex flex-col items-center justify-center mb-12 relative">
+    <img
+      src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
+      alt="VRtueux vous souhaite une bonne année 2026"
+      className="w-[500px] sm:w-[600px] md:w-[700px] lg:w-[800px] h-auto rounded-xl shadow-2xl"
+    />
+  </div>
+)}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* TITRE */}
