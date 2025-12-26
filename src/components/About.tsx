@@ -173,7 +173,7 @@ export function About() {
             <img
               src="https://i.ibb.co/NnWtnwf5/Tapis-Omnidirectionnel.png"
               alt="Tapis omnidirectionnel VRtueux"
-              className="absolute inset-0 w-full h-full object-cover opacity-50"
+              className="absolute inset-0 w-full h-full object-cover opacity-10"
             />
             <div className="relative p-6 text-center text-white">
               <h3 className="text-2xl mb-4">Un équipement unique en France</h3>
