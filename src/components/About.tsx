@@ -179,7 +179,6 @@ export function About() {
     />
     {/* On ajoute un wrapper avec min-h pour contenir le texte */}
     <div className="relative flex items-center justify-center min-h-[300px] p-6">
-      <div className="bg-black/60 p-6 rounded-lg text-center text-white">
         <h3 className="text-2xl mb-4">Un équipement unique en France</h3>
         <p>
           Nous sommes fiers d'être les <span className="text-cyan-400">seuls possesseurs en France</span> du tapis omnidirectionnel, vous offrant une expérience de réalité virtuelle sans précédent.
