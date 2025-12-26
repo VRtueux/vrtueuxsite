@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Gamepad2, Move, Car, Sparkles, X, ArrowDown } from 'lucide-react';
+import { Gamepad2, Move, Car, X } from 'lucide-react';
 
 export function About() {
   const [popupOpen, setPopupOpen] = useState(false);
@@ -86,16 +86,16 @@ export function About() {
         </div>
       )}
 
-{/* --- PC IMAGE --- */}
-{!isMobile && (
-  <div className="flex flex-col items-center justify-center mb-12 relative">
-    <img
-      src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
-      alt="VRtueux vous souhaite une bonne année 2026"
-      className="w-[500px] sm:w-[600px] md:w-[700px] lg:w-[800px] h-auto rounded-xl shadow-2xl"
-    />
-  </div>
-)}
+      {/* --- PC IMAGE --- */}
+      {!isMobile && (
+        <div className="flex flex-col items-center justify-center mb-12 relative">
+          <img
+            src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
+            alt="VRtueux vous souhaite une bonne année 2026"
+            className="w-[500px] sm:w-[600px] md:w-[700px] lg:w-[800px] h-auto rounded-xl shadow-2xl"
+          />
+        </div>
+      )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* TITRE */}
@@ -150,19 +150,19 @@ export function About() {
 
               {feature.hasButton && (
                 <div className="text-center mt-4">
-              <button
-                onClick={() => {
-                 const element = document.getElementById('nexus-club');
-                  if (element) element.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                className="inline-block bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500
-                           text-white font-semibold text-lg px-8 py-4 rounded-full
-                           shadow-lg hover:shadow-xl hover:scale-105
-                           transition-all duration-300"
-                    >
-                  Découvrir le Nexus Club
-              </button>
-
+                  <button
+                    onClick={() => {
+                      const element = document.getElementById('nexus-club');
+                      if (element) element.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="inline-block bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500
+                               text-white font-semibold text-lg px-12 py-4 rounded-full
+                               shadow-lg hover:shadow-xl hover:scale-105
+                               transition-all duration-300"
+                  >
+                    Découvrir le Nexus Club
+                  </button>
+                </div>
               )}
             </div>
           ))}
