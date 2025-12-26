@@ -149,7 +149,8 @@ export function About() {
               <p className="text-gray-400 mb-4">{feature.description}</p>
 
               {feature.hasButton && (
-                <div className="text-center mt-4"><button
+                <div className="text-center mt-4">
+                 <button
   onClick={() => {
     const element = document.getElementById('nexus-club');
     if (element) element.scrollIntoView({ behavior: 'smooth' });
