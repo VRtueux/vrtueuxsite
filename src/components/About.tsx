@@ -14,12 +14,9 @@ export function About() {
 
   useEffect(() => {
     document.body.style.overflow = popupOpen && isMobile ? 'hidden' : 'auto';
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
+    return () => (document.body.style.overflow = 'auto');
   }, [popupOpen, isMobile]);
 
-  // Affiche le popup automatiquement sur mobile
   useEffect(() => {
     if (isMobile) setPopupOpen(true);
   }, [isMobile]);
@@ -29,176 +26,114 @@ export function About() {
       icon: Move,
       title: 'Tapis Omnidirectionnel',
       description:
-        'Unique en France ! Marchez, courez et déplacez-vous naturellement dans vos jeux VR.',
+        'Marchez, courez et explorez librement dans vos jeux VR grâce à une technologie unique en France.',
       highlight: 'Exclusif',
     },
     {
       icon: Car,
       title: 'Simulateur de Conduite',
       description:
-        "Vivez l'expérience ultime du SimRacing VR sur nos simulateurs de pointe.",
+        'Plongez dans une expérience de simulation ultra-réaliste avec nos cockpits professionnels.',
       highlight: 'SimRacing VR',
     },
     {
       icon: Gamepad2,
-      title: 'Casque Autonome',
+      title: 'Casques VR',
       description:
-        'Une grande variété de jeux VR autonomes à découvrir et pour encore plus de fun, jouez aussi en multijoueur !',
+        'Découvrez une large sélection de jeux VR solo et multijoueur accessibles à tous.',
       highlight: 'VR Autonome',
-    },
-    {
-      icon: null,
-      title: 'Nexus Club',
-      description:
-        'Rejoignez notre Club Nexus, accédez à des avantages uniques, des défis spéciaux et des sessions VIP pour vivre la VR comme jamais auparavant.',
-      highlight: 'Game Club',
-      imgSrc: 'https://i.ibb.co/v65QjWpt/image-541f8108-80a4-4a0a-b528-02f3889d8553.png',
-      hasButton: true,
     },
   ];
 
   return (
-    <section id="about" className="py-20 bg-slate-900 relative">
-      {/* --- MOBILE POPUP --- */}
+    <section id="about" className="py-24 bg-slate-900 relative">
+
+      {/* POPUP MOBILE */}
       {isMobile && popupOpen && (
         <div
           className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4"
           onClick={() => setPopupOpen(false)}
         >
           <div
-            className="relative bg-gradient-to-tr from-cyan-800/80 to-purple-900/80 rounded-2xl shadow-2xl p-4 sm:p-6
-                       max-w-[500px] w-[90%] max-h-[80vh] overflow-auto"
+            className="relative bg-gradient-to-tr from-cyan-800/80 to-purple-900/80 rounded-2xl p-6 max-w-md w-full"
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              className="absolute top-3 right-3 w-10 h-10 flex items-center justify-center rounded-full bg-slate-900/80 text-white hover:bg-purple-700 transition"
+              className="absolute top-3 right-3 w-10 h-10 flex items-center justify-center rounded-full bg-black/60 text-white"
               onClick={() => setPopupOpen(false)}
-              aria-label="Fermer la popup"
             >
-              <X size={24} />
+              <X size={22} />
             </button>
             <img
               src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
-              alt="VRtueux vous souhaite une bonne année 2026"
-              className="w-full h-auto rounded-xl"
+              alt="VRtueux"
+              className="rounded-xl w-full"
             />
           </div>
         </div>
       )}
 
-      {/* --- PC IMAGE --- */}
-      {!isMobile && (
-        <div className="flex flex-col items-center justify-center mb-12 relative">
-          <img
-            src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
-            alt="VRtueux vous souhaite une bonne année 2026"
-            className="w-[500px] sm:w-[600px] md:w-[700px] lg:w-[800px] h-auto rounded-xl shadow-2xl"
-          />
-        </div>
-      )}
+      {/* HERO */}
+      <div className="text-center mb-20 px-4">
+        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          Bienvenue chez{' '}
+          <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+            VRtueux
+          </span>
+        </h2>
+        <p className="text-gray-400 max-w-3xl mx-auto text-lg">
+          L’expérience VR ultime à Vienne. Technologie, immersion et sensations réunies dans un même lieu.
+        </p>
+      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* TITRE */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl text-white mb-4">
-            Bienvenue chez{' '}
-            <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-              VRtueux
-            </span>
-          </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Votre destination gaming ultime à Vienne.<br />
-            Vivez des expériences immersives uniques avec nos équipements de pointe.
-          </p>
-        </div>
-
-        {/* FEATURES */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="group bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2"
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div
-                  className={`flex items-center justify-center w-14 h-14 rounded-lg transition-transform ${
-                    feature.icon
-                      ? 'bg-gradient-to-br from-cyan-500 to-purple-500 group-hover:scale-110'
-                      : ''
-                  }`}
-                >
-                  {feature.icon ? (
-                    <feature.icon className="text-white" size={28} />
-                  ) : feature.imgSrc ? (
-                    <img
-                      src={feature.imgSrc}
-                      alt={feature.title}
-                      className="w-12 h-12 object-contain mx-auto"
-                    />
-                  ) : null}
-                </div>
-
-                {feature.highlight && (
-                  <div className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm whitespace-nowrap">
-                    {feature.highlight}
-                  </div>
-                )}
+      {/* FEATURES */}
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {features.map((f, i) => (
+          <div
+            key={i}
+            className="bg-slate-800/60 backdrop-blur rounded-2xl p-8 border border-slate-700 hover:border-cyan-500 transition-all hover:shadow-xl"
+          >
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-500 flex items-center justify-center">
+                <f.icon className="text-white" size={28} />
               </div>
-
-              <h3 className="text-xl text-white mb-2">{feature.title}</h3>
-              <p className="text-gray-400 mb-4">{feature.description}</p>
-
-              {feature.hasButton && (
-                <div className="text-center mt-4">
-                 <button
-  onClick={() => {
-    const element = document.getElementById('nexus-club');
-    if (element) element.scrollIntoView({ behavior: 'smooth' });
-  }}
-  className="inline-block bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500
-             text-white font-semibold text-lg px-16 py-8 rounded-full
-             shadow-lg hover:shadow-xl hover:scale-105
-             transition-all duration-300"
->
-  Découvrir le Nexus Club
-</button>
-                </div>
-              )}
+              <span className="text-sm bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full">
+                {f.highlight}
+              </span>
             </div>
-          ))}
+
+            <h3 className="text-xl text-white mb-2">{f.title}</h3>
+            <p className="text-gray-400">{f.description}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* SECTION UNIQUE */}
+      <div className="mt-24 px-6">
+        <div className="max-w-6xl mx-auto bg-gradient-to-r from-purple-900/30 to-cyan-900/30 rounded-3xl p-10 flex flex-col lg:flex-row items-center gap-10">
+          
+          <div className="flex-1">
+            <h3 className="text-3xl font-semibold text-white mb-4">
+              Une expérience unique en France
+            </h3>
+            <p className="text-gray-300 leading-relaxed">
+              VRtueux est le seul centre à proposer une immersion totale grâce à un
+              tapis omnidirectionnel professionnel.  
+              <br /><br />
+              Marchez, courez, explorez et vivez vos jeux comme jamais auparavant.
+              Chaque détail est pensé pour une immersion maximale.
+            </p>
+          </div>
+
+          <div className="flex-1 flex justify-center">
+            <img
+              src="https://i.ibb.co/QFtBj97K/Capture-d-cran-2025-07-20-202224.png"
+              alt="Tapis omnidirectionnel VR"
+              className="rounded-2xl shadow-2xl max-w-md w-full"
+            />
+          </div>
         </div>
-
-
-        {/* SECTION UNIQUE EN FRANCE */}
-<div className="mt-16 bg-gradient-to-r from-purple-900/30 to-cyan-900/30 rounded-2xl p-8 border border-purple-500/20">
-  <div className="flex flex-col lg:flex-row items-center gap-8">
-  
-    <div className="flex-1 text-center lg:text-left">
-      <h3 className="text-2xl text-white mb-4">
-        Un équipement unique en France
-      </h3>
-      <p className="text-gray-300 max-w-xl mx-auto lg:mx-0">
-        Nous sommes fiers d'être les{' '}
-        <span className="text-cyan-400">seuls possesseurs en France</span> du tapis
-        omnidirectionnel, vous offrant une expérience de réalité virtuelle sans précédent.
-        <br /><br />
-        Pour une immersion optimale, il est recommandé de connaître votre écart interpupillaire
-        afin de régler correctement la netteté de votre casque VR.
-        <br /><br />
-        Venez découvrir ce qui fait de VRtueux une destination gaming d'exception !
-      </p>
-    </div>
-
-    <div className="flex-1 flex justify-center">
-      <img
-        src="https://i.ibb.co/QFtBj97K/Capture-d-cran-2025-07-20-202224.png"
-        alt="Tapis omnidirectionnel VRtueux"
-        className="w-full max-w-md rounded-xl shadow-2xl"
-      />
-    </div>
-  </div>
-</div>
-
+      </div>
     </section>
   );
 }
