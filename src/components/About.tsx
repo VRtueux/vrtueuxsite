@@ -179,9 +179,9 @@ export function About() {
         Un équipement unique en France
       </h3>
       <p className="text-gray-300 max-w-xl mx-auto lg:mx-0">
-        Nous sommes fiers d'être les{' '}
-        <span className="text-cyan-400">seuls possesseurs en France</span> du tapis
-        omnidirectionnel, vous offrant une expérience de réalité virtuelle sans précédent.
+        Nous sommes fiers d'être les
+        <span className="text-cyan-400"> seuls possesseurs en France </span>
+        du tapis omnidirectionnel, vous offrant une expérience de réalité virtuelle sans précédent.
         <br /><br />
         Pour une immersion optimale, il est recommandé de connaître votre écart interpupillaire
         afin de régler correctement la netteté de votre casque VR.
@@ -201,6 +201,7 @@ export function About() {
 
   </div>
 </div>
+
 
 
     </section>
