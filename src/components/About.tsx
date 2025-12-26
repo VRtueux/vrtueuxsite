@@ -156,7 +156,7 @@ export function About() {
                       if (element) element.scrollIntoView({ behavior: 'smooth' });
                     }}
                     className="inline-block bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500
-                               text-white font-semibold text-lg px-11 py-6 rounded-full
+                               text-white font-semibold text-lg px-12 py-7 rounded-full
                                shadow-lg hover:shadow-xl hover:scale-105
                                transition-all duration-300"
                   >
