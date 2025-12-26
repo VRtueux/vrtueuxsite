@@ -59,6 +59,7 @@ export function About() {
 
   return (
     <section id="about" className="py-20 bg-slate-900 relative">
+      
       {/* --- MOBILE POPUP --- */}
       {isMobile && popupOpen && (
         <div
@@ -98,6 +99,7 @@ export function About() {
       )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* TITRE */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl text-white mb-4">
@@ -150,60 +152,56 @@ export function About() {
 
               {feature.hasButton && (
                 <div className="text-center mt-4">
-                 <button
-  onClick={() => {
-    const element = document.getElementById('nexus-club');
-    if (element) element.scrollIntoView({ behavior: 'smooth' });
-  }}
-  className="inline-block bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500
-             text-white font-semibold text-lg px-16 py-8 rounded-full
-             shadow-lg hover:shadow-xl hover:scale-105
-             transition-all duration-300"
->
-  Découvrir le Nexus Club
-</button>
+                  <button
+                    onClick={() => {
+                      const element = document.getElementById('nexus-club');
+                      if (element) element.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="inline-block bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500
+                               text-white font-semibold text-lg px-16 py-8 rounded-full
+                               shadow-lg hover:shadow-xl hover:scale-105
+                               transition-all duration-300"
+                  >
+                    Découvrir le Nexus Club
+                  </button>
                 </div>
               )}
             </div>
           ))}
         </div>
 
+        {/* SECTION UNIQUE EN FRANCE */}
+        <div className="mt-16 bg-gradient-to-r from-purple-900/30 to-cyan-900/30 rounded-2xl p-8 border border-purple-500/20">
+          <div className="flex flex-col lg:flex-row items-center gap-8">
 
-{/* SECTION UNIQUE EN FRANCE */}
-<div className="mt-16 bg-gradient-to-r from-purple-900/30 to-cyan-900/30 rounded-2xl p-8 border border-purple-500/20">
-  <div className="flex flex-col lg:flex-row items-center gap-8">
+            {/* TEXTE */}
+            <div className="flex-1 text-center lg:text-left">
+              <h3 className="text-2xl text-white mb-4">
+                Un équipement unique en France
+              </h3>
+              <p className="text-gray-300 max-w-xl mx-auto lg:mx-0">
+                Nous sommes fiers d'être les{' '}
+                <span className="text-cyan-400">seuls possesseurs en France</span> du tapis omnidirectionnel, vous offrant une expérience de réalité virtuelle sans précédent.
+                <br /><br />
+                Pour une immersion optimale, il est recommandé de connaître votre écart interpupillaire afin de régler correctement la netteté de votre casque VR.
+                <br /><br />
+                Venez découvrir ce qui fait de VRtueux une destination gaming d'exception !
+              </p>
+            </div>
 
-    {/* TEXTE */}
-    <div className="flex-1 text-center lg:text-left">
-      <h3 className="text-2xl text-white mb-4">
-        Un équipement unique en France
-      </h3>
-      <p className="text-gray-300 max-w-xl mx-auto lg:mx-0">
-        Nous sommes fiers d'être les
-        <span className="text-cyan-400"> seuls possesseurs en France </span>
-        du tapis omnidirectionnel, vous offrant une expérience de réalité virtuelle sans précédent.
-        <br /><br />
-        Pour une immersion optimale, il est recommandé de connaître votre écart interpupillaire
-        afin de régler correctement la netteté de votre casque VR.
-        <br /><br />
-        Venez découvrir ce qui fait de VRtueux une destination gaming d'exception !
-      </p>
-    </div>
+            {/* IMAGE */}
+            <div className="flex-1 flex justify-center">
+              <img
+                src="https://i.ibb.co/NnWtnwf5/Tapis-Omnidirectionnel.png"
+                alt="Tapis omnidirectionnel VRtueux"
+                className="w-full max-w-md rounded-xl shadow-2xl"
+              />
+            </div>
 
-    {/* IMAGE */}
-    <div className="flex-1 flex justify-center">
-      <img
-        src="https://i.ibb.co/NnWtnwf5/Tapis-Omnidirectionnel.png"
-        alt="Tapis omnidirectionnel VRtueux"
-        className="w-full max-w-md rounded-xl shadow-2xl"
-      />
-    </div>
+          </div>
+        </div>
 
-  </div>
-</div>
-
-
-
+      </div>
     </section>
   );
 }
