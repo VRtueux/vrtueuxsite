@@ -1,20 +1,10 @@
-import { ChevronDown } from 'lucide-react';
 import logo from '@/assets/logo.png';
 
 export function Hero() {
-  const scrollToAbout = () => {
-    const element = document.getElementById('about');
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const scrollToChristmasCards = () => {
-    const element = document.getElementById('christmas-cards');
-    if (element) {
-      const yOffset = -134.5;
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
 
@@ -38,34 +28,16 @@ export function Hero() {
           Plongez dans l'univers de la réalité virtuelle à Vienne
         </p>
 
-        {/* Boutons */}
-        <div className="flex justify-center gap-4">
-          <button
-            onClick={scrollToAbout}
-            className="bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-8 py-4 rounded-full 
-                       hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105"
-          >
-            Découvrir nos expériences
-          </button>
-
-          <button
-            onClick={scrollToChristmasCards}
-            className="bg-gradient-to-r from-red-500 via-green-500 to-red-500 text-white px-8 py-4 rounded-full 
-                       shadow-lg shadow-red-500/40 hover:shadow-green-500/50 
-                       transition-all duration-300 transform hover:scale-105 
-                       animate-pulse"
-          >
-            Cadeaux de Noël
-          </button>
-        </div>
+        {/* Nouveau bouton Réserver */}
+        <a
+          href="https://vrtueux.setmore.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 text-white px-10 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 animate-pulse"
+        >
+          Réserver
+        </a>
       </div>
-
-      <button
-        onClick={scrollToAbout}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-400 animate-bounce cursor-pointer"
-      >
-        <ChevronDown size={32} />
-      </button>
 
       <style>{`
         @keyframes blob {
@@ -74,29 +46,21 @@ export function Hero() {
           66% { transform: translate(-20px, 20px) scale(0.9); }
           100% { transform: translate(0px, 0px) scale(1); }
         }
-        .animate-blob {
-          animation: blob 7s infinite;
-        }
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-        .animation-delay-4000 {
-          animation-delay: 4s;
-        }
+        .animate-blob { animation: blob 7s infinite; }
+        .animation-delay-2000 { animation-delay: 2s; }
+        .animation-delay-4000 { animation-delay: 4s; }
+
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
           50% { transform: translateY(-20px); }
         }
-        .animate-float {
-          animation: float 3s ease-in-out infinite;
-        }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+
         @keyframes pulse {
-          0%, 100% { transform: scale(1); box-shadow: 0 0 15px rgba(255,0,0,0.4); }
-          50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(0,255,0,0.6); }
+          0%, 100% { transform: scale(1); box-shadow: 0 0 15px rgba(255,0,255,0.4); }
+          50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(0,255,255,0.6); }
         }
-        .animate-pulse {
-          animation: pulse 2s infinite;
-        }
+        .animate-pulse { animation: pulse 2s infinite; }
       `}</style>
     </section>
   );
