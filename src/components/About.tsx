@@ -13,17 +13,22 @@ export function About() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Bloque le scroll quand popup mobile ouvert
+  // Bloque le scroll quand popup ouvert
   useEffect(() => {
-    document.body.style.overflow = popupOpen && isMobile ? 'hidden' : 'auto';
+    document.body.style.overflow = popupOpen ? 'hidden' : 'auto';
     return () => {
       document.body.style.overflow = 'auto';
     };
-  }, [popupOpen, isMobile]);
+  }, [popupOpen]);
 
-  // Affiche le popup automatiquement sur mobile
+  // Ouvre popup automatiquement sur mobile, et PC après 2s
   useEffect(() => {
-    if (isMobile) setPopupOpen(true);
+    if (isMobile) {
+      setPopupOpen(true);
+    } else {
+      const timer = setTimeout(() => setPopupOpen(true), 2000);
+      return () => clearTimeout(timer);
+    }
   }, [isMobile]);
 
   const features = [
@@ -61,14 +66,17 @@ export function About() {
 
   return (
     <section id="about" className="py-20 bg-slate-900 relative">
-      {/* --- MOBILE POPUP --- */}
-      {isMobile && popupOpen && (
+
+      {/* --- POPUP MOBILE & PC --- */}
+      {popupOpen && (
         <div
           className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4"
           onClick={() => setPopupOpen(false)}
         >
           <div
-            className="relative bg-gradient-to-tr from-cyan-800/80 to-purple-900/80 rounded-2xl shadow-2xl p-4 sm:p-6 max-w-[500px] w-[90%] max-h-[80vh] overflow-auto"
+            className={`relative bg-gradient-to-tr from-cyan-800/80 to-purple-900/80 rounded-2xl shadow-2xl p-4 sm:p-6 max-h-[80vh] overflow-auto ${
+              isMobile ? 'max-w-[500px] w-[90%]' : 'max-w-[700px] w-[60%]'
+            }`}
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -80,21 +88,10 @@ export function About() {
             </button>
             <img
               src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
-              alt="VRtueux vous souhaite une bonne année 2026"
+              alt="Bonne année 2026"
               className="w-full h-auto rounded-xl"
             />
           </div>
-        </div>
-      )}
-
-      {/* --- PC IMAGE --- */}
-      {!isMobile && (
-        <div className="flex flex-col items-center justify-center mb-12 relative">
-          <img
-            src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
-            alt="VRtueux vous souhaite une bonne année 2026"
-            className="w-[500px] sm:w-[600px] md:w-[700px] lg:w-[800px] h-auto rounded-xl shadow-2xl"
-          />
         </div>
       )}
 
@@ -190,7 +187,6 @@ export function About() {
         ) : (
           <div className="mt-16 bg-gradient-to-r from-purple-900/30 to-cyan-900/30 rounded-2xl p-8 border border-purple-500/20">
             <div className="flex flex-col lg:flex-row items-center gap-8">
-              {/* TEXTE */}
               <div className="flex-1 text-center lg:text-left">
                 <h3 className="text-2xl text-white mb-4">Un équipement unique en France</h3>
                 <p className="text-gray-300 max-w-xl mx-auto lg:mx-0">
@@ -201,7 +197,6 @@ export function About() {
                   Venez découvrir ce qui fait de VRtueux une destination gaming d'exception !
                 </p>
               </div>
-              {/* IMAGE */}
               <div className="flex-1 flex justify-center">
                 <img
                   src="https://i.ibb.co/NnWtnwf5/Tapis-Omnidirectionnel.png"
