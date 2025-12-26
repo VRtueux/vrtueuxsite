@@ -150,18 +150,19 @@ export function About() {
 
               {feature.hasButton && (
                 <div className="text-center mt-4">
-                  <button
-                    onClick={() =>
-                      document
-                        .getElementById('nexus-club')
-                        ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                    }
-                    className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-purple-400 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:scale-105 transition-transform"
-                  >
-                    <Sparkles size={30} />
-                    Découvrir le Nexus Club
-                  </button>
-                </div>
+              <button
+                onClick={() => {
+                 const element = document.getElementById('nexus-club');
+                  if (element) element.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                className="inline-block bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500
+                           text-white font-semibold text-lg px-8 py-4 rounded-full
+                           shadow-lg hover:shadow-xl hover:scale-105
+                           transition-all duration-300"
+                    >
+                  Découvrir le Nexus Club
+              </button>
+
               )}
             </div>
           ))}
