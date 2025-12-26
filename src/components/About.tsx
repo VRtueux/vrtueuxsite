@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+tu peux me le refit en enteirb stp import { useState, useEffect } from 'react';
 import { Gamepad2, Move, Car, X } from 'lucide-react';
 
 export function About() {
@@ -13,13 +13,13 @@ export function About() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Bloque le scroll quand popup ouvert
+  // Bloque le scroll quand popup mobile ouvert
   useEffect(() => {
-    document.body.style.overflow = popupOpen ? 'hidden' : 'auto';
+    document.body.style.overflow = popupOpen && isMobile ? 'hidden' : 'auto';
     return () => {
       document.body.style.overflow = 'auto';
     };
-  }, [popupOpen]);
+  }, [popupOpen, isMobile]);
 
   // Affiche le popup automatiquement sur mobile
   useEffect(() => {
@@ -61,16 +61,15 @@ export function About() {
 
   return (
     <section id="about" className="py-20 bg-slate-900 relative">
-
-      {/* --- POPUP MOBILE & PC --- */}
-      {popupOpen && (
+      {/* --- MOBILE POPUP --- */}
+      {isMobile && popupOpen && (
         <div
           className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4"
           onClick={() => setPopupOpen(false)}
         >
           <div
-            className={`relative bg-gradient-to-tr from-cyan-800/80 to-purple-900/80 rounded-2xl shadow-2xl
-                        ${isMobile ? 'max-w-[500px] w-[90%] max-h-[80vh]' : 'max-w-[600px] w-[80%] max-h-[70vh]'} p-4 sm:p-6 overflow-auto`}
+            className="relative bg-gradient-to-tr from-cyan-800/80 to-purple-900/80 rounded-2xl shadow-2xl p-4 sm:p-6
+                       max-w-[500px] w-[90%] max-h-[80vh] overflow-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -89,9 +88,19 @@ export function About() {
         </div>
       )}
 
-      {/* --- TITRE & FEATURES --- */}
+      {/* --- PC IMAGE --- */}
+      {!isMobile && (
+        <div className="flex flex-col items-center justify-center mb-12 relative">
+          <img
+            src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
+            alt="VRtueux vous souhaite une bonne année 2026"
+            className="w-[500px] sm:w-[600px] md:w-[700px] lg:w-[800px] h-auto rounded-xl shadow-2xl"
+          />
+        </div>
+      )}
+
+      {/* --- TITRE --- */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* TITRE */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl text-white mb-4">
             Bienvenue chez{' '}
@@ -105,7 +114,7 @@ export function About() {
           </p>
         </div>
 
-        {/* FEATURES */}
+        {/* --- FEATURES --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {features.map((feature, index) => (
             <div
@@ -161,27 +170,29 @@ export function About() {
         </div>
 
         {/* --- UNIQUE EN FRANCE --- */}
-        {isMobile ? (
-          <div className="mt-16 relative rounded-2xl overflow-hidden border border-purple-500/20">
-            <img
-              src="https://i.ibb.co/NnWtnwf5/Tapis-Omnidirectionnel.png"
-              alt="Tapis omnidirectionnel VRtueux"
-              className="w-full h-auto object-cover rounded-t-2xl"
-            />
-            <div className="p-6 text-white text-center">
-              <h3 className="text-2xl mb-4">Un équipement unique en France</h3>
-              <p>
-                Nous sommes fiers d'être les <span className="text-cyan-400">seuls possesseurs en France</span> du tapis omnidirectionnel, vous offrant une expérience de réalité virtuelle sans précédent.
-                <br /><br />
-                Pour une immersion optimale, il est recommandé de connaître votre écart interpupillaire afin de régler correctement la netteté de votre casque VR.
-                <br /><br />
-                Venez découvrir ce qui fait de VRtueux une destination gaming d'exception !
-              </p>
-            </div>
-          </div>
-        ) : (
+       {isMobile ? (
+  <div className="mt-16 relative rounded-2xl overflow-hidden border border-purple-500/20">
+    <img
+      src="https://i.ibb.co/NnWtnwf5/Tapis-Omnidirectionnel.png"
+      alt="Tapis omnidirectionnel VRtueux"
+      className="w-full h-auto object-cover rounded-t-2xl"
+    />
+    <div className="p-6 text-white text-center">
+      <h3 className="text-2xl mb-4">Un équipement unique en France</h3>
+      <p>
+        Nous sommes fiers d'être les <span className="text-cyan-400">seuls possesseurs en France</span> du tapis omnidirectionnel, vous offrant une expérience de réalité virtuelle sans précédent.
+        <br /><br />
+        Pour une immersion optimale, il est recommandé de connaître votre écart interpupillaire afin de régler correctement la netteté de votre casque VR.
+        <br /><br />
+        Venez découvrir ce qui fait de VRtueux une destination gaming d'exception !
+      </p>
+    </div>
+  </div>
+) : (
+          // PC : texte à gauche, image à droite
           <div className="mt-16 bg-gradient-to-r from-purple-900/30 to-cyan-900/30 rounded-2xl p-8 border border-purple-500/20">
             <div className="flex flex-col lg:flex-row items-center gap-8">
+              {/* TEXTE */}
               <div className="flex-1 text-center lg:text-left">
                 <h3 className="text-2xl text-white mb-4">Un équipement unique en France</h3>
                 <p className="text-gray-300 max-w-xl mx-auto lg:mx-0">
@@ -192,6 +203,7 @@ export function About() {
                   Venez découvrir ce qui fait de VRtueux une destination gaming d'exception !
                 </p>
               </div>
+              {/* IMAGE */}
               <div className="flex-1 flex justify-center">
                 <img
                   src="https://i.ibb.co/NnWtnwf5/Tapis-Omnidirectionnel.png"
