@@ -21,7 +21,7 @@ export function About() {
     };
   }, [popupOpen]);
 
-  // Affiche popup automatiquement sur mobile
+  // Affiche le popup automatiquement sur mobile
   useEffect(() => {
     if (isMobile) setPopupOpen(true);
   }, [isMobile]);
@@ -62,15 +62,15 @@ export function About() {
   return (
     <section id="about" className="py-20 bg-slate-900 relative">
 
-      {/* --- POPUP MOBILE --- */}
-      {isMobile && popupOpen && (
+      {/* --- POPUP MOBILE & PC --- */}
+      {popupOpen && (
         <div
           className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4"
           onClick={() => setPopupOpen(false)}
         >
           <div
-            className="relative bg-gradient-to-tr from-cyan-800/80 to-purple-900/80 rounded-2xl shadow-2xl p-4 sm:p-6
-                       max-w-[500px] w-[90%] max-h-[80vh] overflow-auto"
+            className={`relative bg-gradient-to-tr from-cyan-800/80 to-purple-900/80 rounded-2xl shadow-2xl
+                        ${isMobile ? 'max-w-[500px] w-[90%] max-h-[80vh]' : 'max-w-[600px] w-[80%] max-h-[70vh]'} p-4 sm:p-6 overflow-auto`}
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -89,34 +89,9 @@ export function About() {
         </div>
       )}
 
-      {/* --- POPUP PC --- */}
-      {!isMobile && popupOpen && (
-        <div
-          className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4"
-          onClick={() => setPopupOpen(false)}
-        >
-          <div
-            className="relative bg-gradient-to-tr from-cyan-800/80 to-purple-900/80 rounded-2xl shadow-2xl max-w-[600px] w-[50%] max-h-[70vh] p-6 overflow-auto"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className="absolute top-3 right-3 w-10 h-10 flex items-center justify-center rounded-full bg-slate-900/80 text-white hover:bg-purple-700 transition"
-              onClick={() => setPopupOpen(false)}
-              aria-label="Fermer la popup"
-            >
-              <X size={24} />
-            </button>
-            <img
-              src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
-              alt="VRtueux vous souhaite une bonne année 2026"
-              className="w-full h-auto rounded-xl"
-            />
-          </div>
-        </div>
-      )}
-
-      {/* --- TITRE --- */}
+      {/* --- TITRE & FEATURES --- */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* TITRE */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl text-white mb-4">
             Bienvenue chez{' '}
@@ -130,7 +105,7 @@ export function About() {
           </p>
         </div>
 
-        {/* --- FEATURES --- */}
+        {/* FEATURES */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {features.map((feature, index) => (
             <div
