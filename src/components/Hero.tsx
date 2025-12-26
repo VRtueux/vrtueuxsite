@@ -30,13 +30,18 @@ export function Hero() {
 
         {/* Nouveau bouton Réserver */}
         <a
-          href="https://vrtueux.setmore.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 text-white px-10 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 animate-pulse"
-        >
-          Réserver
-        </a>
+  href="https://vrtueux.setmore.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block w-full max-w-lg mx-auto text-center
+             bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500
+             text-white text-2xl font-bold py-6 rounded-full
+             shadow-lg hover:shadow-xl hover:scale-105
+             transition-all duration-300 animate-pulse"
+>
+  Réserver
+</a>
+
       </div>
 
       <style>{`
