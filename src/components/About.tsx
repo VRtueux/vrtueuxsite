@@ -19,7 +19,6 @@ export function About() {
     };
   }, [popupOpen, isMobile]);
 
-  // Affiche le popup automatiquement sur mobile
   useEffect(() => {
     if (isMobile) setPopupOpen(true);
   }, [isMobile]);
@@ -59,7 +58,6 @@ export function About() {
 
   return (
     <section id="about" className="py-20 bg-slate-900 relative">
-      
       {/* --- MOBILE POPUP --- */}
       {isMobile && popupOpen && (
         <div
@@ -99,7 +97,6 @@ export function About() {
       )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* TITRE */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl text-white mb-4">
@@ -170,57 +167,53 @@ export function About() {
           ))}
         </div>
 
-       {/* SECTION UNIQUE EN FRANCE */}
-<div className="mt-16 rounded-2xl border border-purple-500/20 overflow-hidden relative">
-  {isMobile ? (
-    // Mobile : image de fond transparente + texte dessus
-    <div className="relative">
-      <img
-        src="https://i.ibb.co/NnWtnwf5/Tapis-Omnidirectionnel.png"
-        alt="Tapis omnidirectionnel VRtueux"
-        className="absolute inset-0 w-full h-full object-cover opacity-50"
-      />
-      <div className="relative p-6 text-center text-white">
-        <h3 className="text-2xl mb-4">Un équipement unique en France</h3>
-        <p>
-          Nous sommes fiers d'être les{' '}
-          <span className="text-cyan-400">seuls possesseurs en France</span> du tapis omnidirectionnel, vous offrant une expérience de réalité virtuelle sans précédent.
-          <br /><br />
-          Pour une immersion optimale, il est recommandé de connaître votre écart interpupillaire afin de régler correctement la netteté de votre casque VR.
-          <br /><br />
-          Venez découvrir ce qui fait de VRtueux une destination gaming d'exception !
-        </p>
+        {/* SECTION UNIQUE EN FRANCE */}
+        {isMobile ? (
+          <div className="mt-16 relative rounded-2xl overflow-hidden border border-purple-500/20">
+            <img
+              src="https://i.ibb.co/NnWtnwf5/Tapis-Omnidirectionnel.png"
+              alt="Tapis omnidirectionnel VRtueux"
+              className="absolute inset-0 w-full h-full object-cover opacity-50"
+            />
+            <div className="relative p-6 text-center text-white">
+              <h3 className="text-2xl mb-4">Un équipement unique en France</h3>
+              <p>
+                Nous sommes fiers d'être les{' '}
+                <span className="text-cyan-400">seuls possesseurs en France</span> du tapis omnidirectionnel, vous offrant une expérience de réalité virtuelle sans précédent.
+                <br /><br />
+                Pour une immersion optimale, il est recommandé de connaître votre écart interpupillaire afin de régler correctement la netteté de votre casque VR.
+                <br /><br />
+                Venez découvrir ce qui fait de VRtueux une destination gaming d'exception !
+              </p>
+            </div>
+          </div>
+        ) : (
+          <div className="mt-16 bg-gradient-to-r from-purple-900/30 to-cyan-900/30 rounded-2xl p-8 border border-purple-500/20">
+            <div className="flex flex-col lg:flex-row items-center gap-8">
+              <div className="flex-1 text-center lg:text-left">
+                <h3 className="text-2xl text-white mb-4">
+                  Un équipement unique en France
+                </h3>
+                <p className="text-gray-300 max-w-xl mx-auto lg:mx-0">
+                  Nous sommes fiers d'être les{' '}
+                  <span className="text-cyan-400">seuls possesseurs en France</span> du tapis omnidirectionnel, vous offrant une expérience de réalité virtuelle sans précédent.
+                  <br /><br />
+                  Pour une immersion optimale, il est recommandé de connaître votre écart interpupillaire afin de régler correctement la netteté de votre casque VR.
+                  <br /><br />
+                  Venez découvrir ce qui fait de VRtueux une destination gaming d'exception !
+                </p>
+              </div>
+              <div className="flex-1 flex justify-center">
+                <img
+                  src="https://i.ibb.co/NnWtnwf5/Tapis-Omnidirectionnel.png"
+                  alt="Tapis omnidirectionnel VRtueux"
+                  className="w-full max-w-md rounded-xl shadow-2xl"
+                />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
-    </div>
-  ) : (
-    // PC : version originale intacte
-    <div className="bg-gradient-to-r from-purple-900/30 to-cyan-900/30 rounded-2xl p-8 border border-purple-500/20">
-      <div className="flex flex-col lg:flex-row items-center gap-8">
-        <div className="flex-1 text-center lg:text-left">
-          <h3 className="text-2xl text-white mb-4">
-            Un équipement unique en France
-          </h3>
-          <p className="text-gray-300 max-w-xl mx-auto lg:mx-0">
-            Nous sommes fiers d'être les{' '}
-            <span className="text-cyan-400">seuls possesseurs en France</span> du tapis omnidirectionnel, vous offrant une expérience de réalité virtuelle sans précédent.
-            <br /><br />
-            Pour une immersion optimale, il est recommandé de connaître votre écart interpupillaire afin de régler correctement la netteté de votre casque VR.
-            <br /><br />
-            Venez découvrir ce qui fait de VRtueux une destination gaming d'exception !
-          </p>
-        </div>
-        <div className="flex-1 flex justify-center">
-          <img
-            src="https://i.ibb.co/NnWtnwf5/Tapis-Omnidirectionnel.png"
-            alt="Tapis omnidirectionnel VRtueux"
-            className="w-full max-w-md rounded-xl shadow-2xl"
-          />
-        </div>
-      </div>
-    </div>
-  )}
-</div>
-
     </section>
   );
 }
