@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Gamepad2, Move, Car } from 'lucide-react';
+import { Gamepad2, Move, Car, X } from 'lucide-react';
 
 export function About() {
+  const [popupOpen, setPopupOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   // Détection mobile
@@ -11,6 +12,19 @@ export function About() {
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  // Bloque le scroll quand popup mobile ouvert
+  useEffect(() => {
+    document.body.style.overflow = popupOpen && isMobile ? 'hidden' : 'auto';
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [popupOpen, isMobile]);
+
+  // Affiche le popup automatiquement sur mobile
+  useEffect(() => {
+    if (isMobile) setPopupOpen(true);
+  }, [isMobile]);
 
   const features = [
     {
@@ -47,18 +61,44 @@ export function About() {
 
   return (
     <section id="about" className="py-20 bg-slate-900 relative">
-      {/* --- IMAGE PRINCIPALE --- */}
-      <div className="flex flex-col items-center justify-center mb-12 relative">
-        <img
-          src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
-          alt="VRtueux vous souhaite une bonne année 2026"
-          className={`${
-            isMobile ? 'w-full max-w-sm' : 'w-[500px] sm:w-[600px] md:w-[700px] lg:w-[800px]'
-          } h-auto rounded-xl shadow-2xl`}
-        />
-      </div>
+      {/* --- MOBILE POPUP --- */}
+      {isMobile && popupOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={() => setPopupOpen(false)}
+        >
+          <div
+            className="relative bg-gradient-to-tr from-cyan-800/80 to-purple-900/80 rounded-2xl shadow-2xl p-4 sm:p-6 max-w-[500px] w-[90%] max-h-[80vh] overflow-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-3 right-3 w-10 h-10 flex items-center justify-center rounded-full bg-slate-900/80 text-white hover:bg-purple-700 transition"
+              onClick={() => setPopupOpen(false)}
+              aria-label="Fermer la popup"
+            >
+              <X size={24} />
+            </button>
+            <img
+              src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
+              alt="VRtueux vous souhaite une bonne année 2026"
+              className="w-full h-auto rounded-xl"
+            />
+          </div>
+        </div>
+      )}
 
-      {/* --- TITRE --- */}
+      {/* --- PC IMAGE DIRECTE --- */}
+      {!isMobile && (
+        <div className="flex flex-col items-center justify-center mb-12 relative">
+          <img
+            src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
+            alt="VRtueux vous souhaite une bonne année 2026"
+            className="w-[500px] sm:w-[600px] md:w-[700px] lg:w-[800px] h-auto rounded-xl shadow-2xl"
+          />
+        </div>
+      )}
+
+      {/* --- TITRE ET FEATURES --- */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl text-white mb-4">
@@ -73,7 +113,6 @@ export function About() {
           </p>
         </div>
 
-        {/* --- FEATURES --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {features.map((feature, index) => (
             <div
