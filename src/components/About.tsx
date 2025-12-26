@@ -21,14 +21,9 @@ export function About() {
     };
   }, [popupOpen]);
 
-  // Ouvre popup automatiquement
+  // Affiche popup automatiquement sur mobile
   useEffect(() => {
-    if (isMobile) {
-      setPopupOpen(true);
-    } else {
-      const timer = setTimeout(() => setPopupOpen(true), 2000); // PC : 2s delay
-      return () => clearTimeout(timer);
-    }
+    if (isMobile) setPopupOpen(true);
   }, [isMobile]);
 
   const features = [
@@ -67,21 +62,17 @@ export function About() {
   return (
     <section id="about" className="py-20 bg-slate-900 relative">
 
-      {/* --- POPUP MOBILE & PC --- */}
-      {popupOpen && (
+      {/* --- POPUP MOBILE --- */}
+      {isMobile && popupOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4"
           onClick={() => setPopupOpen(false)}
         >
           <div
-            className={`relative bg-gradient-to-tr from-cyan-800/80 to-purple-900/80 rounded-2xl shadow-2xl overflow-auto ${
-              isMobile
-                ? 'max-w-[500px] w-[90%] max-h-[80vh] p-4 sm:p-6'
-                : 'max-w-[600px] w-[50%] max-h-[70vh] p-6'
-            }`}
+            className="relative bg-gradient-to-tr from-cyan-800/80 to-purple-900/80 rounded-2xl shadow-2xl p-4 sm:p-6
+                       max-w-[500px] w-[90%] max-h-[80vh] overflow-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Bouton X */}
             <button
               className="absolute top-3 right-3 w-10 h-10 flex items-center justify-center rounded-full bg-slate-900/80 text-white hover:bg-purple-700 transition"
               onClick={() => setPopupOpen(false)}
@@ -89,11 +80,35 @@ export function About() {
             >
               <X size={24} />
             </button>
-
-            {/* Image popup */}
             <img
               src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
-              alt="Bonne année 2026"
+              alt="VRtueux vous souhaite une bonne année 2026"
+              className="w-full h-auto rounded-xl"
+            />
+          </div>
+        </div>
+      )}
+
+      {/* --- POPUP PC --- */}
+      {!isMobile && popupOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={() => setPopupOpen(false)}
+        >
+          <div
+            className="relative bg-gradient-to-tr from-cyan-800/80 to-purple-900/80 rounded-2xl shadow-2xl max-w-[600px] w-[50%] max-h-[70vh] p-6 overflow-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-3 right-3 w-10 h-10 flex items-center justify-center rounded-full bg-slate-900/80 text-white hover:bg-purple-700 transition"
+              onClick={() => setPopupOpen(false)}
+              aria-label="Fermer la popup"
+            >
+              <X size={24} />
+            </button>
+            <img
+              src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
+              alt="VRtueux vous souhaite une bonne année 2026"
               className="w-full h-auto rounded-xl"
             />
           </div>
