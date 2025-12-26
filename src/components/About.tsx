@@ -149,19 +149,18 @@ export function About() {
               <p className="text-gray-400 mb-4">{feature.description}</p>
 
               {feature.hasButton && (
-                <div className="text-center mt-4">
-                  <button
-                    onClick={() => {
-                      const element = document.getElementById('nexus-club');
-                      if (element) element.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className="inline-block bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500
-                               text-white font-semibold text-lg px-12 py-7 rounded-full
-                               shadow-lg hover:shadow-xl hover:scale-105
-                               transition-all duration-300"
-                  >
-                    Découvrir le Nexus Club
-                  </button>
+                <div className="text-center mt-4"><button
+  onClick={() => {
+    const element = document.getElementById('nexus-club');
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
+  }}
+  className="inline-block bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500
+             text-white font-semibold text-lg px-16 py-8 rounded-full
+             shadow-lg hover:shadow-xl hover:scale-105
+             transition-all duration-300"
+>
+  Découvrir le Nexus Club
+</button>
                 </div>
               )}
             </div>
