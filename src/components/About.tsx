@@ -168,19 +168,37 @@ export function About() {
           ))}
         </div>
 
+
         {/* SECTION UNIQUE EN FRANCE */}
-        <div className="mt-16 bg-gradient-to-r from-purple-900/30 to-cyan-900/30 rounded-2xl p-8 border border-purple-500/20 text-center">
-          <h3 className="text-2xl text-white mb-4">Un équipement unique en France</h3>
-          <p className="text-gray-300 max-w-3xl mx-auto">
-            Nous sommes fiers d'être les{' '}
-            <span className="text-cyan-400">seuls possesseurs en France</span> du tapis omnidirectionnel,
-            vous offrant une expérience de réalité virtuelle sans précédent.<br /><br />
-            Pour une immersion optimale, il est recommandé de connaître votre écart interpupillaire
-            afin de régler correctement la netteté de votre casque VR.<br /><br />
-            Venez découvrir ce qui fait de VRtueux une destination gaming d'exception !
-          </p>
-        </div>
-      </div>
+<div className="mt-16 bg-gradient-to-r from-purple-900/30 to-cyan-900/30 rounded-2xl p-8 border border-purple-500/20">
+  <div className="flex flex-col lg:flex-row items-center gap-8">
+  
+    <div className="flex-1 text-center lg:text-left">
+      <h3 className="text-2xl text-white mb-4">
+        Un équipement unique en France
+      </h3>
+      <p className="text-gray-300 max-w-xl mx-auto lg:mx-0">
+        Nous sommes fiers d'être les{' '}
+        <span className="text-cyan-400">seuls possesseurs en France</span> du tapis
+        omnidirectionnel, vous offrant une expérience de réalité virtuelle sans précédent.
+        <br /><br />
+        Pour une immersion optimale, il est recommandé de connaître votre écart interpupillaire
+        afin de régler correctement la netteté de votre casque VR.
+        <br /><br />
+        Venez découvrir ce qui fait de VRtueux une destination gaming d'exception !
+      </p>
+    </div>
+
+    <div className="flex-1 flex justify-center">
+      <img
+        src="https://i.ibb.co/QFtBj97K/Capture-d-cran-2025-07-20-202224.png"
+        alt="Tapis omnidirectionnel VRtueux"
+        className="w-full max-w-md rounded-xl shadow-2xl"
+      />
+    </div>
+  </div>
+</div>
+
     </section>
   );
 }
