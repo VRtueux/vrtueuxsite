@@ -7,12 +7,13 @@ interface Game {
   description: string;
   image: string;
   platform: 'Tapis Omnidirectionnel' | 'SimRacing VR' | 'CVR Autonome' | 'Arcade';
+  isPopular?: boolean; // <- pour les jeux populaires
 }
 
-type FilterType = 'Tous' | 'Tapis Omnidirectionnel' | 'SimRacing VR' | 'CVR Autonome';
+type FilterType = 'Populaire' | 'Tapis Omnidirectionnel' | 'SimRacing VR' | 'CVR Autonome';
 
 export function Games() {
-  const [activeFilter, setActiveFilter] = useState<FilterType>('Tous');
+  const [activeFilter, setActiveFilter] = useState<FilterType>('Populaire');
 
   const games: Game[] = [
     {
@@ -20,28 +21,31 @@ export function Games() {
       title: 'Virtual Army : Revolution',
       description: 'Prépare-toi à plonger dans une bataille à 360° plus vraie que nature !\nInspiré des plus grands jeux de tir, ce jeu t’embarque dans un univers ultra-immersif où chaque mouvement compte et où stratégie et réflexes feront la différence.',
       image: 'https://i.ibb.co/dwhM60Rg/Virtual-Army-Revolution.jpg',
-      platform: 'Tapis Omnidirectionnel'
+      platform: 'Tapis Omnidirectionnel',
+      isPopular: true
     },
     {
       id: '2',
       title: 'Beat Saber',
       description: 'Plonge dans le rythme et tranche les cubes ! Teste tes réflexes, bat ton score et deviens le maître du sabre lumineux !\nLe meilleur score du mois remporte un cadeau !',
       image: 'https://i.ibb.co/YBQ6hPpB/Beat-Saber.jpg',
-      platform: 'CVR Autonome'
+      platform: 'CVR Autonome',
+      isPopular: true
     },
     {
       id: '3',
       title: 'Assetto Corsa Competizione',
       description: 'Choisis ton circuit et ta voiture !\nConduis, dépasse et teste tes réflexes dans des courses immersives.',
       image: 'https://i.ibb.co/spDYkmGG/t-l-chargement.jpg',
-      platform: 'SimRacing VR'
+      platform: 'SimRacing VR',
     },
     {
       id: '4',
       title: 'Sairento VR',
       description: 'Devenez un Ninja en réalité virtuelle !\nAffrontez vos ennemis à travers 5 cartes et 5 classes différentes.',
       image: 'https://i.ibb.co/bjxPGjnr/sairentovr-header-700x400.jpg',
-      platform: 'Tapis Omnidirectionnel'
+      platform: 'Tapis Omnidirectionnel',
+      isPopular: true
     },
     {
       id: '5',
@@ -55,14 +59,16 @@ export function Games() {
       title: 'AFFECTED : The Manor',
       description: 'Explore le Manoir hanté !\nUtilise ta torche pour éclairer ton chemin et choisis l’un des 3 parcours possibles.',
       image: 'https://i.ibb.co/fdJ3mW18/Affected-The-manor.jpg',
-      platform: 'Tapis Omnidirectionnel'
+      platform: 'Tapis Omnidirectionnel',
+      isPopular: true
     },
     {
       id: '7',
       title: 'Dreadhalls (Escape Game)',
       description: 'Tente de t’échapper du labyrinthe en moins de 10 minutes !\nUtilise ta carte pour explorer méthodiquement et trouver la sortie avant qu’il ne soit trop tard.\nMais prends garde : des créatures mortelles rôdent dans l’ombre.',
       image: 'https://i.ibb.co/jPtjRkny/Dreadhalls.jpg',
-      platform: 'Tapis Omnidirectionnel'
+      platform: 'Tapis Omnidirectionnel',
+      isPopular: true
     },
     {
       id: '8',
@@ -78,7 +84,7 @@ export function Games() {
       image: 'https://i.ibb.co/ZpjMHBZ5/VR-shooter-gun.jpg',
       platform: 'Tapis Omnidirectionnel'
     },
-       {
+    {
       id: '10',
       title: 'Race Room',
       description: 'Courses réalistes en VR, voitures de compétition et sensations de pilotage intenses sur des circuits mythiques.',
@@ -93,7 +99,7 @@ export function Games() {
       platform: 'CVR Autonome'
     },
     {
-    id: '12',
+      id: '12',
       title: 'First Encounters',
       description: 'La réalité se transforme en monde virtuel : attrape les petits bonshommes qui apparaissent et dépose-les dans le vaisseau.',
       image: 'https://i.ibb.co/d4ppX2D9/First-Encounters.jpg',
@@ -108,22 +114,25 @@ export function Games() {
     'Arcade': 'from-green-500 to-emerald-500'
   };
 
-  const filters: FilterType[] = ['Tous', 'Tapis Omnidirectionnel', 'SimRacing VR', 'CVR Autonome'];
-  const filteredGames = activeFilter === 'Tous' ? games : games.filter(game => game.platform === activeFilter);
+  const filters: FilterType[] = ['Populaire', 'Tapis Omnidirectionnel', 'SimRacing VR', 'CVR Autonome'];
+
+  const filteredGames =
+    activeFilter === 'Populaire'
+      ? games.filter(game => game.isPopular)
+      : games.filter(game => game.platform === activeFilter);
 
   return (
     <section id="games" className="py-20 bg-slate-950 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* TITRE */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl text-white mb-4">
             Notre <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Catalogue</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
             Découvrez notre sélection de jeux et expériences VR disponibles sur nos différentes plateformes.
-            <br></br>
-             Accessible dès 10 ans
-            </p>
+            <br />
+            Accessible dès 10 ans
+          </p>
 
           {/* FILTRES */}
           <div className="flex flex-wrap justify-center gap-3 mt-8">
@@ -142,7 +151,6 @@ export function Games() {
             ))}
           </div>
 
-          {/* Compteur */}
           <p className="text-gray-500 mt-6">
             {filteredGames.length} {filteredGames.length > 1 ? 'jeux disponibles' : 'jeu disponible'}
           </p>
