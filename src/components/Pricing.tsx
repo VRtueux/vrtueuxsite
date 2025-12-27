@@ -26,7 +26,7 @@ export function Pricing() {
   const packs = [
     {
       name: "Gift Card",
-      duration: "Carte cadeau",
+      duration: "Carte Cadeau",
       price: "À partir de 15€",
       features: ["Montant libre", "Valable sur toutes les expériences", "Idéal pour offrir"]
     },
@@ -34,7 +34,7 @@ export function Pricing() {
       name: "Pack Découverte",
       duration: "1h",
       price: "49€",
-      features: ["Idéal pour débuter", "Plusieurs expériences", "Accompagnement inclus"]
+      features: ["Idéal pour débuter", "Plusieurs expériences", "Conseils personnalisés"]
     },
     {
       name: "Abonnement 10 Sessions",
@@ -45,21 +45,27 @@ export function Pricing() {
     }
   ];
 
+  const arcadePricing = [
+    { name: "5 Parties", price: "12,50€", features: ["Battle", "Jeux classiques"] },
+    { name: "12 Parties", price: "29,95€", features: ["Meilleur rapport qualité/prix", "Économisez 5€"] },
+    { name: "20 Parties", price: "49,90€", features: ["Offre famille", "Économisez 12,50€"] }
+  ];
+
   const nexusPricing = [
     {
-      name: "Qu’est-ce que le Nexus Club ?",
+      name: "Qu'est-ce que le Nexus Club ?",
       features: [
         "Le cercle premium officiel de VRtueux",
         "Une communauté dédiée aux passionnés de VR"
       ]
     },
     {
-      name: "Prix & Avantages",
+      name: "Prix / Avantages",
       price: "150€/an",
       features: [
         "-10% sur toutes les sessions",
-        "Événements privés",
-        "Tournois VR & compétitions"
+        "Accès aux évènements privés",
+        "Tournois et compétitions VR"
       ]
     },
     {
@@ -67,11 +73,11 @@ export function Pricing() {
       features: [
         "Gamers passionnés",
         "Groupes & associations",
-        "Amateurs de VR premium"
+        "Communautés e-sport"
       ],
       when: {
         title: "Quand ?",
-        description: "Accès annuel — événements les mercredis et dimanches"
+        description: "Accès annuel – sessions les mercredis et dimanches"
       }
     }
   ];
@@ -79,23 +85,25 @@ export function Pricing() {
   const renderBlock = (item: any, highlight?: boolean) => (
     <div
       key={item.name}
-      className={`relative rounded-xl p-8 border transition-all duration-300 bg-slate-800/60 backdrop-blur
-        ${highlight ? "border-cyan-500 shadow-cyan-500/30 shadow-lg" : "border-slate-700 hover:border-cyan-500"}
-      `}
+      className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
+        highlight
+          ? "border-cyan-500 shadow-lg shadow-cyan-500/20"
+          : "border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20"
+      }`}
     >
       {highlight && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-          <span className="px-5 py-1 text-sm font-bold text-white rounded-full bg-gradient-to-r from-cyan-500 to-blue-500">
+          <span className="px-6 py-1 rounded-full text-sm font-bold text-white bg-gradient-to-r from-cyan-500 to-blue-500">
             Populaire
           </span>
         </div>
       )}
 
       <div className="text-center mb-6">
-        <h3 className="text-xl text-white">{item.name}</h3>
-        {item.duration && <p className="text-gray-400 mt-1">{item.duration}</p>}
+        <h4 className="text-xl text-white mb-2">{item.name}</h4>
+        {item.duration && <p className="text-gray-400">{item.duration}</p>}
         {item.price && (
-          <p className="mt-3 text-3xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+          <p className="text-3xl mt-2 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
             {item.price}
           </p>
         )}
@@ -103,7 +111,7 @@ export function Pricing() {
 
       <ul className="space-y-2">
         {item.features.map((f: string, i: number) => (
-          <li key={i} className="flex items-start gap-2 text-gray-300">
+          <li key={i} className="flex gap-2 text-gray-300">
             <Check className="text-cyan-400 mt-1" size={18} />
             <span>{f}</span>
           </li>
@@ -112,7 +120,7 @@ export function Pricing() {
 
       {item.when && (
         <div className="mt-6 text-center text-gray-300">
-          <h4 className="text-white font-semibold mb-1">{item.when.title}</h4>
+          <h5 className="text-white font-semibold mb-1">{item.when.title}</h5>
           <p>{item.when.description}</p>
         </div>
       )}
@@ -135,6 +143,11 @@ export function Pricing() {
         {/* PACKS */}
         <div className="grid md:grid-cols-3 gap-8 mb-20">
           {packs.map(item => renderBlock(item, item.popular))}
+        </div>
+
+        {/* ARCADE */}
+        <div className="grid md:grid-cols-3 gap-8 mb-20">
+          {arcadePricing.map(item => renderBlock(item))}
         </div>
 
         {/* NEXUS CLUB */}
