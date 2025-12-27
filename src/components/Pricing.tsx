@@ -1,6 +1,7 @@
 import { Check } from 'lucide-react';
 
 export function Pricing() {
+
   const vrPricing = [
     {
       name: 'Tapis Omnidirectionnel',
@@ -13,50 +14,22 @@ export function Pricing() {
       name: 'SimRacing VR',
       duration: '30 min',
       price: '15€',
-      features: ['Simulateur de voiture', 'Retour de force réaliste', 'Courses en VR']
+      features: ['Simulateur de voiture', 'Retour de force réaliste', 'Courses en immersion totale']
     },
     {
       name: 'Casque Autonome',
       duration: '30 min',
       price: '12€',
-      features: ['Large catalogue de jeux', 'Sans fil', 'Graphismes immersifs']
-    }
-  ];
-
-  const cn = [
-    {
-      name: 'Ultimate Christmas',
-      duration: 'Privatisation de 2 heures pour 2 personnes',
-      price: '150€',
-      highlight: true,
-      features: ['Économie de 54€', 'Vivez la réalité virtuelle comme des VIP', 'Boissons et snacks inclus pour un confort premium']
-    },
-    {
-      name: 'Pack Familial',
-      duration: '30 min/personne',
-      price: '24€',
-      features: ['-5 % pour 2, -10 % pour 3, -15 % pour 4', 'Aventure partagée en famille ou entre amis', 'Souvenirs immersifs à vivre à plusieurs']
-    },
-    {
-      name: 'Pack Arcade',
-      duration: '50 sessions d’arcade VR',
-      price: '25€',
-      features: ['Accès libre aux jeux d’arcade VR', 'Parfait pour s’entraîner et battre les meilleurs scores (Beat Saber)', 'Expérience fun, rapide et addictive']
+      features: ['Sans fil', 'Liberté totale', 'Idéal découverte']
     }
   ];
 
   const packs = [
     {
-      name: 'Gift Card',
-      duration: 'Carte Cadeau à prix libre',
-      price: 'À partir de 15€',
-      features: ['Montant libre', 'Laisse le choix de l’expérience à offrir', 'Idéal pour découvrir la VR sans limite']
-    },
-    {
       name: 'Pack Découverte',
       duration: '1h',
       price: '49€',
-      features: ['Idéal pour débuter', 'Testez plusieurs expériences', 'Conseils personnalisés']
+      features: ['Idéal pour débuter', 'Plusieurs expériences', 'Accompagnement inclus']
     },
     {
       name: 'Abonnement 10 Sessions',
@@ -68,186 +41,94 @@ export function Pricing() {
   ];
 
   const arcadePricing = [
-    { name: '5 Parties', price: '12,50€', features: ['Battle', 'Jeux classiques'] },
-    { name: '12 Parties', price: '29,95€', features: ['Meilleur rapport qualité/prix', 'Économisez 5€'] },
-    { name: '20 Parties', price: '49,90€', features: ['Offre famille', 'Économisez 12,50€'] }
+    {
+      name: '5 Parties',
+      price: '12,50€',
+      features: ['Jeux d’arcade VR', 'Idéal découverte']
+    },
+    {
+      name: '12 Parties',
+      price: '29,95€',
+      features: ['Meilleur rapport qualité/prix', 'Sessions libres']
+    },
+    {
+      name: '20 Parties',
+      price: '49,90€',
+      features: ['Pour les passionnés', 'Économie maximale']
+    }
   ];
 
   const nexusPricing = [
     {
-      name: "Qu'est-ce que le Nexus Club ?",
-      features: [
-        'Le VRtueux Nexus Club est le cercle premium officiel de VRtueux.',
-        'C’est une communauté réservée aux passionnés de VR.'
-      ]
-    },
-    {
-      name: 'Prix / Avantages',
+      name: 'Nexus Club',
       price: '150€/an',
       features: [
+        'Accès VIP toute l’année',
         '-10% sur toutes les sessions',
-        'Accès aux évènements privés du Nexus',
-        'E-sport : tournois Beat Saber et autres compétitions VR',
-        'Et encore plein d’autres évènements.'
+        'Événements privés & tournois',
+        'Communauté exclusive'
       ]
-    },
-    {
-      name: 'Pour qui ?',
-      features: [
-        'Gamers passionnés, clients réguliers',
-        'Membres d’associations partenaires',
-        'Communautés e-sport, groupes d’amis',
-        'Toute personne souhaitant accéder au cercle VIP VRtueux'
-      ],
-      when: {
-        title: 'Quand ?',
-        description: 'Inscription annuelle. RDV les Mercredi et Dimanche pour des sessions exclusives.'
-      }
     }
   ];
 
-  const renderBlock = (item: any, highlightColor?: string, popular?: boolean) => (
+  const renderBlock = (item: any, highlight?: boolean) => (
     <div
       key={item.name}
       className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
-        highlightColor
-          ? `border-${highlightColor}-500 shadow-lg shadow-${highlightColor}-500/20`
-          : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
+        highlight
+          ? 'border-purple-500 shadow-lg shadow-purple-500/30'
+          : 'border-slate-700 hover:border-cyan-500 hover:shadow-cyan-500/20'
       }`}
     >
-      {/* BADGE Populaire / Exclusif / VIP Noël */}
-{(popular || item.highlight || item.name === 'Ultimate Christmas') && (
-  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-    <span
-      className={`px-8 py-2 rounded-full text-lg font-bold text-white text-center shadow-lg ${
-        item.name === 'Ultimate Christmas'
-          ? 'bg-gradient-to-r from-red-600 via-yellow-400 to-green-500 border-2 border-yellow-400 shadow-red-500/70 animate-pulse'
-          : item.highlight
-          ? 'bg-purple-600 px-8 py-2 rounded-full text-lg font-bold text-white text-center'
-          : popular
-          ? 'bg-gradient-to-r from-cyan-500 to-blue-500 border-2 border-blue-400 shadow-blue-500/50'
-          : ''
-      }`}
-    >
-      {item.name === 'Ultimate Christmas'
-        ? 'VIP'
-        : item.highlight
-        ? 'Exclusif'
-        : 'Populaire'}
-    </span>
-  </div>
-)}
-
-      {/* NOM + DUREE + PRIX */}
       <div className="text-center mb-6">
         <h4 className="text-xl text-white mb-2">{item.name}</h4>
-        {item.duration && <div className="text-gray-400 mb-4">{item.duration}</div>}
+        {item.duration && <p className="text-gray-400">{item.duration}</p>}
         {item.price && (
-          <>
-            <div className="text-4xl text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">
-              {item.price}
-            </div>
-            <div className="text-gray-500 text-sm">TTC</div>
-          </>
+          <div className="text-3xl font-bold text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text mt-2">
+            {item.price}
+          </div>
         )}
       </div>
 
-      {/* FEATURES */}
-      {item.features && (
-        <ul className="space-y-2 text-left">
-          {item.features.map((feature: string, idx: number) => (
-            <li key={idx} className="flex items-start gap-2 text-gray-300">
-              <Check className="text-cyan-400 flex-shrink-0 mt-0.5" size={18} />
-              <span>{feature}</span>
-            </li>
-          ))}
-        </ul>
-      )}
-
-      {/* BLOCS “QUI ?” et “QUAND ?” */}
-      {item.when && (
-        <div className="mt-6 text-center text-gray-300">
-          <h5 className="text-xl text-white mb-2">{item.when.title}</h5>
-          <p className="whitespace-pre-line mt-2">{item.when.description}</p>
-        </div>
-      )}
-
-      {/* NEXUS CLUB DISCORD */}
-      {item.name === "Qu'est-ce que le Nexus Club ?" && (
-        <div className="mt-6 text-center">
-          <a
-            href="https://discord.gg/aVsYRYJP"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#7289da] text-white font-semibold px-4 py-2 rounded-full shadow-md hover:scale-105 transition-transform hover:shadow-lg"
-          >
-            <img
-              src="https://i.ibb.co/dsBr3HpT/t-l-chargement-3.png"
-              alt="Discord Logo"
-              className="h-4 w-4"
-            />
-          </a>
-        </div>
-      )}
+      <ul className="space-y-2 text-gray-300">
+        {item.features.map((f: string, i: number) => (
+          <li key={i} className="flex gap-2">
+            <Check className="text-cyan-400 mt-1" size={18} />
+            <span>{f}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 
   return (
-    <section id="pricing" className="py-20 bg-slate-900 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl text-white mb-4">
-            Nos <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Tarifs</span>
-          </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Des formules adaptées à tous vos besoins, que vous soyez débutant ou expert.
-          </p>
+    <section id="pricing" className="py-20 bg-slate-900">
+      <div className="max-w-7xl mx-auto px-4">
+
+        {/* EXPÉRIENCES VR */}
+        <h2 className="text-4xl text-white text-center mb-10">Expériences VR</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          {vrPricing.map(p => renderBlock(p, p.highlight))}
         </div>
 
-        <div className="mb-16">
-          <h3 className="text-2xl text-white mb-8 text-center">Expériences VR Individuelles</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {vrPricing.map(item => renderBlock(item, item.highlight ? 'purple' : undefined))}
-          </div>
+        {/* PACKS */}
+        <h2 className="text-4xl text-white text-center mb-10">Packs & Forfaits</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+          {packs.map(p => renderBlock(p, p.popular))}
         </div>
 
-        <div id="christmas-cards" className="mb-16">
-          <h3 className="text-2xl text-white mb-8 text-center">Cartes Cadeaux / Noël</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {cn.map(item => renderBlock(item, item.highlight ? 'purple' : undefined))}
-          </div>
+        {/* NEXUS CLUB */}
+        <h2 className="text-4xl text-white text-center mb-10">Nexus Club</h2>
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-8 mb-20">
+          {nexusPricing.map(p => renderBlock(p, true))}
         </div>
 
-        <div className="mb-16">
-          <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {packs.map(item => renderBlock(item, undefined, item.popular))}
-          </div>
+        {/* ARCADE */}
+        <h2 className="text-4xl text-white text-center mb-10">Mode Arcade</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {arcadePricing.map(p => renderBlock(p))}
         </div>
 
-        <div className="mb-16">
-          <h3 className="text-2xl text-white mb-8 text-center">Modes Arcade</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {arcadePricing.map(item => renderBlock(item))}
-          </div>
-        </div>
-
-        <div id="nexus-club" className="mb-16 scroll-mt-24">
-          <h3 className="text-2xl sm:text-4xl font-bold mb-8 text-center">
-            <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x">
-              Nexus Club
-            </span>
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {nexusPricing.map(item => renderBlock(item))}
-          </div>
-        </div>
-
-        <div className="mt-12 text-center">
-          <p className="text-gray-400 text-sm">
-            * Tous les prix sont TTC. Les sessions sont à réserver à l'avance.
-          </p>
-        </div>
       </div>
     </section>
   );
