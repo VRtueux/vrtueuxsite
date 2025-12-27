@@ -136,20 +136,21 @@ export function Games() {
 
           {/* FILTRES */}
           <div className="flex flex-wrap justify-center gap-3 mt-8">
-            {filters.map(filter => (
-              <button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
-                className={`px-6 py-3 rounded-full transition-all duration-300 font-semibold ${
-                  activeFilter === filter
-                    ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg shadow-cyan-500/50 scale-105'
-                    : 'bg-slate-800/50 text-gray-400 hover:text-white hover:bg-slate-700 border border-slate-700'
-                }`}
-              >
-                {filter}
-              </button>
-            ))}
-          </div>
+  {filters.map(filter => (
+    <button
+      key={filter}
+      onClick={() => setActiveFilter(filter)}
+      className={`px-8 py-3 rounded-full transition-all duration-300 font-semibold tracking-tight ${
+        activeFilter === filter
+          ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg shadow-cyan-500/50 scale-105'
+          : 'bg-slate-800/50 text-gray-400 hover:text-white hover:bg-slate-700 border border-slate-700'
+      }`}
+    >
+      {filter}
+    </button>
+  ))}
+</div>
+
 
           <p className="text-gray-500 mt-6">
             {filteredGames.length} {filteredGames.length > 1 ? 'jeux disponibles' : 'jeu disponible'}
