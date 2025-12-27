@@ -135,12 +135,12 @@ export function Games() {
           </p>
 
           {/* FILTRES */}
-          <div className="flex flex-wrap justify-center gap-3 mt-8">
+         <div className="flex flex-wrap justify-center gap-3 mt-8">
   {filters.map(filter => (
     <button
       key={filter}
       onClick={() => setActiveFilter(filter)}
-      className={`px-8 py-3 rounded-full transition-all duration-300 font-semibold tracking-tight ${
+      className={`px-6 sm:px-8 py-3 rounded-full transition-all duration-300 font-semibold tracking-tight w-auto sm:w-auto min-w-[120px] text-center ${
         activeFilter === filter
           ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg shadow-cyan-500/50 scale-105'
           : 'bg-slate-800/50 text-gray-400 hover:text-white hover:bg-slate-700 border border-slate-700'
@@ -150,6 +150,7 @@ export function Games() {
     </button>
   ))}
 </div>
+
 
 
           <p className="text-gray-500 mt-6">
