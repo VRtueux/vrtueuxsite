@@ -1,4 +1,5 @@
 name: Deploy to GitHub Pages
+
 on:
   push:
     branches: [ main ]
@@ -16,13 +17,17 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # Détecte npm / pnpm / yarn
+      # Détection du gestionnaire de paquets
       - name: Detect package manager
         id: pm
         run: |
@@ -34,7 +39,7 @@ jobs:
             echo "manager=npm" >> $GITHUB_OUTPUT
           fi
 
-      # Installe les deps selon le manager
+      # Installation des dépendances
       - name: Install dependencies
         run: |
           if [ "${{ steps.pm.outputs.manager }}" = "pnpm" ]; then
@@ -47,6 +52,7 @@ jobs:
             npm ci || npm install
           fi
 
+      # Build du projet
       - name: Build
         run: |
           if [ "${{ steps.pm.outputs.manager }}" = "pnpm" ]; then
@@ -57,7 +63,9 @@ jobs:
             npm run build
           fi
 
-      - uses: actions/upload-pages-artifact@v3
+      # Upload du dossier de build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
@@ -68,5 +76,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - id: deployment
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
