@@ -1,218 +1,214 @@
-import { Check } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Gamepad2, Move, Car, X } from 'lucide-react';
 
-export function Pricing() {
-  const vrPricing = [
+export function About() {
+  const [popupOpen, setPopupOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Détection mobile
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Bloque le scroll quand popup mobile ouvert
+  useEffect(() => {
+    document.body.style.overflow = popupOpen && isMobile ? 'hidden' : 'auto';
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [popupOpen, isMobile]);
+
+  // Affiche le popup automatiquement sur mobile
+  useEffect(() => {
+    if (isMobile) setPopupOpen(true);
+  }, [isMobile]);
+
+  const features = [
     {
-      name: 'Tapis Omnidirectionnel',
-      duration: '30 min',
-      price: '15€',
-      highlight: true,
-      features: ['Immersion totale', 'Liberté de mouvement', 'Expérience réaliste']
+      icon: Move,
+      title: 'Tapis Omnidirectionnel',
+      description:
+        'Unique en France ! Marchez, courez et déplacez-vous naturellement dans vos jeux VR.',
+      highlight: 'Exclusif',
     },
     {
-      name: 'SimRacing VR',
-      duration: '30 min',
-      price: '15€',
-      features: ['Simulateur de voiture', 'Retour de force réaliste', 'Courses en immersion totale']
+      icon: Car,
+      title: 'Simulateur de Conduite',
+      description:
+        "Vivez l'expérience ultime du SimRacing VR sur nos simulateurs de pointe.",
+      highlight: 'SimRacing VR',
     },
     {
-      name: 'Casque Autonome',
-      duration: '30 min',
-      price: '12€',
-      features: ['Large catalogue de jeux', 'Sans fil', 'Graphismes immersifs']
-    }
+      icon: Gamepad2,
+      title: 'Casque Autonome',
+      description:
+        'Une grande variété de jeux VR autonomes à découvrir et pour encore plus de fun, jouez aussi en multijoueur !',
+      highlight: 'VR Autonome',
+    },
+    {
+      icon: null,
+      title: 'Nexus Club',
+      description:
+        'Rejoignez notre Club Nexus, accédez à des avantages uniques, des défis spéciaux et des sessions VIP pour vivre la VR comme jamais auparavant.',
+      highlight: 'Game Club',
+      imgSrc: 'https://i.ibb.co/v65QjWpt/image-541f8108-80a4-4a0a-b528-02f3889d8553.png',
+      hasButton: true,
+    },
   ];
-
-  const packs = [
-    {
-      name: 'Gift Card',
-      duration: 'Carte Cadeau à prix libre',
-      price: 'À partir de 15€',
-      features: ['Montant libre', 'Laisse le choix de l’expérience à offrir', 'Idéal pour découvrir la VR sans limite']
-    },
-    {
-      name: 'Pack Découverte',
-      duration: '1h',
-      price: '49€',
-      popular: true,
-      features: ['Idéal pour débuter', 'Plusieurs expériences', 'Accompagnement inclus']
-    },
-    {
-      name: 'Abonnement 10 Sessions',
-      duration: '1h/session',
-      price: '130€',
-      features: ['Économie de 25%', 'Accès prioritaire', 'Sessions flexibles']
-    }
-  ];
-
-  const nexusPricing = [
-    {
-      name: "Qu'est-ce que le Nexus Club ?",
-      features: [
-        'Le VRtueux Nexus Club est le cercle premium officiel de VRtueux.',
-        'C’est une communauté réservée aux passionnés de VR.'
-      ]
-    },
-    {
-      name: 'Prix / Avantages',
-      price: '150€/an',
-      features: [
-        'Accès VIP toute l’année',
-        '-10% sur toutes les sessions',
-        'Accès aux évènements privés du Nexus',
-        'E-sport : tournois Beat Saber et autres compétitions VR',
-        'Événements privés & tournois',
-        'Communauté exclusive'
-      ]
-    },
-    {
-      name: 'Pour qui ?',
-      features: [
-        'Gamers passionnés, clients réguliers',
-        'Membres d’associations partenaires',
-        'Communautés e-sport, groupes d’amis',
-        'Toute personne souhaitant accéder au cercle VIP VRtueux'
-      ],
-      when: {
-        title: 'Quand ?',
-        description: 'Inscription annuelle. RDV les Mercredi et Dimanche pour des sessions exclusives.'
-      }
-    }
-  ];
-
-  const arcadePricing = [
-    { name: '5 Parties', price: '12,50€', features: ['Jeux d’arcade VR', 'Idéal découverte'] },
-    { name: '12 Parties', price: '29,95€', features: ['Meilleur rapport qualité/prix', 'Sessions libres'] },
-    { name: '20 Parties', price: '49,90€', features: ['Pour les passionnés', 'Économie maximale'] }
-  ];
-
-  const renderBlock = (item: any, highlightColor?: string, popular?: boolean) => (
-    <div
-      key={item.name}
-      className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 flex flex-col justify-start items-center text-center h-full ${
-        highlightColor
-          ? `border-${highlightColor}-500 shadow-lg shadow-${highlightColor}-500/20`
-          : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
-      }`}
-    >
-      {/* BADGE */}
-      {(popular || item.highlight) && (
-        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-          <span
-            className={`px-6 py-2 rounded-full text-lg font-bold text-white text-center shadow-lg ${
-              item.highlight
-                ? 'bg-purple-600 border-2 border-purple-400 shadow-purple-500/50'
-                : popular
-                ? 'bg-gradient-to-r from-cyan-500 to-blue-500 border-2 border-blue-400 shadow-blue-500/50'
-                : ''
-            }`}
-          >
-            {item.highlight ? 'Exclusif' : 'Populaire'}
-          </span>
-        </div>
-      )}
-
-      {/* TITRE */}
-      <h4 className="text-xl text-white mb-2">{item.name}</h4>
-
-      {/* PRIX */}
-      {item.price && (
-        <div className="text-3xl font-bold text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text mb-2">
-          {item.price}
-        </div>
-      )}
-
-      {/* DURÉE */}
-      {item.duration && <div className="text-gray-400 mb-4">{item.duration}</div>}
-
-      {/* FEATURES / DESCRIPTION */}
-      {item.features && (
-        <ul className="space-y-2 text-gray-300 mb-4">
-          {item.features.map((feature: string, idx: number) => (
-            <li key={idx} className="flex items-start gap-2">
-              <Check className="text-cyan-400 flex-shrink-0 mt-1" size={18} />
-              <span>{feature}</span>
-            </li>
-          ))}
-        </ul>
-      )}
-
-      {/* BLOCS “QUI ?” et “QUAND ?” */}
-      {item.when && (
-        <div className="mt-4 text-gray-300">
-          <h5 className="text-xl text-white mb-1">{item.when.title}</h5>
-          <p className="whitespace-pre-line">{item.when.description}</p>
-        </div>
-      )}
-
-      {/* NEXUS CLUB DISCORD */}
-      {item.name === "Qu'est-ce que le Nexus Club ?" && (
-        <div className="mt-6">
-          <a
-            href="https://discord.gg/aVsYRYJP"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#7289da] text-white font-semibold px-4 py-2 rounded-full shadow-md hover:scale-105 transition-transform hover:shadow-lg"
-          >
-            <img
-              src="https://i.ibb.co/dsBr3HpT/t-l-chargement-3.png"
-              alt="Discord Logo"
-              className="h-4 w-4"
-            />
-            Rejoindre le Discord
-          </a>
-        </div>
-      )}
-    </div>
-  );
 
   return (
-    <section id="pricing" className="py-20 bg-slate-900 relative">
+    <section id="about" className="py-20 bg-slate-900 relative">
+      {/* --- MOBILE POPUP --- */}
+      {isMobile && popupOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={() => setPopupOpen(false)}
+        >
+          <div
+            className="relative bg-gradient-to-tr from-cyan-800/80 to-purple-900/80 rounded-2xl shadow-2xl p-4 sm:p-6 max-w-[500px] w-[90%] max-h-[80vh] overflow-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-3 right-3 w-10 h-10 flex items-center justify-center rounded-full bg-slate-900/80 text-white hover:bg-purple-700 transition"
+              onClick={() => setPopupOpen(false)}
+              aria-label="Fermer la popup"
+            >
+              <X size={24} />
+            </button>
+            <img
+              src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
+              alt="VRtueux vous souhaite une bonne année 2026"
+              className="w-full h-auto rounded-xl"
+            />
+          </div>
+        </div>
+      )}
+
+      {/* --- PC IMAGE DIRECTE --- */}
+      {!isMobile && (
+        <div className="flex flex-col items-center justify-center mb-12 relative">
+          <img
+            src="https://i.ibb.co/6RBwm0zC/VRtueux-vous-souhaite-une-bonne-ann-e-2026.png"
+            alt="VRtueux vous souhaite une bonne année 2026"
+            className="w-[500px] sm:w-[600px] md:w-[700px] lg:w-[800px] h-auto rounded-xl shadow-2xl"
+          />
+        </div>
+      )}
+
+      {/* --- TITRE ET FEATURES --- */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl text-white mb-4">
-            Nos <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Tarifs</span>
+            Bienvenue chez{' '}
+            <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              VRtueux
+            </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Des formules adaptées à tous vos besoins, que vous soyez débutant ou expert.
+            Votre destination gaming ultime à Vienne.<br />
+            Vivez des expériences immersives uniques avec nos équipements de pointe.
           </p>
         </div>
 
-        {/* EXPÉRIENCES VR INDIVIDUELLES */}
-        <div className="mb-16">
-          <h3 className="text-2xl text-white mb-8 text-center">Expériences VR Individuelles</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {vrPricing.map(item => renderBlock(item, item.highlight ? 'purple' : undefined, item.popular))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="group bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div
+                  className={`flex items-center justify-center w-14 h-14 rounded-lg transition-transform ${
+                    feature.icon
+                      ? 'bg-gradient-to-br from-cyan-500 to-purple-500 group-hover:scale-110'
+                      : ''
+                  }`}
+                >
+                  {feature.icon ? (
+                    <feature.icon className="text-white" size={28} />
+                  ) : feature.imgSrc ? (
+                    <img
+                      src={feature.imgSrc}
+                      alt={feature.title}
+                      className="w-12 h-12 object-contain mx-auto"
+                    />
+                  ) : null}
+                </div>
+                {feature.highlight && (
+                  <div className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm whitespace-nowrap">
+                    {feature.highlight}
+                  </div>
+                )}
+              </div>
+
+              <h3 className="text-xl text-white mb-2">{feature.title}</h3>
+              <p className="text-gray-400 mb-4">{feature.description}</p>
+
+              {feature.hasButton && (
+                <div className="text-center mt-4">
+                  <button
+                    onClick={() => {
+                      const element = document.getElementById('nexus-club');
+                      if (element) element.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="inline-block bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500
+                               text-white font-semibold text-lg px-16 py-8 rounded-full
+                               shadow-lg hover:shadow-xl hover:scale-105
+                               transition-all duration-300"
+                  >
+                    Découvrir le Nexus Club
+                  </button>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* --- UNIQUE EN FRANCE --- */}
+        {isMobile ? (
+          <div className="mt-16 relative rounded-2xl overflow-hidden border border-purple-500/20">
+            <img
+              src="https://i.ibb.co/NnWtnwf5/Tapis-Omnidirectionnel.png"
+              alt="Tapis omnidirectionnel VRtueux"
+              className="w-full h-auto object-cover rounded-t-2xl"
+            />
+            <div className="p-6 text-white text-center">
+              <h3 className="text-2xl mb-4">Un équipement unique en France</h3>
+              <p>
+                Nous sommes fiers d'être les <span className="text-cyan-400">seuls possesseurs en France</span> du tapis omnidirectionnel, vous offrant une expérience de réalité virtuelle sans précédent.
+                <br /><br />
+                Pour une immersion optimale, il est recommandé de connaître votre écart interpupillaire afin de régler correctement la netteté de votre casque VR.
+                <br /><br />
+                Venez découvrir ce qui fait de VRtueux une destination gaming d'exception !
+              </p>
+            </div>
           </div>
-        </div>
-
-        {/* PACKS */}
-        <div className="mb-16">
-          <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {packs.map(item => renderBlock(item, undefined, item.popular))}
+        ) : (
+          <div className="mt-16 bg-gradient-to-r from-purple-900/30 to-cyan-900/30 rounded-2xl p-8 border border-purple-500/20">
+            <div className="flex flex-col lg:flex-row items-center gap-8">
+              <div className="flex-1 text-center lg:text-left">
+                <h3 className="text-2xl text-white mb-4">Un équipement unique en France</h3>
+                <p className="text-gray-300 max-w-xl mx-auto lg:mx-0">
+                  Nous sommes fiers d'être les <span className="text-cyan-400">seuls possesseurs en France</span> du tapis omnidirectionnel, vous offrant une expérience de réalité virtuelle sans précédent.
+                  <br /><br />
+                  Pour une immersion optimale, il est recommandé de connaître votre écart interpupillaire afin de régler correctement la netteté de votre casque VR.
+                  <br /><br />
+                  Venez découvrir ce qui fait de VRtueux une destination gaming d'exception !
+                </p>
+              </div>
+              <div className="flex-1 flex justify-center">
+                <img
+                  src="https://i.ibb.co/NnWtnwf5/Tapis-Omnidirectionnel.png"
+                  alt="Tapis omnidirectionnel VRtueux"
+                  className="w-full max-w-md rounded-xl shadow-2xl"
+                />
+              </div>
+            </div>
           </div>
-        </div>
-
-        {/* NEXUS CLUB */}
-        <h2 className="text-4xl text-white text-center mb-10">Nexus Club</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {nexusPricing.map(item => renderBlock(item))}
-        </div>
-
-        {/* ARCADE */}
-        <div className="mb-16">
-          <h3 className="text-2xl text-white mb-8 text-center">Modes Arcade</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {arcadePricing.map(item => renderBlock(item))}
-          </div>
-        </div>
-
-        <div className="mt-12 text-center">
-          <p className="text-gray-400 text-sm">
-            * Tous les prix sont TTC. Les sessions sont à réserver à l'avance.
-          </p>
-        </div>
+        )}
       </div>
     </section>
   );
