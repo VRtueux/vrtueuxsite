@@ -80,7 +80,7 @@ export function Pricing() {
     }
   ];
 
-    const arcadePricing = [
+  const arcadePricing = [
     { name: '5 Parties', price: '12,50€', features: ['Jeux d’arcade VR', 'Idéal découverte'] },
     { name: '12 Parties', price: '29,95€', features: ['Meilleur rapport qualité/prix', 'Sessions libres'] },
     { name: '20 Parties', price: '49,90€', features: ['Pour les passionnés', 'Économie maximale'] }
@@ -193,7 +193,7 @@ export function Pricing() {
 
         {/* NEXUS CLUB */}
         <h2 className="text-4xl text-white text-center mb-10">Nexus Club</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch mb-20">
           {nexusPricing.map(item => renderBlock(item))}
         </div>
 
