@@ -89,11 +89,8 @@ export function Pricing() {
   const renderBlock = (item: any, highlightColor?: string, popular?: boolean) => (
     <div
       key={item.name}
-      className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 flex flex-col justify-start items-center text-center h-full ${
-        highlightColor
-          ? `border-${highlightColor}-500 shadow-lg shadow-${highlightColor}-500/20`
-          : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
-      }`}
+      className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 flex flex-col justify-start items-stretch text-left h-full`}
+      style={{ borderColor: highlightColor ? `${highlightColor}-500` : undefined }}
     >
       {/* BADGE */}
       {(popular || item.highlight) && (
@@ -113,17 +110,17 @@ export function Pricing() {
       )}
 
       {/* TITRE */}
-      <h4 className="text-xl text-white mb-2">{item.name}</h4>
+      <h4 className="text-xl text-white mb-2 text-center">{item.name}</h4>
 
       {/* PRIX */}
       {item.price && (
-        <div className="text-3xl font-bold text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text mb-2">
+        <div className="text-3xl font-bold text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text mb-2 text-center">
           {item.price}
         </div>
       )}
 
       {/* DURÉE */}
-      {item.duration && <div className="text-gray-400 mb-4">{item.duration}</div>}
+      {item.duration && <div className="text-gray-400 mb-4 text-center">{item.duration}</div>}
 
       {/* FEATURES / DESCRIPTION */}
       {item.features && (
@@ -147,7 +144,7 @@ export function Pricing() {
 
       {/* NEXUS CLUB DISCORD */}
       {item.name === "Qu'est-ce que le Nexus Club ?" && (
-        <div className="mt-6">
+        <div className="mt-6 text-center">
           <a
             href="https://discord.gg/aVsYRYJP"
             target="_blank"
@@ -169,6 +166,7 @@ export function Pricing() {
   return (
     <section id="pricing" className="py-20 bg-slate-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* TITRE */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl text-white mb-4">
             Nos <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Tarifs</span>
