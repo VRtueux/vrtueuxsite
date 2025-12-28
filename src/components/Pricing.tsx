@@ -88,8 +88,7 @@ export function Pricing() {
 
   const renderBlock = (item: any, highlightColor?: string, popular?: boolean) => (
     <div
-      key={item.name}
-      className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
+      className={`relative flex-1 flex flex-col bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
         highlightColor
           ? `border-${highlightColor}-500 shadow-lg shadow-${highlightColor}-500/20`
           : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
@@ -125,7 +124,7 @@ export function Pricing() {
 
       {/* Features */}
       {item.features && (
-        <ul className="space-y-2 text-left">
+        <ul className="space-y-2 text-left flex-1">
           {item.features.map((feature: string, idx: number) => (
             <li key={idx} className="flex items-start gap-2 text-gray-300">
               <Check className="text-cyan-400 flex-shrink-0 mt-0.5" size={18} />
@@ -179,7 +178,7 @@ export function Pricing() {
         {/* Expériences VR */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Expériences VR Individuelles</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
             {vrPricing.map(item => renderBlock(item, item.highlight ? 'purple' : undefined, item.popular))}
           </div>
         </div>
@@ -187,9 +186,9 @@ export function Pricing() {
         {/* Packs & Forfaits */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
             {packs.map(item => (
-              <div key={item.name} id={item.name === 'Gift Card' ? 'gift-card' : undefined}>
+              <div key={item.name} id={item.name === 'Gift Card' ? 'gift-card' : undefined} className="h-full flex flex-col">
                 {renderBlock(item, undefined, item.popular)}
               </div>
             ))}
@@ -205,7 +204,7 @@ export function Pricing() {
         {/* Arcade */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Modes Arcade</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
             {arcadePricing.map(item => renderBlock(item))}
           </div>
         </div>
