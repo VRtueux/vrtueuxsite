@@ -28,7 +28,7 @@ export function Pricing() {
       name: 'Gift Card',
       duration: 'Carte Cadeau à prix libre',
       price: 'À partir de 15€',
-      features: ['Montant libre', 'Laisse le choix de l’expérience à offrir', 'Idéal pour découvrir la VR sans limite']
+      features: ['Montant libre', "Laisse le choix de l’expérience à offrir", 'Idéal pour découvrir la VR sans limite']
     },
     {
       name: 'Pack Découverte',
@@ -187,7 +187,11 @@ export function Pricing() {
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-            {packs.map(item => renderBlock(item, undefined, item.popular))}
+            {packs.map(item => (
+              <div key={item.name} id={item.name === 'Gift Card' ? 'gift-card' : undefined}>
+                {renderBlock(item, undefined, item.popular)}
+              </div>
+            ))}
           </div>
         </div>
 

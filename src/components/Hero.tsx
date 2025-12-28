@@ -28,19 +28,38 @@ export function Hero() {
           Plongez dans l'univers de la réalité virtuelle à Vienne
         </p>
 
-        {/* Nouveau bouton Réserver */}
-        <a
-  href="https://vrtueux.setmore.com"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-block w-full max-w-lg mx-auto text-center
-             bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500
-             text-white text-2xl font-bold py-6 rounded-full
-             shadow-lg hover:shadow-xl hover:scale-105
-             transition-all duration-300 animate-pulse"
->
-  Réserver maintenant !
-</a>
+<div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-center gap-4">
+  {/* Bouton Réserver */}
+  <a
+    href="https://vrtueux.setmore.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Réserver une session VR"
+    className="inline-block w-full sm:w-auto text-center
+               bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500
+               text-white text-2xl font-bold py-6 px-10 rounded-full
+               shadow-lg hover:shadow-xl hover:scale-105
+               transition-all duration-300 animate-pulse"
+  >
+    Réserver maintenant !
+  </a>
+
+  {/* Bouton Cadeau */}
+  <button
+    onClick={() => {
+      const element = document.getElementById('gift-card');
+      if (element) element.scrollIntoView({ behavior: 'smooth' });
+    }}
+    className="inline-block w-full sm:w-auto text-center
+               bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500
+               text-white text-2xl font-bold py-6 px-10 rounded-full
+               shadow-lg hover:shadow-xl hover:scale-105
+               transition-all duration-300 animate-pulse"
+  >
+    Gift Card
+  </button>
+</div>
+
 
       </div>
 
