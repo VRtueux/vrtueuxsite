@@ -89,14 +89,17 @@ export function Pricing() {
   const renderBlock = (item: any, highlightColor?: string, popular?: boolean) => (
     <div
       key={item.name}
-      className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 flex flex-col justify-start items-stretch text-left h-full`}
-      style={{ borderColor: highlightColor ? `${highlightColor}-500` : undefined }}
+      className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 flex flex-col justify-start items-center text-center h-full ${
+        highlightColor
+          ? `border-${highlightColor}-500 shadow-lg shadow-${highlightColor}-500/20`
+          : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
+      }`}
     >
       {/* BADGE */}
       {(popular || item.highlight) && (
         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
           <span
-            className={`px-6 py-2 rounded-full text-lg font-bold text-white text-center shadow-lg ${
+            className={`px-8 py-2 rounded-full text-lg font-bold text-white shadow-lg ${
               item.highlight
                 ? 'bg-purple-600 border-2 border-purple-400 shadow-purple-500/50'
                 : popular
@@ -109,25 +112,23 @@ export function Pricing() {
         </div>
       )}
 
-      {/* TITRE */}
-      <h4 className="text-xl text-white mb-2 text-center">{item.name}</h4>
+      {/* NOM + DURÉE + PRIX */}
+      <div className="text-center mb-6">
+        <h4 className="text-xl text-white mb-2">{item.name}</h4>
+        {item.duration && <div className="text-gray-400 mb-4">{item.duration}</div>}
+        {item.price && (
+          <div className="text-3xl font-bold text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text mt-2">
+            {item.price}
+          </div>
+        )}
+      </div>
 
-      {/* PRIX */}
-      {item.price && (
-        <div className="text-3xl font-bold text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text mb-2 text-center">
-          {item.price}
-        </div>
-      )}
-
-      {/* DURÉE */}
-      {item.duration && <div className="text-gray-400 mb-4 text-center">{item.duration}</div>}
-
-      {/* FEATURES / DESCRIPTION */}
+      {/* FEATURES */}
       {item.features && (
-        <ul className="space-y-2 text-gray-300 mb-4">
+        <ul className="space-y-2 text-left w-full">
           {item.features.map((feature: string, idx: number) => (
-            <li key={idx} className="flex items-start gap-2">
-              <Check className="text-cyan-400 flex-shrink-0 mt-1" size={18} />
+            <li key={idx} className="flex items-start gap-2 text-gray-300">
+              <Check className="text-cyan-400 flex-shrink-0 mt-0.5" size={18} />
               <span>{feature}</span>
             </li>
           ))}
@@ -136,9 +137,9 @@ export function Pricing() {
 
       {/* BLOCS “QUI ?” et “QUAND ?” */}
       {item.when && (
-        <div className="mt-4 text-gray-300">
-          <h5 className="text-xl text-white mb-1">{item.when.title}</h5>
-          <p className="whitespace-pre-line">{item.when.description}</p>
+        <div className="mt-6 text-center text-gray-300 w-full">
+          <h5 className="text-xl text-white mb-2">{item.when.title}</h5>
+          <p className="whitespace-pre-line mt-2">{item.when.description}</p>
         </div>
       )}
 
@@ -166,7 +167,6 @@ export function Pricing() {
   return (
     <section id="pricing" className="py-20 bg-slate-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* TITRE */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl text-white mb-4">
             Nos <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Tarifs</span>
@@ -179,7 +179,7 @@ export function Pricing() {
         {/* EXPÉRIENCES VR INDIVIDUELLES */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Expériences VR Individuelles</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             {vrPricing.map(item => renderBlock(item, item.highlight ? 'purple' : undefined, item.popular))}
           </div>
         </div>
@@ -187,21 +187,21 @@ export function Pricing() {
         {/* PACKS */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             {packs.map(item => renderBlock(item, undefined, item.popular))}
           </div>
         </div>
 
         {/* NEXUS CLUB */}
         <h2 className="text-4xl text-white text-center mb-10">Nexus Club</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch mb-20">
           {nexusPricing.map(item => renderBlock(item))}
         </div>
 
         {/* ARCADE */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Modes Arcade</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             {arcadePricing.map(item => renderBlock(item))}
           </div>
         </div>
