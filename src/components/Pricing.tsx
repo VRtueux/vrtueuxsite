@@ -1,14 +1,13 @@
 import { Check } from 'lucide-react';
 
 export function Pricing() {
-
   const vrPricing = [
     {
       name: 'Tapis Omnidirectionnel',
       duration: '30 min',
-      price: '24€',
+      price: '15€',
       highlight: true,
-      features: ['Unique en France', 'Expérience immersive totale', 'Déplacement naturel']
+      features: ['Immersion totale', 'Liberté de mouvement', 'Expérience réaliste']
     },
     {
       name: 'SimRacing VR',
@@ -35,20 +34,15 @@ export function Pricing() {
       name: 'Pack Découverte',
       duration: '1h',
       price: '49€',
+      popular: true,
       features: ['Idéal pour débuter', 'Plusieurs expériences', 'Accompagnement inclus']
     },
     {
       name: 'Abonnement 10 Sessions',
-      duration: '10 x 30 min',
+      duration: '1h/session',
       price: '130€',
-      features: ['Économisez 40€', 'Valable 6 mois', 'Partage possible']
+      features: ['Économie de 25%', 'Accès prioritaire', 'Sessions flexibles']
     }
-  ];
-
-  const arcadePricing = [
-    { name: '5 Parties', price: '12,50€', features: ['Jeux d’arcade VR', 'Idéal découverte'] },
-    { name: '12 Parties', price: '29,95€', features: ['Meilleur rapport qualité/prix', 'Sessions libres'] },
-    { name: '20 Parties', price: '49,90€', features: ['Pour les passionnés', 'Économie maximale'] }
   ];
 
   const nexusPricing = [
@@ -60,7 +54,7 @@ export function Pricing() {
       ]
     },
     {
-      name: 'Nexus Club',
+      name: 'Prix / Avantages',
       price: '150€/an',
       features: [
         'Accès VIP toute l’année',
@@ -86,6 +80,12 @@ export function Pricing() {
     }
   ];
 
+    const arcadePricing = [
+    { name: '5 Parties', price: '12,50€', features: ['Jeux d’arcade VR', 'Idéal découverte'] },
+    { name: '12 Parties', price: '29,95€', features: ['Meilleur rapport qualité/prix', 'Sessions libres'] },
+    { name: '20 Parties', price: '49,90€', features: ['Pour les passionnés', 'Économie maximale'] }
+  ];
+
   const renderBlock = (item: any, highlightColor?: string, popular?: boolean) => (
     <div
       key={item.name}
@@ -95,13 +95,13 @@ export function Pricing() {
           : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
       }`}
     >
-      {/* BADGE Populaire / Exclusif */}
+      {/* BADGE */}
       {(popular || item.highlight) && (
         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
           <span
             className={`px-8 py-2 rounded-full text-lg font-bold text-white text-center shadow-lg ${
               item.highlight
-                ? 'bg-purple-600'
+                ? 'bg-purple-600 border-2 border-purple-400 shadow-purple-500/50'
                 : popular
                 ? 'bg-gradient-to-r from-cyan-500 to-blue-500 border-2 border-blue-400 shadow-blue-500/50'
                 : ''
@@ -112,7 +112,7 @@ export function Pricing() {
         </div>
       )}
 
-      {/* NOM + DUREE + PRIX */}
+      {/* NOM + DURÉE + PRIX */}
       <div className="text-center mb-6">
         <h4 className="text-xl text-white mb-2">{item.name}</h4>
         {item.duration && <div className="text-gray-400 mb-4">{item.duration}</div>}
@@ -175,35 +175,33 @@ export function Pricing() {
           </p>
         </div>
 
-        {/* EXPÉRIENCES VR */}
+        {/* EXPÉRIENCES VR INDIVIDUELLES */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Expériences VR Individuelles</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {vrPricing.map(item => renderBlock(item, item.highlight ? 'purple' : undefined))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+            {vrPricing.map(item => renderBlock(item, item.highlight ? 'purple' : undefined, item.popular))}
           </div>
         </div>
 
-        {/* PACKS & FORFAITS */}
+        {/* PACKS */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             {packs.map(item => renderBlock(item, undefined, item.popular))}
           </div>
         </div>
 
-        {/* MODE ARCADE */}
-        <div className="mb-16">
-          <h3 className="text-2xl text-white mb-8 text-center">Modes Arcade</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {arcadePricing.map(item => renderBlock(item))}
-          </div>
+        {/* NEXUS CLUB */}
+        <h2 className="text-4xl text-white text-center mb-10">Nexus Club</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start mb-20">
+          {nexusPricing.map(item => renderBlock(item))}
         </div>
 
-        {/* NEXUS CLUB */}
+        {/* ARCADE */}
         <div className="mb-16">
-          <h3 className="text-2xl text-white mb-8 text-center">Nexus Club</h3>
-          <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
-            {nexusPricing.map(p => renderBlock(p, true))}
+          <h3 className="text-2xl text-white mb-8 text-center">Modes Arcade</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+            {arcadePricing.map(item => renderBlock(item))}
           </div>
         </div>
 
