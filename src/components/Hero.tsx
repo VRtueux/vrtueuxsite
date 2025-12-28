@@ -48,7 +48,7 @@ export function Hero() {
 
           {/* Bouton Gift Card */}
           <button
-            onClick={() => scrollToSection('gift-card', -50)}
+            onClick={() => scrollToSection('gift-card', -80)}
             className="inline-block w-full sm:w-auto text-center
                        bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500
                        text-white text-2xl font-bold py-6 px-10 rounded-full
