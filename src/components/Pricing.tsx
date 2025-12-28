@@ -93,11 +93,7 @@ export function Pricing() {
     return (
       <div
         key={item.name}
-        className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between h-full ${
-          isHighlight
-            ? 'border-purple-500 shadow-lg shadow-purple-500/20'
-            : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
-        }`}
+        className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 flex flex-col justify-start h-full`}
       >
         {/* BADGE */}
         {(isHighlight || isPopular) && (
@@ -114,12 +110,12 @@ export function Pricing() {
           </div>
         )}
 
-        {/* NOM */}
-        <h4 className="text-xl text-white text-center mb-2">{item.name}</h4>
+        {/* TITRE */}
+        <h4 className="text-xl text-white text-center mb-4">{item.name}</h4>
 
         {/* PRIX */}
         {item.price && (
-          <div className="text-3xl font-bold text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-center mb-4">
+          <div className="text-3xl font-bold text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-center mb-2">
             {item.price}
           </div>
         )}
@@ -129,9 +125,9 @@ export function Pricing() {
           <div className="text-gray-400 text-center mb-4">{item.duration}</div>
         )}
 
-        {/* FEATURES */}
+        {/* FEATURES / DESCRIPTION */}
         {item.features && (
-          <ul className="space-y-2 text-left flex-1">
+          <ul className="space-y-2 text-left mt-2 flex-1">
             {item.features.map((feature: string, idx: number) => (
               <li key={idx} className="flex items-start gap-2 text-gray-300">
                 <Check className="text-cyan-400 flex-shrink-0 mt-0.5" size={18} />
@@ -185,7 +181,7 @@ export function Pricing() {
         {/* EXPÉRIENCES VR INDIVIDUELLES */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Expériences VR Individuelles</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {vrPricing.map(renderBlock)}
           </div>
         </div>
@@ -193,21 +189,21 @@ export function Pricing() {
         {/* PACKS */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {packs.map(renderBlock)}
           </div>
         </div>
 
         {/* NEXUS CLUB */}
         <h2 className="text-4xl text-white text-center mb-10">Nexus Club</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {nexusPricing.map(renderBlock)}
         </div>
 
         {/* ARCADE */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Modes Arcade</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {arcadePricing.map(renderBlock)}
           </div>
         </div>
