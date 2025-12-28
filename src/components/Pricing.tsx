@@ -112,28 +112,29 @@ const renderBlock = (item: any, highlightColor?: string, popular?: boolean) => (
       </div>
     )}
 
-    {/* NAME + DURATION + PRICE */}
-    <div className="text-center mb-6">
-      <h4 className="text-xl text-white mb-2">{item.name}</h4>
-      {item.duration && <div className="text-gray-400 mb-4">{item.duration}</div>}
-      {item.price && (
-        <div className="text-3xl font-bold text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text mt-2">
-          {item.price}
-        </div>
-      )}
+   {/* NOM + DURÉE + PRIX */}
+<div className="text-center mb-6">
+  <h4 className="text-xl text-white mb-2">{item.name}</h4>
+  {item.duration && <div className="text-gray-400 mb-4">{item.duration}</div>}
+  {item.price && (
+    <div className="text-3xl font-bold text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text mt-2">
+      {item.price}
     </div>
+  )}
+</div>
 
-    {/* FEATURES - chaque feature centré et sous forme de ligne */}
-    {item.features && (
-      <div className="flex flex-col items-center space-y-2 mt-4 mb-4">
-        {item.features.map((feature: string, idx: number) => (
-          <div key={idx} className="flex items-center gap-2 text-gray-300">
-            <Check className="text-cyan-400 flex-shrink-0" size={18} />
-            <span>{feature}</span>
-          </div>
-        ))}
-      </div>
-    )}
+{/* FEATURES */}
+{item.features && (
+  <ul className="mt-4 space-y-2 w-full flex flex-col items-center">
+    {item.features.map((feature: string, idx: number) => (
+      <li key={idx} className="flex items-center gap-2">
+        <Check className="text-cyan-400 flex-shrink-0" size={18} />
+        <span className="text-gray-300">{feature}</span>
+      </li>
+    ))}
+  </ul>
+)}
+
 
     {/* BLOCS “QUI ?” et “QUAND ?” */}
     {item.when && (
