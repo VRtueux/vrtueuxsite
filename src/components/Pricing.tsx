@@ -7,6 +7,7 @@ export function Pricing() {
       duration: "30 min",
       price: "24€",
       highlight: true,
+      badge: "EXCLUSIF",
       features: ["Unique en France", "Expérience immersive totale", "Déplacement naturel"]
     },
     {
@@ -34,6 +35,7 @@ export function Pricing() {
       name: "Pack Découverte",
       duration: "1h",
       price: "49€",
+      badge: "POPULAIRE",
       features: ["Idéal pour débuter", "Testez plusieurs expériences", "Conseils personnalisés"]
     },
     {
@@ -45,13 +47,7 @@ export function Pricing() {
     }
   ];
 
-  const arcadePricing = [
-    { name: "5 Parties", price: "12,50€", features: ["Battle", "Jeux classiques"] },
-    { name: "12 Parties", price: "29,95€", features: ["Meilleur rapport qualité/prix", "Économisez 5€"] },
-    { name: "20 Parties", price: "49,90€", features: ["Offre famille", "Économisez 12,50€"] }
-  ];
-
-  const nexusPricing = [
+ const nexusPricing = [
     {
       name: "Qu'est-ce que le Nexus Club ?",
       features: [
@@ -82,8 +78,20 @@ export function Pricing() {
     }
   ];
 
+    const arcadePricing = [
+    { name: "5 Parties", price: "12,50€", features: ["Battle", "Jeux classiques"] },
+    { name: "12 Parties", price: "29,95€", features: ["Meilleur rapport qualité/prix", "Économisez 5€"] },
+    { name: "20 Parties", price: "49,90€", features: ["Offre famille", "Économisez 12,50€"] }
+  ];
+
   const renderBlock = (item: any, highlight?: boolean) => (
     <div
+    {item.badge && (
+  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-cyan-500 text-black text-xs font-bold px-4 py-1 rounded-full shadow-md uppercase">
+    {item.badge}
+  </div>
+)}
+
       key={item.name}
       className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
         highlight
@@ -123,7 +131,8 @@ export function Pricing() {
 
   return (
     <section className="py-20 bg-slate-900">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 space-y-24">
+
 
         <h2 className="text-center text-4xl text-white mb-16">
           Nos <span className="text-cyan-400">Tarifs</span>
