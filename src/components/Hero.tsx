@@ -55,7 +55,7 @@ export function Hero() {
                        shadow-lg hover:shadow-xl hover:scale-105
                        transition-all duration-300 animate-pulse"
           >
-            Gift Card
+            Cartes Cadeaux
           </button>
         </div>
       </div>
