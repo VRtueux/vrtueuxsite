@@ -86,82 +86,86 @@ export function Pricing() {
     { name: '20 Parties', price: '49,90€', features: ['Pour les passionnés', 'Économie maximale'] }
   ];
 
-  const renderBlock = (item: any, highlightColor?: string, popular?: boolean) => (
-    <div
-      key={item.name}
-      className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between h-full ${
-        highlightColor
-          ? `border-${highlightColor}-500 shadow-lg shadow-${highlightColor}-500/20`
-          : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
-      }`}
-    >
-      {/* BADGE */}
-      {(popular || item.highlight) && (
-        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-          <span
-            className={`px-6 py-2 rounded-full text-lg font-bold text-white text-center shadow-lg ${
-              item.highlight
-                ? 'bg-purple-600 border-2 border-purple-400 shadow-purple-500/50'
-                : popular
-                ? 'bg-gradient-to-r from-cyan-500 to-blue-500 border-2 border-blue-400 shadow-blue-500/50'
-                : ''
-            }`}
-          >
-            {item.highlight ? 'Exclusif' : 'Populaire'}
-          </span>
-        </div>
-      )}
-
-      {/* NOM + DURÉE + PRIX */}
-      <div className="text-center mb-6">
-        <h4 className="text-xl text-white mb-2">{item.name}</h4>
-        {item.duration && <div className="text-gray-400 mb-4">{item.duration}</div>}
-        {item.price && (
-          <div className="text-3xl font-bold text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text mt-2">
-            {item.price}
-          </div>
-        )}
+ const renderBlock = (item: any, highlightColor?: string, popular?: boolean) => (
+  <div
+    key={item.name}
+    className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between h-full ${
+      highlightColor
+        ? `border-${highlightColor}-500 shadow-lg shadow-${highlightColor}-500/20`
+        : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
+    }`}
+  >
+    {/* BADGE */}
+    {(popular || item.highlight) && (
+      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+        <span
+          className={`px-6 py-2 rounded-full text-lg font-bold text-white text-center shadow-lg ${
+            item.highlight
+              ? 'bg-purple-600 border-2 border-purple-400 shadow-purple-500/50'
+              : popular
+              ? 'bg-gradient-to-r from-cyan-500 to-blue-500 border-2 border-blue-400 shadow-blue-500/50'
+              : ''
+          }`}
+        >
+          {item.highlight ? 'Exclusif' : 'Populaire'}
+        </span>
       </div>
+    )}
 
-      {/* FEATURES */}
-      {item.features && (
-        <ul className="space-y-2 text-left flex-1">
-          {item.features.map((feature: string, idx: number) => (
-            <li key={idx} className="flex items-start gap-2 text-gray-300">
-              <Check className="text-cyan-400 flex-shrink-0 mt-0.5" size={18} />
-              <span>{feature}</span>
-            </li>
-          ))}
-        </ul>
-      )}
+    {/* NOM */}
+    <h4 className="text-xl text-white text-center mb-2">{item.name}</h4>
 
-      {/* BLOCS “QUI ?” et “QUAND ?” */}
-      {item.when && (
-        <div className="mt-6 text-center text-gray-300">
-          <h5 className="text-xl text-white mb-2">{item.when.title}</h5>
-          <p className="whitespace-pre-line mt-2">{item.when.description}</p>
-        </div>
-      )}
+    {/* PRIX */}
+    {item.price && (
+      <div className="text-3xl font-bold text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-center mb-4">
+        {item.price}
+      </div>
+    )}
 
-      {/* NEXUS CLUB DISCORD */}
-      {item.name === "Qu'est-ce que le Nexus Club ?" && (
-        <div className="mt-6 text-center">
-          <a
-            href="https://discord.gg/aVsYRYJP"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#7289da] text-white font-semibold px-4 py-2 rounded-full shadow-md hover:scale-105 transition-transform hover:shadow-lg"
-          >
-            <img
-              src="https://i.ibb.co/dsBr3HpT/t-l-chargement-3.png"
-              alt="Discord Logo"
-              className="h-4 w-4"
-            />
-          </a>
-        </div>
-      )}
-    </div>
-  );
+    {/* DURÉE */}
+    {item.duration && (
+      <div className="text-gray-400 text-center mb-4">{item.duration}</div>
+    )}
+
+    {/* FEATURES / DESCRIPTION */}
+    {item.features && (
+      <ul className="space-y-2 text-left flex-1">
+        {item.features.map((feature: string, idx: number) => (
+          <li key={idx} className="flex items-start gap-2 text-gray-300">
+            <Check className="text-cyan-400 flex-shrink-0 mt-0.5" size={18} />
+            <span>{feature}</span>
+          </li>
+        ))}
+      </ul>
+    )}
+
+    {/* BLOCS “QUI ?” et “QUAND ?” */}
+    {item.when && (
+      <div className="mt-6 text-center text-gray-300">
+        <h5 className="text-xl text-white mb-2">{item.when.title}</h5>
+        <p className="whitespace-pre-line mt-2">{item.when.description}</p>
+      </div>
+    )}
+
+    {/* NEXUS CLUB DISCORD */}
+    {item.name === "Qu'est-ce que le Nexus Club ?" && (
+      <div className="mt-6 text-center">
+        <a
+          href="https://discord.gg/aVsYRYJP"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 bg-[#7289da] text-white font-semibold px-4 py-2 rounded-full shadow-md hover:scale-105 transition-transform hover:shadow-lg"
+        >
+          <img
+            src="https://i.ibb.co/dsBr3HpT/t-l-chargement-3.png"
+            alt="Discord Logo"
+            className="h-4 w-4"
+          />
+        </a>
+      </div>
+    )}
+  </div>
+);
 
   return (
     <section id="pricing" className="py-20 bg-slate-900 relative">
