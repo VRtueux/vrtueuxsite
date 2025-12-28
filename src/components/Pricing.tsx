@@ -42,9 +42,14 @@ export function Pricing() {
       name: 'Abonnement 10 Sessions',
       duration: '10 x 30 min',
       price: '130€',
-      popular: true,
       features: ['Économisez 40€', 'Valable 6 mois', 'Partage possible']
     }
+  ];
+
+  const arcadePricing = [
+    { name: '5 Parties', price: '12,50€', features: ['Jeux d’arcade VR', 'Idéal découverte'] },
+    { name: '12 Parties', price: '29,95€', features: ['Meilleur rapport qualité/prix', 'Sessions libres'] },
+    { name: '20 Parties', price: '49,90€', features: ['Pour les passionnés', 'Économie maximale'] }
   ];
 
   const nexusPricing = [
@@ -56,13 +61,14 @@ export function Pricing() {
       ]
     },
     {
-      name: 'Prix / Avantages',
+      name: 'Nexus Club',
       price: '150€/an',
       features: [
         'Accès VIP toute l’année',
         '-10% sur toutes les sessions',
         'Accès aux évènements privés du Nexus',
         'E-sport : tournois Beat Saber et autres compétitions VR',
+        'Événements privés & tournois',
         'Communauté exclusive'
       ]
     },
@@ -81,53 +87,53 @@ export function Pricing() {
     }
   ];
 
-  const arcadePricing = [
-    { name: '5 Parties', price: '12,50€', features: ['Jeux d’arcade VR', 'Idéal découverte'] },
-    { name: '12 Parties', price: '29,95€', features: ['Meilleur rapport qualité/prix', 'Sessions libres'] },
-    { name: '20 Parties', price: '49,90€', features: ['Pour les passionnés', 'Économie maximale'] }
-  ];
-
   const renderBlock = (item: any, highlight?: boolean, popular?: boolean) => (
     <div
       key={item.name}
-      className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
-        highlight ? 'border-purple-500 shadow-lg shadow-purple-500/20' : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
-      }`}
+      className="relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-10 border transition-all duration-300 hover:-translate-y-2"
     >
       {/* BADGE */}
-      {item.badge || item.highlight || popular ? (
-        <div className="absolute -top-6 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold shadow-md uppercase text-center
-          bg-gradient-to-r from-cyan-500 to-purple-500 text-white">
-          {item.badge ? item.badge : item.highlight ? 'EXCLUSIF' : 'POPULAIRE'}
+      {item.badge && (
+        <div className={`absolute -top-6 left-1/2 -translate-x-1/2 px-5 py-1 rounded-full text-sm font-bold shadow-md uppercase ${
+          item.badge === 'EXCLUSIF' ? 'bg-yellow-400 text-black' : 'bg-purple-500 text-white'
+        }`}>
+          {item.badge}
         </div>
-      ) : null}
+      )}
+      {popular && (
+        <div className="absolute -top-6 left-1/2 -translate-x-1/2 px-5 py-1 rounded-full text-sm font-bold shadow-md uppercase bg-gradient-to-r from-cyan-500 to-blue-500 text-white">
+          POPULAIRE
+        </div>
+      )}
 
       {/* NOM + DUREE + PRIX */}
-      <div className="text-center mb-6">
-        <h4 className="text-xl text-white mb-2">{item.name}</h4>
-        {item.duration && <div className="text-gray-400 mb-2">{item.duration}</div>}
+      <div className="text-center mb-8">
+        <h4 className="text-xl text-white mb-3">{item.name}</h4>
+        {item.duration && <div className="text-gray-400 mb-3">{item.duration}</div>}
         {item.price && (
-          <div className="text-3xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">{item.price}</div>
+          <div className="text-3xl font-bold text-transparent bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text">
+            {item.price}
+          </div>
         )}
       </div>
 
       {/* FEATURES */}
       {item.features && (
-        <ul className="space-y-2 text-left">
-          {item.features.map((f: string, i: number) => (
-            <li key={i} className="flex gap-2 text-gray-300 items-start">
-              <Check className="text-cyan-400 mt-1" size={18} />
-              {f}
+        <ul className="space-y-3 text-left">
+          {item.features.map((feature: string, idx: number) => (
+            <li key={idx} className="flex items-start gap-3 text-gray-300">
+              <Check className="text-cyan-400 flex-shrink-0 mt-1" size={18} />
+              <span>{feature}</span>
             </li>
           ))}
         </ul>
       )}
 
-      {/* WHEN */}
+      {/* BLOCS “QUI ?” et “QUAND ?” */}
       {item.when && (
         <div className="mt-6 text-center text-gray-300">
           <h5 className="text-xl text-white mb-2">{item.when.title}</h5>
-          <p>{item.when.description}</p>
+          <p className="whitespace-pre-line mt-2">{item.when.description}</p>
         </div>
       )}
 
@@ -152,45 +158,46 @@ export function Pricing() {
   );
 
   return (
-    <section id="pricing" className="py-20 bg-slate-900">
-      <div className="max-w-7xl mx-auto px-4 space-y-32">
+    <section id="pricing" className="py-24 bg-slate-900 relative">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 space-y-32">
 
-        {/* Expériences VR */}
+        {/* EXPÉRIENCES VR */}
         <div>
-          <h2 className="text-4xl text-white text-center mb-10">Expériences VR</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 gap-y-16">
+          <h2 className="text-4xl text-white text-center mb-10">Expériences VR Individuelles</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {vrPricing.map(p => renderBlock(p, p.highlight))}
           </div>
         </div>
 
-        {/* Packs & Forfaits */}
+        {/* PACKS & FORFAITS */}
         <div>
           <h2 className="text-4xl text-white text-center mb-10">Packs & Forfaits</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 gap-y-16">
-            {packs.map(p => renderBlock(p, undefined, p.popular))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {packs.map(p => renderBlock(p, undefined, p.badge === 'POPULAIRE'))}
           </div>
         </div>
 
-        {/* Nexus Club */}
-        <div>
-          <h2 className="text-4xl text-white text-center mb-10">Nexus Club</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 gap-y-16">
-            {nexusPricing.map(p => renderBlock(p, true))}
-          </div>
-        </div>
-
-        {/* Mode Arcade */}
+        {/* MODE ARCADE */}
         <div>
           <h2 className="text-4xl text-white text-center mb-10">Mode Arcade</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 gap-y-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {arcadePricing.map(p => renderBlock(p))}
           </div>
         </div>
 
-        <div className="mt-12 text-center text-gray-400 text-sm">
-          * Tous les prix sont TTC. Les sessions sont à réserver à l'avance.
+        {/* NEXUS CLUB */}
+        <div>
+          <h2 className="text-4xl text-white text-center mb-10">Nexus Club</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {nexusPricing.map(p => renderBlock(p, true))}
+          </div>
         </div>
 
+        <div className="mt-12 text-center">
+          <p className="text-gray-400 text-sm">
+            * Tous les prix sont TTC. Les sessions sont à réserver à l'avance.
+          </p>
+        </div>
       </div>
     </section>
   );
