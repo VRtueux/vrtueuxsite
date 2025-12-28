@@ -95,7 +95,7 @@ export function Pricing() {
           : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
       }`}
     >
-      {/* BADGE */}
+      {/* Badge */}
       {(popular || item.highlight) && (
         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
           <span
@@ -112,7 +112,7 @@ export function Pricing() {
         </div>
       )}
 
-      {/* NOM + DURÉE + PRIX */}
+      {/* Nom + Durée + Prix */}
       <div className="text-center mb-6">
         <h4 className="text-xl text-white mb-2">{item.name}</h4>
         {item.duration && <div className="text-gray-400 mb-4">{item.duration}</div>}
@@ -123,7 +123,7 @@ export function Pricing() {
         )}
       </div>
 
-      {/* FEATURES */}
+      {/* Features */}
       {item.features && (
         <ul className="space-y-2 text-left">
           {item.features.map((feature: string, idx: number) => (
@@ -135,7 +135,7 @@ export function Pricing() {
         </ul>
       )}
 
-      {/* BLOCS “QUI ?” et “QUAND ?” */}
+      {/* Quand ? */}
       {item.when && (
         <div className="mt-6 text-center text-gray-300">
           <h5 className="text-xl text-white mb-2">{item.when.title}</h5>
@@ -143,7 +143,7 @@ export function Pricing() {
         </div>
       )}
 
-      {/* NEXUS CLUB DISCORD */}
+      {/* Discord Nexus */}
       {item.name === "Qu'est-ce que le Nexus Club ?" && (
         <div className="mt-6 text-center">
           <a
@@ -166,6 +166,7 @@ export function Pricing() {
   return (
     <section id="pricing" className="py-20 bg-slate-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl text-white mb-4">
             Nos <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Tarifs</span>
@@ -175,7 +176,7 @@ export function Pricing() {
           </p>
         </div>
 
-        {/* EXPÉRIENCES VR INDIVIDUELLES */}
+        {/* Expériences VR */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Expériences VR Individuelles</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
@@ -183,7 +184,7 @@ export function Pricing() {
           </div>
         </div>
 
-        {/* PACKS */}
+        {/* Packs & Forfaits */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Packs & Forfaits</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
@@ -195,13 +196,13 @@ export function Pricing() {
           </div>
         </div>
 
-        {/* NEXUS CLUB */}
+        {/* Nexus Club */}
         <h2 className="text-4xl text-white text-center mb-10">Nexus Club</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch mb-20">
           {nexusPricing.map(item => renderBlock(item))}
         </div>
 
-        {/* ARCADE */}
+        {/* Arcade */}
         <div className="mb-16">
           <h3 className="text-2xl text-white mb-8 text-center">Modes Arcade</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
@@ -209,6 +210,7 @@ export function Pricing() {
           </div>
         </div>
 
+        {/* Note */}
         <div className="mt-12 text-center">
           <p className="text-gray-400 text-sm">
             * Tous les prix sont TTC. Les sessions sont à réserver à l'avance.
