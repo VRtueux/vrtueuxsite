@@ -113,8 +113,6 @@ export function Contact() {
                     <br />
                     Exception :<br />
                     <br />
-                    Mercredi 24 décembre : 10h à 17h<br />
-                    Jeudi 25 décembre : Fermé<br />
                     Mercredi 31 décembre : 10h à 17h<br />
                     Jeudi 1er janvier : Fermé<br />
                     Vendredi 2 janvier : 13h à 22h<br />

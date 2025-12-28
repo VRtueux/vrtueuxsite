@@ -89,7 +89,7 @@ export function Pricing() {
   const renderBlock = (item: any, highlightColor?: string, popular?: boolean) => (
     <div
       key={item.name}
-      className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
+      className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between h-full ${
         highlightColor
           ? `border-${highlightColor}-500 shadow-lg shadow-${highlightColor}-500/20`
           : 'border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20'
@@ -99,7 +99,7 @@ export function Pricing() {
       {(popular || item.highlight) && (
         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
           <span
-            className={`px-8 py-2 rounded-full text-lg font-bold text-white text-center shadow-lg ${
+            className={`px-6 py-2 rounded-full text-lg font-bold text-white text-center shadow-lg ${
               item.highlight
                 ? 'bg-purple-600 border-2 border-purple-400 shadow-purple-500/50'
                 : popular
@@ -125,7 +125,7 @@ export function Pricing() {
 
       {/* FEATURES */}
       {item.features && (
-        <ul className="space-y-2 text-left">
+        <ul className="space-y-2 text-left flex-1">
           {item.features.map((feature: string, idx: number) => (
             <li key={idx} className="flex items-start gap-2 text-gray-300">
               <Check className="text-cyan-400 flex-shrink-0 mt-0.5" size={18} />
