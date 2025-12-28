@@ -84,50 +84,52 @@ export function Pricing() {
     { name: "20 Parties", price: "49,90€", features: ["Offre famille", "Économisez 12,50€"] }
   ];
 
-  const renderBlock = (item: any, highlight?: boolean) => (
-    <div
+ const renderBlock = (item: any, highlight?: boolean) => (
+  <div
+    key={item.name}
+    className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
+      highlight
+        ? "border-cyan-500 shadow-lg shadow-cyan-500/20"
+        : "border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20"
+    }`}
+  >
+    {/* Badge */}
     {item.badge && (
-  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-cyan-500 text-black text-xs font-bold px-4 py-1 rounded-full shadow-md uppercase">
-    {item.badge}
-  </div>
-)}
-
-      key={item.name}
-      className={`relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
-        highlight
-          ? "border-cyan-500 shadow-lg shadow-cyan-500/20"
-          : "border-slate-700 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20"
-      }`}
-    >
-      <div className="text-center mb-6">
-        <h4 className="text-xl text-white mb-2">{item.name}</h4>
-        {item.duration && <div className="text-gray-400 mb-2">{item.duration}</div>}
-        {item.price && (
-          <div className="text-3xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-            {item.price}
-          </div>
-        )}
+      <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-cyan-500 text-black text-xs font-bold px-4 py-1 rounded-full shadow-md uppercase">
+        {item.badge}
       </div>
+    )}
 
-      {item.features && (
-        <ul className="space-y-2">
-          {item.features.map((f: string, i: number) => (
-            <li key={i} className="flex gap-2 text-gray-300">
-              <Check className="text-cyan-400 mt-1" size={18} />
-              {f}
-            </li>
-          ))}
-        </ul>
-      )}
-
-      {item.when && (
-        <div className="mt-6 text-center text-gray-300">
-          <h5 className="text-white font-semibold">{item.when.title}</h5>
-          <p>{item.when.description}</p>
+    <div className="text-center mb-6">
+      <h4 className="text-xl text-white mb-2">{item.name}</h4>
+      {item.duration && <div className="text-gray-400 mb-2">{item.duration}</div>}
+      {item.price && (
+        <div className="text-3xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+          {item.price}
         </div>
       )}
     </div>
-  );
+
+    {item.features && (
+      <ul className="space-y-2">
+        {item.features.map((f: string, i: number) => (
+          <li key={i} className="flex gap-2 text-gray-300">
+            <Check className="text-cyan-400 mt-1" size={18} />
+            {f}
+          </li>
+        ))}
+      </ul>
+    )}
+
+    {item.when && (
+      <div className="mt-6 text-center text-gray-300">
+        <h5 className="text-white font-semibold">{item.when.title}</h5>
+        <p>{item.when.description}</p>
+      </div>
+    )}
+  </div>
+);
+
 
   return (
     <section className="py-20 bg-slate-900">
