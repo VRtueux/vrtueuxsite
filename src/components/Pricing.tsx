@@ -147,7 +147,7 @@ export function Pricing() {
 {item.name === 'Gift Card' && (
   <div className="mt-6 text-center">
     <a
-      href="https://www.paypal.com/ncp/payment/C28MCSPHAPTU4"
+      href="https://www.paypal.com/ncp/payment/KEA4Q3LKBGQAL"
       target="_blank"
       rel="noopener noreferrer"
       className="inline-block px-8 py-3 rounded-full font-semibold text-white 
