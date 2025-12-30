@@ -25,11 +25,11 @@ export function Pricing() {
 
   const packs = [
     {
-      name: 'Gift Card',
-      duration: 'Carte Cadeau à prix libre',
-      price: 'À partir de 15€',
-      features: ['Montant libre', 'Laisse le choix de l’expérience à offrir']
-    },
+       name: 'Gift Card',
+  duration: 'Valable 6 mois',
+  price: 'À partir de 15€',
+  features: ['Le cadeau parfait pour découvrir la VR', 'Choix libre de l’expérience à offrir'],
+   },
     {
       name: 'Pack Découverte',
       duration: '1h',
