@@ -28,7 +28,7 @@ export function Pricing() {
       name: 'Gift Card',
       duration: 'Carte Cadeau à prix libre',
       price: 'À partir de 15€',
-      features: ['Montant libre', "Laisse le choix de l’expérience à offrir", 'Idéal pour découvrir la VR sans limite']
+      features: ['Montant libre', 'Laisse le choix de l’expérience à offrir']
     },
     {
       name: 'Pack Découverte',
