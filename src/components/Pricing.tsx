@@ -39,7 +39,7 @@ export function Pricing() {
     },
     {
       name: 'Abonnement 10 Sessions',
-      duration: '1h/session',
+      duration: '30min / session',
       price: '130€',
       features: ['Économie de 25%', 'Accès prioritaire', 'Sessions flexibles']
     }
@@ -147,7 +147,7 @@ export function Pricing() {
 {item.name === 'Gift Card' && (
   <div className="mt-6 text-center">
     <a
-      href="https://www.paypal.com/ncp/payment/KEA4Q3LKBGQAL"
+      href="https://app.squareup.com/gift/ML1MM8E6TG10J/order"
       target="_blank"
       rel="noopener noreferrer"
       className="inline-block px-8 py-3 rounded-full font-semibold text-white 
