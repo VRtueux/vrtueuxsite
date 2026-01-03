@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Instagram, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, Clock, Youtube } from 'lucide-react';
 
 export function Contact() {
   return (
@@ -16,6 +16,7 @@ export function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Contact Info */}
           <div className="space-y-6">
+            {/* Téléphone */}
             <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 hover:border-cyan-500 transition-all duration-300">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center">
@@ -30,6 +31,7 @@ export function Contact() {
               </div>
             </div>
 
+            {/* Email */}
             <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 hover:border-cyan-500 transition-all duration-300">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center">
@@ -38,12 +40,13 @@ export function Contact() {
                 <div>
                   <h3 className="text-white mb-2">Email</h3>
                   <a href="mailto:Contact@vrtueux.fr" className="text-gray-400 hover:text-cyan-400 transition-colors">
-                    contact@vrtueux.fr | 
+                    contact@vrtueux.fr
                   </a>
                 </div>
               </div>
             </div>
 
+            {/* Adresse */}
             <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 hover:border-cyan-500 transition-all duration-300">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center">
@@ -53,7 +56,7 @@ export function Contact() {
                   <h3 className="text-white mb-2">Adresse</h3>
                   <p className="text-gray-400 mb-2">Vienne, France</p>
                   <a
-                    href="https://www.google.com/maps/place/VRtueux/@45.5234331,4.8695156,830m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47f4df96df867eb1:0x33aa68de3c69a7a9!8m2!3d45.5234294!4d4.8720959!16s%2Fg%2F11xh9nm5sx!5m1!1e2?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D"
+                    href="https://www.google.com/maps/place/VRtueux/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors"
@@ -64,10 +67,12 @@ export function Contact() {
               </div>
             </div>
 
+            {/* Réseaux sociaux */}
             <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700 hover:border-cyan-500 transition-all duration-300">
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center">
-                  <Instagram className="text-white" size={24} />
+                <div className="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center">
+                  {/* Gradient spécifique pour YouTube */}
+                  <Youtube className="text-red-600" size={24} />
                 </div>
                 <div>
                   <h3 className="text-white mb-2">Nos Réseaux</h3>
@@ -85,7 +90,7 @@ export function Contact() {
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-cyan-400 transition-colors"
                   >
-                    <br />Tiktok
+                    <br />TikTok
                   </a>
                   <a
                     href="https://discord.gg/N4BsUMNX"
@@ -95,10 +100,19 @@ export function Contact() {
                   >
                     <br />Discord
                   </a>
+                  <a
+                    href="https://www.youtube.com/@VRtueux"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-cyan-400 transition-colors"
+                  >
+                    <br />YouTube
+                  </a>
                 </div>
               </div>
             </div>
 
+            {/* Horaires */}
             <div className="bg-gradient-to-r from-purple-900/30 to-cyan-900/30 rounded-xl p-6 border border-purple-500/20">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
@@ -111,7 +125,7 @@ export function Contact() {
                     Lundi : Fermé<br />
                     <br />
                     <span className="text-sm text-gray-400">Dernière réservation à 20h30.</span><br />
-                    <span className="text-sm text-cyan-400"> <a href="https://vrtueux.setmore.com/?fbclid=PAZXh0bgNhZW0CMTEAAacUMcGurlhlyC-GJgjzvhAmseVlvvBBXlMIgYa45i-3QmrmSqVdkvkKLCPdkQ_aem_g-L0mFxazO_YmhwD5o0rUQ"> Rerserver maintenant.</a></span>
+                    <span className="text-sm text-cyan-400"> <a href="https://vrtueux.setmore.com/">Réserver maintenant.</a></span>
                   </p>
                 </div>
               </div>
