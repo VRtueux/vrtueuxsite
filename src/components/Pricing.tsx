@@ -163,7 +163,7 @@ export function Pricing() {
       {item.name === "Qu'est-ce que le Nexus Club ?" && (
         <div className="mt-6 text-center">
           <a
-            href="https://discord.gg/aVsYRYJP"
+            href="https://discord.gg/JzRRdQg7"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#7289da] text-white font-semibold px-4 py-2 rounded-full shadow-md hover:scale-105 transition-transform hover:shadow-lg"
