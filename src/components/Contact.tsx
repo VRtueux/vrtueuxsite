@@ -54,7 +54,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h3 className="text-white mb-2">Adresse</h3>
-                  <p className="text-gray-400 mb-2">Vienne, France</p>
+                  <p className="text-gray-400 mb-2">22 rue boson, 38200, Vienne, France</p>
                   <a
                     href="https://www.google.com/maps/place/VRtueux/@45.5234331,4.8695156,830m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47f4df96df867eb1:0x33aa68de3c69a7a9!8m2!3d45.5234294!4d4.8720959!16s%2Fg%2F11xh9nm5sx!5m1!1e2?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D"
                     target="_blank"
