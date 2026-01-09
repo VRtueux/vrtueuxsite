@@ -147,35 +147,13 @@ export function Contact() {
         </div>
       </div>
 
-     {/* Footer */}
-<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 pt-8 border-t border-slate-800">
-  <div className="text-center text-gray-500 space-y-4">
-    <p>
-      &copy; {new Date().getFullYear()} VRtueux. Tous droits réservés.
-    </p>
-    <p className="text-sm">
-      Votre destination gaming VR à Vienne
-    </p>
-
-    {/* CGV */}
- <div className="mt-6 flex justify-center">
-  <a
-    href="https://docs.google.com/document/d/e/2PACX-1vThXvEPMFbIoL5d8_eD4J4Vvsf1Y8-WfHGeDuvU_nTdZjc_5Qochul-catFza3vcDN1b7CJEmyYgWx3/pub"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-flex items-center gap-2 px-6 py-2
-               rounded-lg border border-slate-600
-               text-gray-300 text-sm
-               hover:border-cyan-400 hover:text-cyan-400
-               transition-all duration-300"
-  >
-    Conditions Générales de Vente
-  </a>
-</div>
-</div>
-  </div>
-</div>
-
+      {/* Footer */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 pt-8 border-t border-slate-800">
+        <div className="text-center text-gray-500">
+          <p>&copy; {new Date().getFullYear()} VRtueux. Tous droits réservés.</p>
+          <p className="mt-2 text-sm">Votre destination gaming VR à Vienne</p>
+        </div>
+      </div>
     </section>
   );
 }
