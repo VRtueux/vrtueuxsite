@@ -158,9 +158,11 @@ export function Contact() {
     </p>
 
     {/* CGV */}
-   <div className="mt-6 flex justify-center">
+ <div className="mt-6 flex justify-center">
   <a
-    href="/conditions-generales-de-vente"
+    href="https://docs.google.com/document/d/e/2PACX-1vThXvEPMFbIoL5d8_eD4J4Vvsf1Y8-WfHGeDuvU_nTdZjc_5Qochul-catFza3vcDN1b7CJEmyYgWx3/pub"
+    target="_blank"
+    rel="noopener noreferrer"
     className="inline-flex items-center gap-2 px-6 py-2
                rounded-lg border border-slate-600
                text-gray-300 text-sm
@@ -169,6 +171,7 @@ export function Contact() {
   >
     Conditions Générales de Vente
   </a>
+</div>
 </div>
   </div>
 </div>
