@@ -178,20 +178,23 @@ export function Contact() {
 
  {/* CGV Fullscreen Modal */}
 {openCGV && (
-  <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur flex items-center justify-center">
-    <div className="w-full h-full bg-slate-950 border border-slate-700 overflow-auto">
-      {/* Header */}
-      <div className="flex justify-between items-center px-4 py-3 border-b border-slate-800">
-        <h2 className="text-white text-lg">
-          Conditions Générales de Vente
-        </h2>
-        <button
-          onClick={() => setOpenCGV(false)}
-          className="text-gray-400 hover:text-white text-xl"
-        >
-          ✕
-        </button>
-      </div>
+  <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur">
+    {/* Iframe fullscreen */}
+    <iframe
+      src="https://docs.google.com/document/d/e/2PACX-1vThXvEPMFbIoL5d8_eD4J4Vvsf1Y8-WfHGeDuvU_nTdZjc_5Qochul-catFza3vcDN1b7CJEmyYgWx3/pub?embedded=true"
+      className="w-full h-full border-0"
+      title="Conditions Générales de Vente VRtueux"
+    />
+    
+    {/* Bouton fermer */}
+    <button
+      onClick={() => setOpenCGV(false)}
+      className="fixed top-4 right-4 z-50 text-white text-2xl bg-black/50 px-3 py-1 rounded hover:bg-black/70 transition"
+    >
+      ✕
+    </button>
+  </div>
+)}
 
       {/* Iframe fullscreen */}
       <iframe
