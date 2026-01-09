@@ -176,32 +176,32 @@ export function Contact() {
         </div>
       </div>
 
-      {/* CGV Fullscreen Modal */}
-      {openCGV && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur">
-          <div className="absolute inset-4 bg-slate-950 rounded-xl border border-slate-700 overflow-hidden">
-            {/* Header */}
-            <div className="flex justify-between items-center px-4 py-3 border-b border-slate-800">
-              <h2 className="text-white text-lg">
-                Conditions Générales de Vente
-              </h2>
-              <button
-                onClick={() => setOpenCGV(false)}
-                className="text-gray-400 hover:text-white text-xl"
-              >
-                ✕
-              </button>
-            </div>
+ {/* CGV Fullscreen Modal */}
+{openCGV && (
+  <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur flex items-center justify-center">
+    <div className="w-full h-full bg-slate-950 border border-slate-700 overflow-auto">
+      {/* Header */}
+      <div className="flex justify-between items-center px-4 py-3 border-b border-slate-800">
+        <h2 className="text-white text-lg">
+          Conditions Générales de Vente
+        </h2>
+        <button
+          onClick={() => setOpenCGV(false)}
+          className="text-gray-400 hover:text-white text-xl"
+        >
+          ✕
+        </button>
+      </div>
 
-            {/* Iframe fullscreen */}
-            <iframe
-              src="https://docs.google.com/document/d/e/2PACX-1vThXvEPMFbIoL5d8_eD4J4Vvsf1Y8-WfHGeDuvU_nTdZjc_5Qochul-catFza3vcDN1b7CJEmyYgWx3/pub?embedded=true"
-              className="w-full h-[calc(100%-56px)]"
-              title="Conditions Générales de Vente VRtueux"
-            />
-          </div>
-        </div>
-      )}
+      {/* Iframe fullscreen */}
+      <iframe
+        src="https://docs.google.com/document/d/e/2PACX-1vThXvEPMFbIoL5d8_eD4J4Vvsf1Y8-WfHGeDuvU_nTdZjc_5Qochul-catFza3vcDN1b7CJEmyYgWx3/pub?embedded=true"
+        className="w-full h-[calc(100%-56px)]"
+        title="Conditions Générales de Vente VRtueux"
+      />
+    </div>
+  </div>
+)}
     </section>
   );
 }
