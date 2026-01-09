@@ -147,13 +147,23 @@ export function Contact() {
         </div>
       </div>
 
-      {/* Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 pt-8 border-t border-slate-800">
-        <div className="text-center text-gray-500">
-          <p>&copy; {new Date().getFullYear()} VRtueux. Tous droits réservés.</p>
-          <p className="mt-2 text-sm">Votre destination gaming VR à Vienne</p>
-        </div>
-      </div>
+ {/* Footer */}
+<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 pt-8 border-t border-slate-800">
+  <div className="text-center text-gray-500 space-y-2">
+    <p>&copy; {new Date().getFullYear()} VRtueux. Tous droits réservés.</p>
+    <p className="text-sm">Votre destination gaming VR à Vienne</p>
+
+    {/* Bouton CGV */}
+    <a
+      href="https://docs.google.com/document/d/e/2PACX-1vThXvEPMFbIoL5d8_eD4J4Vvsf1Y8-WfHGeDuvU_nTdZjc_5Qochul-catFza3vcDN1b7CJEmyYgWx3/pub"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block mt-2 px-4 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors text-sm font-medium"
+    >
+      Conditions Générales de Vente
+    </a>
+  </div>
+</div>
     </section>
   );
-}
+} 
