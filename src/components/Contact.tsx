@@ -147,13 +147,27 @@ export function Contact() {
         </div>
       </div>
 
-      {/* Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 pt-8 border-t border-slate-800">
-        <div className="text-center text-gray-500">
-          <p>&copy; {new Date().getFullYear()} VRtueux. Tous droits réservés.</p>
-          <p className="mt-2 text-sm">Votre destination gaming VR à Vienne</p>
-        </div>
-      </div>
+     {/* Footer */}
+<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 pt-8 border-t border-slate-800">
+  <div className="text-center text-gray-500 space-y-4">
+    <p>
+      &copy; {new Date().getFullYear()} VRtueux. Tous droits réservés.
+    </p>
+    <p className="text-sm">
+      Votre destination gaming VR à Vienne
+    </p>
+
+    {/* CGV */}
+    <div className="mt-6 flex justify-center">
+      <iframe
+        src="https://docs.google.com/document/d/e/2PACX-1vThXvEPMFbIoL5d8_eD4J4Vvsf1Y8-WfHGeDuvU_nTdZjc_5Qochul-catFza3vcDN1b7CJEmyYgWx3/pub?embedded=true"
+        className="w-full max-w-3xl h-[400px] rounded-lg border border-slate-700"
+        title="Conditions Générales de Vente VRtueux"
+      ></iframe>
+    </div>
+  </div>
+</div>
+
     </section>
   );
 }
