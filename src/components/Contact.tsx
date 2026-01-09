@@ -1,9 +1,6 @@
-import { useState } from 'react';
-import { Phone, Mail, MapPin, Instagram, Clock, Youtube } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, Clock, Youtube } from 'lucide-react'; // ajouter Youtube
 
 export function Contact() {
-  const [openCGV, setOpenCGV] = useState(false);
-
   return (
     <section id="contact" className="py-20 bg-slate-950 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -127,11 +124,7 @@ export function Contact() {
                     Lundi : Fermé<br />
                     <br />
                     <span className="text-sm text-gray-400">Dernière réservation à 20h30.</span><br />
-                    <span className="text-sm text-cyan-400">
-                      <a href="https://vrtueux.setmore.com/?fbclid=PAZXh0bgNhZW0CMTEAAacUMcGurlhlyC-GJgjzvhAmseVlvvBBXlMIgYa45i-3QmrmSqVdkvkKLCPdkQ_aem_g-L0mFxazO_YmhwD5o0rUQ">
-                        Réserver maintenant.
-                      </a>
-                    </span>
+                    <span className="text-sm text-cyan-400"> <a href="https://vrtueux.setmore.com/?fbclid=PAZXh0bgNhZW0CMTEAAacUMcGurlhlyC-GJgjzvhAmseVlvvBBXlMIgYa45i-3QmrmSqVdkvkKLCPdkQ_aem_g-L0mFxazO_YmhwD5o0rUQ"> Réserver maintenant.</a></span>
                   </p>
                 </div>
               </div>
@@ -156,55 +149,11 @@ export function Contact() {
 
       {/* Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 pt-8 border-t border-slate-800">
-        <div className="text-center text-gray-500 space-y-4">
+        <div className="text-center text-gray-500">
           <p>&copy; {new Date().getFullYear()} VRtueux. Tous droits réservés.</p>
-          <p className="text-sm">Votre destination gaming VR à Vienne</p>
-
-          {/* CGV button */}
-          <div className="flex justify-center">
-            <button
-              onClick={() => setOpenCGV(true)}
-              className="inline-flex items-center gap-2 px-6 py-2
-                         rounded-lg border border-slate-600
-                         text-gray-300 text-sm
-                         hover:border-cyan-400 hover:text-cyan-400
-                         transition-all duration-300"
-            >
-              Conditions Générales de Vente
-            </button>
-          </div>
+          <p className="mt-2 text-sm">Votre destination gaming VR à Vienne</p>
         </div>
       </div>
-
- {/* CGV Fullscreen Modal */}
-{openCGV && (
-  <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur">
-    {/* Iframe fullscreen */}
-    <iframe
-      src="https://docs.google.com/document/d/e/2PACX-1vThXvEPMFbIoL5d8_eD4J4Vvsf1Y8-WfHGeDuvU_nTdZjc_5Qochul-catFza3vcDN1b7CJEmyYgWx3/pub?embedded=true"
-      className="w-full h-full border-0"
-      title="Conditions Générales de Vente VRtueux"
-    />
-    
-    {/* Bouton fermer */}
-    <button
-      onClick={() => setOpenCGV(false)}
-      className="fixed top-4 right-4 z-50 text-white text-2xl bg-black/50 px-3 py-1 rounded hover:bg-black/70 transition"
-    >
-      ✕
-    </button>
-  </div>
-)}
-
-      {/* Iframe fullscreen */}
-      <iframe
-        src="https://docs.google.com/document/d/e/2PACX-1vThXvEPMFbIoL5d8_eD4J4Vvsf1Y8-WfHGeDuvU_nTdZjc_5Qochul-catFza3vcDN1b7CJEmyYgWx3/pub?embedded=true"
-        className="w-full h-[calc(100%-56px)]"
-        title="Conditions Générales de Vente VRtueux"
-      />
-    </div>
-  </div>
-)}
     </section>
   );
 }
