@@ -5,7 +5,7 @@ export function Pricing() {
     {
       name: 'Tapis Omnidirectionnel',
       duration: '30 min',
-      price: '15€',
+      price: '24€',
       highlight: true,
       features: ['Immersion totale', 'Liberté de mouvement', 'Expérience réaliste']
     },
